@@ -18,26 +18,7 @@ spec:
         app: java-restful-web-services
     spec:
       containers:
-      - image: diegokoala/java-restful-web-services
-        name: java-restful-web-services
-        resources: {}
+        - image: diegokoala/java-restful-web-services
+          name: java-restful-web-services
+          resources: {}
 status: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  creationTimestamp: null
-  labels:
-    app: java-restful-web-services
-  name: java-restful-web-services
-spec:
-  ports:
-  - name: 8080-8080
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
-  selector:
-    app: java-restful-web-services
-  type: ClusterIP
-status:
-  loadBalancer: {}
