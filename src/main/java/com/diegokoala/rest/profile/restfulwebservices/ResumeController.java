@@ -1,5 +1,6 @@
 package com.diegokoala.rest.profile.restfulwebservices;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,5 +12,10 @@ public class ResumeController
     public String GetResume(){
         return "{ nome: 'Diego Paes Ramalho Pereira', position: 'Senior Sales Engineer', company: 'Cisco - Appdynamics', objective:''  }";
 
+    }
+
+    @GetMapping(path = "/api/v1/help")
+    public String GetHelp(){
+        return "We only have the api /api/v1/resume , I hope I could help you!";
     }
 }
