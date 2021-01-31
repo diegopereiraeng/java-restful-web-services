@@ -20,5 +20,32 @@ spec:
       containers:
         - image: diegokoala/java-restful-web-services
           name: java-restful-web-services
+          envFrom:
+            - configMapRef:
+                name: java-restful-web-services-appdynamics
+            - configMapRef:
+                name: appdynamics-common
+            - secretRef:
+                name: appdynamics-secrets
+          imagePullPolicy: Always
+          env:
+          - name: ROLE
+            value: CV
           resources: {}
+          volumeMounts:
+          - mountPath: /opt/appdynamics-agents/java
+            name: appd-agent-java-install
+      restartPolicy: Always
+      initContainers:
+        - name: appdynamics-java-agent
+          image: appdynamics/java-agent:20.11.0
+          imagePullPolicy: IfNotPresent
+          command:
+            - cp
+            - -ra
+            - /opt/appdynamics/.
+            - /opt/appdynamics-agents/java/
+          volumeMounts:
+          - mountPath: /opt/appdynamics-agents/java
+            name: appd-agent-java-install
 status: {}
