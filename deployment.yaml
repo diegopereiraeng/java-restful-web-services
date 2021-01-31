@@ -45,6 +45,8 @@ spec:
           type: Directory
       - name: appd-agent-java-install
         emptyDir: {}
+        persistentVolumeClaim:
+            claimName: java-restful-web-services
       initContainers:
         - name: appdynamics-java-agent
           image: appdynamics/java-agent:20.11.0
@@ -63,8 +65,4 @@ spec:
           volumeMounts:
           - name: appd-agent-java-install
             mountPath: /opt/appdynamics-agents/java
-        volumes:
-          - name: appd-agent-java-install
-            persistentVolumeClaim:
-              claimName: java-restful-web-services
 status: {}
