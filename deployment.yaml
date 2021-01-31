@@ -36,6 +36,8 @@ spec:
           - mountPath: /opt/appdynamics-agents/java
             name: appd-agent-java-install
       restartPolicy: Always
+      securityContext:
+        fsGroup: 200
       volumes:
       - name: hostroot
         hostPath:
