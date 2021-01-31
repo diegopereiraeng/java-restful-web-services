@@ -6,4 +6,4 @@ metadata:
   name: java-restful-web-services-appdynamics
 data:
   APPDYNAMICS_AGENT_TIER_NAME: "Koala-Java-V2"
-  APPDYNAMICS_AGENT_NODE_NAME: "Koala-Java-V2"
+  APPDYNAMICS_AGENT_NODE_NAME: $(hostname)
