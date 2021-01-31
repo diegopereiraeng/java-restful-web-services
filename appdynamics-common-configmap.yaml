@@ -16,3 +16,4 @@ data:
   APPDYNAMICS_CONTROLLER_SSL_ENABLED: "FALSE"
   APPD_JAVAAGENT: "-javaagent:/opt/appdynamics-agents/java/javaagent.jar"
   APPDYNAMICS_NETVIZ_AGENT_PORT: "3892"
+  JAVA_OPTS: "-javaagent:/opt/appdynamics-agents/java/javaagent.jar -Dappdynamics.agent.nodeName=$(hostname)"
