@@ -49,16 +49,8 @@ spec:
         - name: appdynamics-java-agent
           image: appdynamics/java-agent:20.11.0
           imagePullPolicy: IfNotPresent
-          command:
-            - cp
-            - -ra
-            - /opt/appdynamics/.
-            - /opt/appdynamics-agents/java/
-            - \|
-            - /bin/chmod
-            - -R
-            - 777
-            - /opt/appdynamics-agents/java
+          command: ["/bin/sh","-c"]
+          args: ["cp -ra /opt/appdynamics/. /opt/appdynamics-agents/java/; /bin/chmod -R 777 /opt/appdynamics-agents/java"]
           volumeMounts:
           - mountPath: /opt/appdynamics-agents/java
             name: appd-agent-java-install
