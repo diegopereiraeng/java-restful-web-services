@@ -7,6 +7,8 @@ dockercfg: ${artifact.source.dockerconfig}
 createNamespace: true
 namespace: ${infra.kubernetes.namespace}
 
+podName: ${instance.hostName}
+
 # Service Type allow you to specify what kind of service you want.
 # Possible values for ServiceType are:
 # ClusterIP | NodePort | LoadBalancer | ExternalName
