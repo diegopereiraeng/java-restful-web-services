@@ -36,6 +36,12 @@ spec:
           - mountPath: /opt/appdynamics-agents/java
             name: appd-agent-java-install
       restartPolicy: Always
+      volumes:
+      - name: hostroot
+        hostPath:
+          path: /
+          type: Directory
+      - name: appd-agent-java-install
       initContainers:
         - name: appdynamics-java-agent
           image: appdynamics/java-agent:20.11.0
