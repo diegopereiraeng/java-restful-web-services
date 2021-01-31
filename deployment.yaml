@@ -6,7 +6,7 @@ metadata:
     app: java-restful-web-services
   name: java-restful-web-services
 spec:
-  replicas: 8
+  replicas: 1
   selector:
     matchLabels:
       app: java-restful-web-services
