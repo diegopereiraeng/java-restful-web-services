@@ -1,5 +1,5 @@
-name: harness-example
-replicas: 1
+name: harness-lab
+replicas: ${workflow.variables.replicas}
 
 image: ${artifact.metadata.image}
 dockercfg: ${artifact.source.dockerconfig}
@@ -7,7 +7,6 @@ dockercfg: ${artifact.source.dockerconfig}
 createNamespace: true
 namespace: ${infra.kubernetes.namespace}
 
-port: 
 
 podName: ${instance.hostName}
 
@@ -20,6 +19,8 @@ serviceType: LoadBalancer
 # targetPort is where application is listening on inside the container.
 servicePort: ${workflow.variables.ServicePort}
 serviceTargetPort: ${workflow.variables.ServiceTargetPort}
+
+appEnv: ${workflow.variables.Namespace}
 
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
