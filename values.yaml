@@ -7,6 +7,8 @@ dockercfg: ${artifact.source.dockerconfig}
 createNamespace: true
 namespace: ${infra.kubernetes.namespace}
 
+port: 
+
 podName: ${instance.hostName}
 
 # Service Type allow you to specify what kind of service you want.
@@ -16,8 +18,8 @@ serviceType: LoadBalancer
 
 # A Service can map an incoming port to any targetPort.
 # targetPort is where application is listening on inside the container.
-servicePort: 8080
-serviceTargetPort: 8080
+servicePort: ${workflow.variables.ServicePort}
+serviceTargetPort: ${workflow.variables.ServiceTargetPort}
 
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
