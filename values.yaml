@@ -21,6 +21,7 @@ servicePort: ${workflow.variables.ServicePort}
 serviceTargetPort: ${workflow.variables.ServiceTargetPort}
 
 appdyName: ${workflow.variables.AppdyName}
+tierName: ${workflow.variables.AppdyTierName}
 
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
