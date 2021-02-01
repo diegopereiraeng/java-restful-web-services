@@ -20,7 +20,7 @@ serviceType: LoadBalancer
 servicePort: ${workflow.variables.ServicePort}
 serviceTargetPort: ${workflow.variables.ServiceTargetPort}
 
-appEnv: ${workflow.variables.Namespace}
+appdyName: ${workflow.variables.AppdyName}
 
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
