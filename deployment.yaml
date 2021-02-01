@@ -47,7 +47,7 @@ spec:
         emptyDir: {}
       initContainers:
         - name: appdynamics-java-agent
-          image: appdynamics/java-agent:20.10.0
+          image: appdynamics/java-agent:20.11.0
           imagePullPolicy: IfNotPresent
           command: ["/bin/sh","-c"]
           args: ["cp -ra /opt/appdynamics/. /opt/appdynamics-agents/java/; /bin/chmod -R 777 /opt/appdynamics-agents/java"]
