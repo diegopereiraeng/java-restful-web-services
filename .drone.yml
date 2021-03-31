@@ -10,6 +10,7 @@ steps:
 - name: test
   image: gradle:jdk11
   commands:
+  - gradle init
   - gradle assemble
   - gradle check
 ...
