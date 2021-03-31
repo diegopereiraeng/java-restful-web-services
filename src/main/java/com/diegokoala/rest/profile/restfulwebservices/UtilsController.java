@@ -11,8 +11,8 @@ import java.net.UnknownHostException;
 @RestController
 public class UtilsController {
 
-    @Autowired
-    public BuildProperties buildProperties;
+    //@Autowired
+    //public BuildProperties buildProperties;
 
     @GetMapping(path = "/api/v1/hostname")
     public static String getHostName() {
@@ -25,12 +25,13 @@ public class UtilsController {
         }
         return hostName;
     }
+    /*
     @GetMapping("/build-info")
     public BuildProperties buildInfo() {
         return this.buildProperties;
     }
 
-    /*
+
     @GetMapping("/version")
     public String version() {
         return this.buildProperties.getVersion();
