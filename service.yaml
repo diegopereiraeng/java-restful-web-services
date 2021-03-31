@@ -5,9 +5,18 @@ metadata:
   name: java-restful-web-services
 spec:
   ports:
-    - port: 8080
-      targetPort: 8080
-      name: http
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
   selector:
-    app: java-restful-web-services
-  type: LoadBalancer
+    run: java-restful-web-services
+  type: NodePort
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: basic-ingress
+spec:
+  backend:
+    serviceName: java-restful-web-services
+    servicePort: 8080
