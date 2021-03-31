@@ -1,9 +1,3 @@
 harnessApiVersion: '1.0'
 type: APPLICATION_MANIFEST
-gitFileConfig:
-  branch: main
-  connectorName: Diego-Koala-Github
-  repoName: java-restful-web-services
-  useBranch: true
-  useInlineServiceDefinition: false
-storeType: Remote
+storeType: Local
