@@ -8,9 +8,8 @@ platform:
 
 steps:
 - name: test
-  image: gradle:jdk11
+  image: maven:3-jdk-11
   commands:
-  - gradle init --type pom
-  - gradle assemble
-  - gradle check
-...
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B
+
