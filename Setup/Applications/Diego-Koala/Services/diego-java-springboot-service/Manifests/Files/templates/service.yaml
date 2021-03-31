@@ -10,3 +10,12 @@ spec:
     protocol: TCP
   selector:
     app: {{.Values.name}}
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: basic-ingress
+spec:
+  backend:
+    serviceName: {{.Values.name}}-svc
+    servicePort: {{.Values.serviceTargetPort}}
