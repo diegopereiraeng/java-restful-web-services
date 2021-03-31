@@ -29,8 +29,12 @@ phases:
     - type: K8S_CANARY_DEPLOY
       name: Canary Deployment
       properties:
-        instanceUnitType: COUNT
-        instances: '1'
+        instanceUnitType: PERCENTAGE
+        instances: '50'
+        stateTimeoutInMinutes: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
