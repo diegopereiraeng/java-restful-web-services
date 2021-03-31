@@ -14,7 +14,7 @@ spec:
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: basic-ingress
+  name: diego-ingress
 spec:
   backend:
     serviceName: {{.Values.name}}-svc
