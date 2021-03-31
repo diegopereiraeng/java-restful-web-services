@@ -8,9 +8,8 @@ platform:
 
 steps:
 - name: test
-  image: golang:1.11
+  image: maven:3-jdk-10
   commands:
-  - go vet ./...
-  - go test ./...
-
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B
 ...
