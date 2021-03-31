@@ -7,7 +7,7 @@ platform:
   arch: amd64
 
 steps:
-- name: test
+- name: build
   image: maven:3-jdk-11
   commands:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
@@ -21,3 +21,5 @@ steps:
       from_secret: DockerHub
     repo: diegokoala/java-restful-web-services
     tags: latest
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
