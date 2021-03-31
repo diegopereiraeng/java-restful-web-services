@@ -13,3 +13,11 @@ steps:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - mvn test -B
 
+- name: docker  
+  image: plugins/docker
+  settings:
+    username: diegokoala
+    password: 
+      from_secret: DockerHub
+    repo: diegokoala/java-restful-web-services
+    tags: latest
