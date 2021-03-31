@@ -1,4 +1,4 @@
-name: harness-example
+name: java-restful-web-services
 replicas: 1
 
 image: ${artifact.metadata.image}
