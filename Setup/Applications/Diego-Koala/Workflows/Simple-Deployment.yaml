@@ -79,7 +79,7 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
-        timeoutMillis: 10000
+        timeoutMillis: 15000
         url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=${artifact.displayName}
         useProxy: false
     stepsInParallel: false
