@@ -19,6 +19,8 @@ servicePort: 8080
 serviceTargetPort: 8080
 createIngress: false
 
+apiServiceUrl: ${workflow.variables.API_URL}
+
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
 # and a Secret, respectively.
