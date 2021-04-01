@@ -112,4 +112,10 @@ rollbackPhases:
   provisionNodes: false
   serviceName: diego-java-springboot-service
   statefulSet: false
-templatized: false
+templatized: true
+userVariables:
+- type: TEXT
+  fixed: false
+  mandatory: true
+  name: API_URL
+  value: http://${context.api_service.URL}/api/v1/harness
