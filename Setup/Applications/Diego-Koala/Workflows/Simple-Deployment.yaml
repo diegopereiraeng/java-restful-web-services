@@ -65,6 +65,23 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 60000
+    - type: HTTP
+      name: HTTP
+      properties:
+        assertion: ''
+        body: ''
+        executeWithPreviousSteps: false
+        method: GET
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags:
+        - diego-koala
+        templateVariables: ''
+        timeoutMillis: 10000
+        url: http://${context.api_service.URL}/api/v1/harness
+        useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
