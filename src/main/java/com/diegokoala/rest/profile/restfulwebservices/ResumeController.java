@@ -32,6 +32,11 @@ public class ResumeController
         return "{ Message: 'Welcome to Harness, Your Deployment 1.15 was successful implemented', status: 'UP' }";
 
     }
+    @RequestMapping(method = RequestMethod.GET, path = "/")
+    public String GetRoot(){
+        return "{ Message: 'Welcome to Harness, Your Deployment 1.15 was successful implemented', status: 'UP' }";
+
+    }
 
     @GetMapping(path = "/api/v1/help")
     public String GetHelp(){
