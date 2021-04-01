@@ -47,8 +47,6 @@ spec:
             value: "true"
           - name: DD_PROFILING_ENABLED
             value: "true"
-          - name: DD_LOGS_INJECTION
-            value: "true"
           resources: {}
       restartPolicy: Always
       securityContext:
