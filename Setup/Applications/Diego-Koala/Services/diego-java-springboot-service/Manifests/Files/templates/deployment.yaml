@@ -63,3 +63,61 @@ spec:
             name: {{.Values.name}}
         {{- end}}
         {{- end}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: {{.Values.name}}
+  name: {{.Values.name}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{.Values.name}}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: {{.Values.name}}
+    spec:
+      containers:
+        - image: {{.Values.image}}
+          name: {{.Values.name}}
+          envFrom:
+            - configMapRef:
+                name: {{.Values.name}}-appdynamics
+            - configMapRef:
+                name: appdynamics-common
+            - secretRef:
+                name: appdynamics-secrets
+          imagePullPolicy: Always
+          env:
+          - name: ROLE
+            value: CV
+          resources: {}
+          volumeMounts:
+          - mountPath: /opt/appdynamics-agents/java
+            name: appd-agent-java-install
+      restartPolicy: Always
+      securityContext:
+        fsGroup: 200
+      volumes:
+      - name: hostroot
+        hostPath:
+          path: /
+          type: Directory
+      - name: appd-agent-java-install
+        emptyDir: {}
+      initContainers:
+        - name: appdynamics-java-agent
+          image: appdynamics/java-agent:20.9.0
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/sh","-c"]
+          args: ["cp -ra /opt/appdynamics/. /opt/appdynamics-agents/java/; /bin/chmod -R 777 /opt/appdynamics-agents/java"]
+          volumeMounts:
+          - mountPath: /opt/appdynamics-agents/java
+            name: appd-agent-java-install
+status: {}
