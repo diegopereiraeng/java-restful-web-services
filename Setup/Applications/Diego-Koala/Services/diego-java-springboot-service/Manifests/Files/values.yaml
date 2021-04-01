@@ -17,6 +17,7 @@ protocol: http
 # targetPort is where application is listening on inside the container.
 servicePort: 80
 serviceTargetPort: 8080
+createIngress: false
 
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
