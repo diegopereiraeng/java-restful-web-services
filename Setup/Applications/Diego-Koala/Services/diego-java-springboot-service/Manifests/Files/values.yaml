@@ -11,7 +11,7 @@ namespace: ${infra.kubernetes.namespace}
 # Possible values for ServiceType are:
 # ClusterIP | NodePort | LoadBalancer | ExternalName
 serviceType: LoadBalancer
-protocol: http
+protocol: TCP
 
 # A Service can map an incoming port to any targetPort.
 # targetPort is where application is listening on inside the container.
