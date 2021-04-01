@@ -36,6 +36,53 @@ phases:
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
+    steps:
+    - type: SHELL_SCRIPT
+      name: Get LoadBalancer IP
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        delegateSelectors:
+        - diego-koala
+        executeOnDelegate: true
+        host: null
+        outputVars: URL
+        publishAsVar: true
+        scriptString: |
+          echo "Getting External LoadBalancer IP"
+
+          export URL=$(kubectl get svc ${service.name} -n ${infra.kubernetes.namespace} --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") # Get the load balancer from k8s service
+
+          echo "External LoadBalancer IP: $URL"
+        scriptType: BASH
+        secretOutputVars: ''
+        sshKeyRef: null
+        sweepingOutputName: api_service
+        sweepingOutputScope: PIPELINE
+        templateExpressions: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 60000
+    - type: HTTP
+      name: HTTP
+      properties:
+        assertion: ''
+        body: ''
+        executeWithPreviousSteps: false
+        method: PUT
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags:
+        - diego-koala
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 10000
+        url: ${workflow.variables.API_URL}/health_check/${artifact.buildNo}?name=${artifact.displayName}
+        useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
@@ -66,4 +113,10 @@ rollbackPhases:
   provisionNodes: false
   serviceName: diego-java-springboot-service
   statefulSet: false
-templatized: false
+templatized: true
+userVariables:
+- type: TEXT
+  fixed: false
+  mandatory: true
+  name: API_URL
+  value: http://${context.api_service.URL}
