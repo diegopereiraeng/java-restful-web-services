@@ -98,3 +98,4 @@ userVariables:
   fixed: false
   mandatory: true
   name: service_name
+  value: ${service.name}
