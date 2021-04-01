@@ -65,7 +65,7 @@ phases:
         templateVersion: null
         timeoutMillis: 60000
     - type: HTTP
-      name: HTTP
+      name: HTTP Check
       properties:
         assertion: ''
         body: ''
@@ -75,8 +75,7 @@ phases:
         responseProcessingExpressions: ''
         sweepingOutputName: null
         sweepingOutputScope: null
-        tags:
-        - diego-koala
+        tags: null
         templateUuid: null
         templateVariables: null
         templateVersion: null
