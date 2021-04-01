@@ -78,9 +78,11 @@ phases:
         sweepingOutputScope: null
         tags:
         - diego-koala
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
-        url: http://${context.api_service.URL}/api/v1/harness
+        url: ${workflow.variables.API_URL}
         useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
