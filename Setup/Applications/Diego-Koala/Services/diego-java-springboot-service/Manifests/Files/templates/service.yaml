@@ -20,4 +20,4 @@ spec:
   backend:
     serviceName: {{.Values.name}}
     servicePort: {{.Values.serviceTargetPort}}
-{{-end}}
+{{- end}}
