@@ -4,6 +4,9 @@ metadata:
   creationTimestamp: null
   labels:
     app: {{.Values.name}}
+    tags.datadoghq.com/env: "Dev"
+    tags.datadoghq.com/service: {{.Values.name}}
+    tags.datadoghq.com/version: "1.0.0"
   name: {{.Values.name}}
 spec:
   replicas: {{int .Values.replicas}}
@@ -24,6 +27,28 @@ spec:
           env:
           - name: ROLE
             value: CV
+          - name: DD_AGENT_HOST
+            valueFrom:
+              fieldRef:
+                fieldPath: status.hostIP
+          - name: DD_ENV
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.labels['tags.datadoghq.com/env']
+          - name: DD_SERVICE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.labels['tags.datadoghq.com/service']
+          - name: DD_VERSION
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.labels['tags.datadoghq.com/version']
+          - name: DD_LOGS_INJECTION
+            value: "true"
+          - name: DD_PROFILING_ENABLED
+            value: "true"
+          - name: DD_LOGS_INJECTION
+            value: "true"
           resources: {}
       restartPolicy: Always
       securityContext:
