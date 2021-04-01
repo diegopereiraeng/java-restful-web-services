@@ -20,6 +20,8 @@ steps:
     password: 
       from_secret: DockerHub
     repo: diegokoala/java-restful-web-services
-    tags: latest
+    tags:
+      - latest
+      - '1.0.0'
     environment:
       - DOCKER_LAUNCH_DEBUG=true
