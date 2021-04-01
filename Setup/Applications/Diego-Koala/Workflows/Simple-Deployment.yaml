@@ -49,7 +49,7 @@ phases:
         outputVars: api_service
         publishAsVar: false
         scriptString: |
-          export URL=$(kubectl get svc exemplar-api-svc -n development --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") # Get the load balancer from k8s service
+          export URL=$(kubectl get svc {{.Values.name}} -n {{infra.kubernetes.namespace}} --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") # Get the load balancer from k8s service
 
           echo $URL
         scriptType: BASH
