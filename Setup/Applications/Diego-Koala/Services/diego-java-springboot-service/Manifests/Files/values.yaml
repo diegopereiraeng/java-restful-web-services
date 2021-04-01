@@ -14,8 +14,8 @@ serviceType: NodePort
 
 # A Service can map an incoming port to any targetPort.
 # targetPort is where application is listening on inside the container.
-servicePort: 8080
-serviceTargetPort: 8080
+servicePort: 2502
+serviceTargetPort: 2502
 
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
