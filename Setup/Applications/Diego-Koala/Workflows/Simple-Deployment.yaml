@@ -50,13 +50,17 @@ phases:
         publishAsVar: false
         scriptString: |
           export URL=$(kubectl get svc exemplar-api-svc -n development --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") # Get the load balancer from k8s service
+
+          echo $URL
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRef: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     stepsInParallel: false
   - type: K8S_PHASE_STEP
