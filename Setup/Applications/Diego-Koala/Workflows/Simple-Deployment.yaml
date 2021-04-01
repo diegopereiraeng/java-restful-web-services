@@ -48,10 +48,13 @@ phases:
         host: null
         outputVars: api_service
         publishAsVar: false
-        scriptString: |
+        scriptString: |+
+          echo "Getting LoadBalancer IP"
+
           export URL=$(kubectl get svc ${service.name} -n ${infra.kubernetes.namespace} --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") # Get the load balancer from k8s service
 
-          echo $URL
+          echo " LoadBalancer IP: $URL"
+
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRef: null
