@@ -92,4 +92,9 @@ rollbackPhases:
   provisionNodes: false
   serviceName: diego-java-springboot-service
   statefulSet: false
-templatized: false
+templatized: true
+userVariables:
+- type: TEXT
+  fixed: false
+  mandatory: true
+  name: service_name
