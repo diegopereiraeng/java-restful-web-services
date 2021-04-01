@@ -1,9 +1,6 @@
 package com.diegokoala.rest.profile.restfulwebservices;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,6 +32,13 @@ public class ResumeController
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String GetRoot(){
         return "{ Message: 'Welcome to Harness, Your Deployment 1.15 was successful implemented', status: 'UP' }";
+
+    }
+
+    @PutMapping("/health_check/{id}")
+    public String SetDeployment(@PathVariable String id,
+                                @RequestParam("name") String name){
+        return "{ Message: 'Welcome to Harness, Your Deployment "+id+" for app: " +name+ " was successful implemented', status: 'UP' }";
 
     }
 
