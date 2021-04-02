@@ -1,5 +1,5 @@
 harnessApiVersion: '1.0'
-type: CANARY
+type: ROLLING
 concurrencyStrategy: INFRA
 envName: Dev
 failureStrategies:
@@ -16,4 +16,128 @@ notificationRules:
   userGroupAsExpression: false
   userGroupIds:
   - PFIVcv84TVW6OEpQEDvmGw
-templatized: false
+phases:
+- type: KUBERNETES
+  computeProviderName: Kubernetes Cluster Diego-GKE
+  daemonSet: false
+  infraDefinitionName: Diego-Koala-GKE
+  name: Rolling
+  phaseSteps:
+  - type: K8S_PHASE_STEP
+    name: Deploy
+    steps:
+    - type: K8S_DEPLOYMENT_ROLLING
+      name: Rollout Deployment
+      properties:
+        stateTimeoutInMinutes: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: Verify
+    steps:
+    - type: SHELL_SCRIPT
+      name: Get LoadBalancer IP
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        delegateSelectors:
+        - diego-koala
+        executeOnDelegate: true
+        host: null
+        outputVars: URL
+        publishAsVar: true
+        scriptString: |
+          echo "Getting External LoadBalancer IP"
+
+          export URL=$(kubectl get svc ${service.name} -n ${infra.kubernetes.namespace} --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") # Get the load balancer from k8s service
+
+          sleep 2
+
+          echo "External LoadBalancer IP: $URL"
+        scriptType: BASH
+        secretOutputVars: ''
+        sshKeyRef: null
+        sweepingOutputName: api_service
+        sweepingOutputScope: PIPELINE
+        templateExpressions: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 60000
+    - type: HTTP
+      name: HTTP Root HealthCheck
+      properties:
+        assertion: ${httpResponseCode}==200
+        body: ''
+        executeWithPreviousSteps: false
+        method: GET
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags:
+        - diego-koala-delegate
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 10000
+        url: http://${instance.name}:8080
+        useProxy: false
+    - type: HTTP
+      name: HTTP Deployment HealthCheck
+      properties:
+        assertion: ${httpResponseCode}==200
+        body: ''
+        executeWithPreviousSteps: true
+        method: PUT
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags:
+        - diego-koala-delegate
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 15000
+        url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=blabla
+        useProxy: false
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: Wrap Up
+    stepsInParallel: false
+  provisionNodes: false
+  serviceName: diego-java-springboot-service
+  statefulSet: false
+rollbackPhases:
+- type: KUBERNETES
+  computeProviderName: Kubernetes Cluster Diego-GKE
+  daemonSet: false
+  infraDefinitionName: Diego-Koala-GKE
+  name: Rollback Rolling
+  phaseNameForRollback: Rolling
+  phaseSteps:
+  - type: K8S_PHASE_STEP
+    name: Deploy
+    phaseStepNameForRollback: Deploy
+    statusForRollback: SUCCESS
+    steps:
+    - type: K8S_DEPLOYMENT_ROLLING_ROLLBACK
+      name: Rollback Deployment
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: Wrap Up
+    phaseStepNameForRollback: Wrap Up
+    stepsInParallel: false
+  provisionNodes: false
+  serviceName: diego-java-springboot-service
+  statefulSet: false
+templatized: true
+userVariables:
+- type: TEXT
+  fixed: false
+  mandatory: true
+  name: API_URL
+  value: http://${context.api_service.URL}
