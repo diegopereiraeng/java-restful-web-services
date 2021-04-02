@@ -12,3 +12,6 @@ triggerCondition:
   artifactStreamName: diegokoala_java-restful-web-services
   regex: false
   serviceName: diego-java-springboot-service
+workflowVariables:
+- name: API_URL
+  value: http://${context.api_service.URL}
