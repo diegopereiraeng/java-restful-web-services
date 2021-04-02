@@ -67,7 +67,7 @@ phases:
         templateVersion: null
         timeoutMillis: 60000
     - type: HTTP
-      name: HTTP Root HealthCheck
+      name: Internal HTTP Root HealthCheck
       properties:
         assertion: ${httpResponseCode}==200
         body: ''
