@@ -83,7 +83,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 10000
-        url: http://${instance.name}:8080
+        url: http://${service.name}.dev.svc.cluster.local:8080
         useProxy: false
     - type: HTTP
       name: HTTP Deployment HealthCheck
