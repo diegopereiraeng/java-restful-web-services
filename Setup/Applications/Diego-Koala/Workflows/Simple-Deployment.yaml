@@ -83,18 +83,20 @@ phases:
         url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=${artifact.displayName}
         useProxy: false
     - type: HTTP
-      name: HTTP_2
+      name: Check Root HTTP
       properties:
         assertion: ''
         body: ''
-        executeWithPreviousSteps: false
+        executeWithPreviousSteps: true
         method: GET
         publishAsVar: false
         responseProcessingExpressions: ''
         sweepingOutputName: null
         sweepingOutputScope: null
         tags: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
         url: http://${instance.host.publicDns}:8080
         useProxy: false
