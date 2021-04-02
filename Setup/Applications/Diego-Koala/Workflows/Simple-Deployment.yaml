@@ -99,7 +99,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 10000
-        url: http://${instance.host.publicDns}:8080
+        url: http://${artifact.url}:8080
         useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
