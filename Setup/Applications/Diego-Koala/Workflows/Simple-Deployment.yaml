@@ -86,9 +86,9 @@ phases:
         url: http://${instance.name}:8080
         useProxy: false
     - type: HTTP
-      name: HTTP Check
+      name: HTTP Deployment HealthCheck
       properties:
-        assertion: ''
+        assertion: ${httpResponseCode}==200
         body: ''
         executeWithPreviousSteps: true
         method: PUT
