@@ -111,7 +111,7 @@ phases:
         analysisTolerance: LOW
         comparisonStrategy: COMPARE_WITH_CURRENT
         hostnameTemplate: ${instance.hostName}
-        metrics: docker.cpu.throttled,docker.cpu.usage,docker.mem.rss,system.load.1,system.cpu.iowait,kubernetes.memory.usage_pct,system.mem.used
+        metrics: system.load.1,system.mem.used,system.cpu.iowait,docker.cpu.usage,kubernetes.memory.usage_pct,kubernetes.cpu.usage.total
         templateUuid: null
         templateVariables: null
         templateVersion: null
