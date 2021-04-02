@@ -100,7 +100,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 10000
-        url: http://${deploymentUrl}:8080
+        url: http://${instance.name}:8080
         useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
