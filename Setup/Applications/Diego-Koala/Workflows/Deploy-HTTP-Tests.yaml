@@ -86,7 +86,7 @@ phases:
         url: http://${service.name}.${infra.kubernetes.namespace}.svc.cluster.local:8080
         useProxy: false
     - type: HTTP
-      name: HTTP Deployment HealthCheck
+      name: External HTTP Deployment HealthCheck
       properties:
         assertion: ${httpResponseCode}==200
         body: ''
