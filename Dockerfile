@@ -4,8 +4,8 @@ RUN   apk update \
   &&   apk add ca-certificates wget \                                                                                                                                                                                                      
   &&   update-ca-certificates
 RUN wget -O dd-java-agent.jar "https://dtdg.co/latest-java-tracer"
-RUN chown spring:spring dd-java-agent.jar
 RUN addgroup -S spring && adduser -S spring -G spring
+RUN chown spring:spring dd-java-agent.jar
 USER spring:spring
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
