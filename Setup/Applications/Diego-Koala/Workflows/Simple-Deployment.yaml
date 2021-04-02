@@ -87,7 +87,7 @@ phases:
       properties:
         assertion: ''
         body: ''
-        executeWithPreviousSteps: false
+        executeWithPreviousSteps: true
         method: PUT
         publishAsVar: false
         responseProcessingExpressions: ''
