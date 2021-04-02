@@ -69,7 +69,7 @@ phases:
     - type: HTTP
       name: HTTP Root HealthCheck
       properties:
-        assertion: ${httpResponseCode}=200
+        assertion: ${httpResponseCode}==200
         body: ''
         executeWithPreviousSteps: false
         method: GET
