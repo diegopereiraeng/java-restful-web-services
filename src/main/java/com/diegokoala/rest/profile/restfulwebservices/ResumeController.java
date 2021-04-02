@@ -38,7 +38,7 @@ public class ResumeController
     @PutMapping("/health_check/{id}")
     public String SetDeployment(@PathVariable String id,
                                 @RequestParam("name") String name){
-        
+
         return "{ Message: 'Welcome to Harness, Your Deployment "+id+" for app: " +name+ " was successful implemented', status: 'UP' }";
 
     }
