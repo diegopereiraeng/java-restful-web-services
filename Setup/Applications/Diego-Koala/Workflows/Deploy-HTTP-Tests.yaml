@@ -110,7 +110,11 @@ phases:
         analysisServerConfigId: UgyUhvKnS3akwdXfYQfEMA
         analysisTolerance: LOW
         comparisonStrategy: COMPARE_WITH_CURRENT
+        hostnameTemplate: ${instance.hostName}
         metrics: docker.cpu.throttled,docker.cpu.usage,docker.mem.rss,system.load.1,system.cpu.iowait,kubernetes.memory.usage_pct,system.mem.used
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeDuration: 15
     stepsInParallel: false
   - type: K8S_PHASE_STEP
