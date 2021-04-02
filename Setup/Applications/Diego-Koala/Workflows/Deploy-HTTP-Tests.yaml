@@ -42,7 +42,7 @@ phases:
       properties:
         assertion: ${httpResponseCode}==200
         body: ''
-        executeWithPreviousSteps: true
+        executeWithPreviousSteps: false
         method: GET
         publishAsVar: false
         responseProcessingExpressions: ''
