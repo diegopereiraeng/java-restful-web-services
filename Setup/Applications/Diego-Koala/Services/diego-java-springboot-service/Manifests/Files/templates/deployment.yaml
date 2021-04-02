@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: {{.Values.name}}
-    tags.datadoghq.com/env: ${infra.kubernetes.namespace}
+    tags.datadoghq.com/env: {{.Values.namespace}}
     tags.datadoghq.com/service: {{.Values.name}}
     tags.datadoghq.com/version: "1.0.0"
   name: {{.Values.name}}
