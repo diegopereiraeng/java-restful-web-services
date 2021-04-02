@@ -1,12 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
+labels:
+  tags.datadoghq.com/env: "Dev"
+  tags.datadoghq.com/service: {{.Values.name}}
+  tags.datadoghq.com/version: "1.0.0"
 metadata:
   creationTimestamp: null
   labels:
     app: {{.Values.name}}
-    tags.datadoghq.com/env: "Dev"
-    tags.datadoghq.com/service: {{.Values.name}}
-    tags.datadoghq.com/version: "1.0.0"
   name: {{.Values.name}}
 spec:
   replicas: {{int .Values.replicas}}
