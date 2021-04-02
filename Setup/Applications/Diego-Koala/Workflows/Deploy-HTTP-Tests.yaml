@@ -104,6 +104,14 @@ phases:
         timeoutMillis: 15000
         url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=blabla
         useProxy: false
+    - type: DATA_DOG
+      name: Datadog Metrics
+      properties:
+        analysisServerConfigId: UgyUhvKnS3akwdXfYQfEMA
+        analysisTolerance: LOW
+        comparisonStrategy: COMPARE_WITH_CURRENT
+        metrics: docker.cpu.throttled,docker.cpu.usage,docker.mem.rss,system.load.1,system.cpu.iowait,kubernetes.memory.usage_pct,system.mem.used
+        timeDuration: 15
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
