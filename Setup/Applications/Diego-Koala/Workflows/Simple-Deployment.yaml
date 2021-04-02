@@ -53,6 +53,8 @@ phases:
 
           export URL=$(kubectl get svc ${service.name} -n ${infra.kubernetes.namespace} --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") # Get the load balancer from k8s service
 
+          sleep 2
+
           echo "External LoadBalancer IP: $URL"
         scriptType: BASH
         secretOutputVars: ''
