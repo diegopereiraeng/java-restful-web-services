@@ -90,7 +90,7 @@ phases:
       properties:
         assertion: ${httpResponseCode}==200
         body: ''
-        executeWithPreviousSteps: true
+        executeWithPreviousSteps: false
         method: PUT
         publishAsVar: false
         responseProcessingExpressions: ''
