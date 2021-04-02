@@ -67,18 +67,20 @@ phases:
         templateVersion: null
         timeoutMillis: 60000
     - type: HTTP
-      name: HTTP_2
+      name: HTTP Root HealthCheck
       properties:
         assertion: ''
         body: ''
-        executeWithPreviousSteps: true
+        executeWithPreviousSteps: false
         method: GET
         publishAsVar: false
         responseProcessingExpressions: ''
         sweepingOutputName: null
         sweepingOutputScope: null
         tags: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
         url: http://${instance.name}:8080
         useProxy: false
