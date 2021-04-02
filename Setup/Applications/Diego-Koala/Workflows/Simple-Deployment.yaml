@@ -77,8 +77,7 @@ phases:
         responseProcessingExpressions: ''
         sweepingOutputName: null
         sweepingOutputScope: null
-        tags:
-        - diego-koala
+        tags: null
         templateUuid: null
         templateVariables: null
         templateVersion: null
