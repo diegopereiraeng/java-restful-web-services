@@ -85,6 +85,22 @@ phases:
         timeoutMillis: 15000
         url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=blabla
         useProxy: false
+    - type: HTTP
+      name: HTTP_2
+      properties:
+        assertion: ''
+        body: ''
+        executeWithPreviousSteps: true
+        method: GET
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags: null
+        templateVariables: ''
+        timeoutMillis: 10000
+        url: http://${instance.name}:8080
+        useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
