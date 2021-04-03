@@ -44,19 +44,6 @@ phases:
         templateVariables: null
         templateVersion: null
         timeDuration: 5
-    - type: DATA_DOG_LOG
-      name: Datadog Log
-      properties:
-        analysisServerConfigId: UgyUhvKnS3akwdXfYQfEMA
-        comparisonStrategy: COMPARE_WITH_PREVIOUS
-        executeWithPreviousSteps: true
-        hostnameField: pod_name
-        hostnameTemplate: ${instance.hostName}
-        query: error
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeDuration: 5
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
