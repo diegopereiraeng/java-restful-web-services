@@ -38,6 +38,13 @@ phases:
         analysisServerConfigId: UgyUhvKnS3akwdXfYQfEMA
         analysisTolerance: LOW
         comparisonStrategy: COMPARE_WITH_PREVIOUS
+        customMetrics:
+          diego-java-springboot-service:
+          - metricName: trace.servlet.request.duration
+            displayName: trace.servlet.request.duration
+            mlMetricType: RESP_TIME
+            txnName: service
+            datadogMetricType: Custom
         hostnameTemplate: ${instance.hostName}
         metrics: system.load.1,system.mem.used,kubernetes.memory.usage_pct,kubernetes.cpu.usage.total,docker.cpu.throttled
         templateUuid: null
