@@ -1,2 +1,22 @@
 harnessApiVersion: '1.0'
 type: PIPELINE
+pipelineStages:
+- type: ENV_STATE
+  name: Deploy-HTTP-Tests
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 1
+  workflowName: Deploy-HTTP-Tests
+  workflowVariables:
+  - name: API_URL
+    value: http://${context.api_service.URL}
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: Dev
+  - entityType: SERVICE
+    name: Service
+    value: diego-java-springboot-service
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: Diego-Koala-GKE
