@@ -33,9 +33,8 @@ pipelineStages:
   properties:
     userGroups:
     - Account Administrator
-    variables: null
     stageName: STAGE 3
-    timeoutMillis: 600000
+    timeoutMillis: 1800000
     approvalStateType: USER_GROUP
     sweepingOutputName: ''
   skipCondition:
