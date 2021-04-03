@@ -1,7 +1,7 @@
 harnessApiVersion: '1.0'
 type: CANARY
 concurrencyStrategy: INFRA
-envName: Dev
+envName: QA
 failureStrategies:
 - executionScope: WORKFLOW
   failureTypes:
@@ -53,7 +53,6 @@ phases:
   statefulSet: false
 rollbackPhases:
 - type: KUBERNETES
-  computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
   infraDefinitionName: Diego-Koala-GKE
   name: Rollback Canary
