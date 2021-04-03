@@ -33,6 +33,7 @@ pipelineStages:
   properties:
     userGroups:
     - Account Administrator
+    workflowVariables: null
     stageName: STAGE 3
     timeoutMillis: 1800000
     approvalStateType: USER_GROUP
@@ -40,3 +41,17 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 3
+- type: ENV_STATE
+  name: Canary-Verification
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 4
+  workflowName: Canary-Verification
+  workflowVariables:
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_Kubernetes
+    value: Diego-GKE-PROD
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: PROD
