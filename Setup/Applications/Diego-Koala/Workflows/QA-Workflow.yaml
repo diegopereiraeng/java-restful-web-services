@@ -40,7 +40,10 @@ phases:
         comparisonStrategy: COMPARE_WITH_PREVIOUS
         hostnameTemplate: ${instance.hostName}
         metrics: system.load.1,system.mem.used,kubernetes.memory.usage_pct,kubernetes.cpu.usage.total,docker.cpu.throttled
-        timeDuration: 15
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeDuration: 5
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
