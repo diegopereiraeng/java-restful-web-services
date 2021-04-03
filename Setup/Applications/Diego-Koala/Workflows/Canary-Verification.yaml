@@ -46,7 +46,10 @@ phases:
         analysisTolerance: LOW
         comparisonStrategy: COMPARE_WITH_CURRENT
         hostnameTemplate: ${instance.hostName}
-        metrics: docker.cpu.usage
+        metrics: system.load.1,system.mem.used,system.cpu.iowait,docker.cpu.usage,kubernetes.memory.usage_pct,kubernetes.cpu.usage.total
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeDuration: 15
     stepsInParallel: false
   - type: K8S_PHASE_STEP
