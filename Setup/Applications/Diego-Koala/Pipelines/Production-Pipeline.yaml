@@ -52,6 +52,9 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_Kubernetes
     value: Diego-GKE-PROD
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_Kubernetes2
+    value: Diego-GKE-PROD
   - entityType: ENVIRONMENT
     name: Environment
     value: PROD
