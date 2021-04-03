@@ -64,6 +64,14 @@ phases:
   provisionNodes: false
   serviceName: diego-java-springboot-service
   statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
@@ -84,4 +92,30 @@ rollbackPhases:
   provisionNodes: false
   serviceName: diego-java-springboot-service
   statefulSet: false
-templatized: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
+templateExpressions:
+- expression: ${Environment}
+  fieldName: envId
+  metadata:
+  - name: relatedField
+  - name: entityType
+    value: ENVIRONMENT
+templatized: true
+userVariables:
+- type: ENTITY
+  description: Variable for Environment entity
+  fixed: false
+  mandatory: true
+  name: Environment
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Rollback Canary
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_Kubernetes
