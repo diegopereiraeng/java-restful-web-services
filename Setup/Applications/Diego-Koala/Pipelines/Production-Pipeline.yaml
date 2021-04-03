@@ -21,7 +21,7 @@ pipelineStages:
     name: InfraDefinition_KUBERNETES
     value: Diego-Koala-GKE
 - type: ENV_STATE
-  name: QA-Workflow
+  name: Deploy QA
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
