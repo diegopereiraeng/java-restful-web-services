@@ -26,13 +26,6 @@ phases:
   - type: K8S_PHASE_STEP
     name: Deploy
     steps:
-    - type: K8S_DEPLOYMENT_ROLLING
-      name: Rollout Deployment
-      properties:
-        stateTimeoutInMinutes: 10
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
     - type: JIRA_CREATE_UPDATE
       name: Jira
       properties:
@@ -46,6 +39,13 @@ phases:
         priority: P2
         project: HD
         summary: Deployment Track
+    - type: K8S_DEPLOYMENT_ROLLING
+      name: Rollout Deployment
+      properties:
+        stateTimeoutInMinutes: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
