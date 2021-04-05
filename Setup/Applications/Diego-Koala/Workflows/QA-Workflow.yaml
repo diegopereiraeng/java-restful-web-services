@@ -69,12 +69,12 @@ phases:
     name: Wrap Up
     steps:
     - type: JIRA_CREATE_UPDATE
-      name: Jira
+      name: Update JIRA to "Ready for Testing"
       properties:
-        comment: ''
+        comment: Finished deploying to QA. Ready for tests.
         customFields: null
         description: ''
-        issueId: '123'
+        issueId: ${Jiravar.issueId}
         issueType: Test
         jiraAction: UPDATE_TICKET
         jiraConnectorId: -4V_2W76RC27nYQBghdb5Q
@@ -83,8 +83,11 @@ phases:
         priority: P2
         project: HD
         publishAsVar: false
-        status: ''
+        status: QA Test
         summary: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   provisionNodes: false
   serviceName: diego-java-springboot-service
