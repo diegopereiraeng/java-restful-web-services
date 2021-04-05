@@ -89,7 +89,7 @@ phases:
         templateVariables: null
         templateVersion: null
     - type: JIRA_CREATE_UPDATE
-      name: Create Production Cheange Request
+      name: Create Production Change Request
       properties:
         customFields: null
         description: |-
