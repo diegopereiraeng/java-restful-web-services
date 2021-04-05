@@ -89,7 +89,7 @@ phases:
         templateVariables: null
         templateVersion: null
     - type: JIRA_CREATE_UPDATE
-      name: Jira_2
+      name: Create Production Cheange Request
       properties:
         customFields: null
         description: |-
@@ -104,6 +104,9 @@ phases:
         priority: P1
         project: HD
         summary: Change for production deployment
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   provisionNodes: false
   serviceName: diego-java-springboot-service
