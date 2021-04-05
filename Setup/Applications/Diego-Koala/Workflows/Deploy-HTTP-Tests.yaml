@@ -147,6 +147,9 @@ phases:
         publishAsVar: false
         status: QA Test
         summary: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   provisionNodes: false
   serviceName: diego-java-springboot-service
