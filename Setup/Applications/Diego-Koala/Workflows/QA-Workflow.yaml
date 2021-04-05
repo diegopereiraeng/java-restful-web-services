@@ -71,7 +71,7 @@ phases:
     - type: JIRA_CREATE_UPDATE
       name: Update JIRA to "Ready for Production"
       properties:
-        comment: Finished deploying to QA. Ready for tests.
+        comment: Finished deploying to QA. Ready for production.
         customFields: null
         description: ''
         issueId: ${Jiravar.issueId}
