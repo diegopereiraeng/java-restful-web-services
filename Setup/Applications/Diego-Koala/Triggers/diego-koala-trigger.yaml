@@ -9,9 +9,9 @@ executionName: Simple-Deployment
 executionType: Workflow
 triggerCondition:
 - type: NEW_ARTIFACT
-  artifactFilter: main
+  artifactFilter: .*
   artifactStreamName: diegokoala_java-restful-web-services
-  regex: false
+  regex: true
   serviceName: diego-java-springboot-service
 workflowVariables:
 - name: API_URL
