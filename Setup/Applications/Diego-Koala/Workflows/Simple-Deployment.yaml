@@ -119,7 +119,7 @@ phases:
           export TESTURL=${workflow.variables.API_URL}
           rm -rf harness-selenium
           git clone https://github.com/diegopereiraeng/java-restful-web-services
-          python harness-selenium/${workflow.variables.TEST_SCRIPT}
+          python java-restful-web-services/${workflow.variables.TEST_SCRIPT} $TESTURL
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
