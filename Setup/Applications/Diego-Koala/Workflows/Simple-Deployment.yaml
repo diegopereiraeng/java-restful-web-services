@@ -53,6 +53,8 @@ phases:
 
           export URL=$(kubectl get svc ${service.name} -n ${infra.kubernetes.namespace} --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") # Get the load balancer from k8s service
 
+          sleep 2
+
           echo "External LoadBalancer IP: $URL"
         scriptType: BASH
         secretOutputVars: ''
@@ -65,22 +67,42 @@ phases:
         templateVersion: null
         timeoutMillis: 60000
     - type: HTTP
-      name: HTTP Check
+      name: HTTP Root HealthCheck
       properties:
-        assertion: ''
+        assertion: ${httpResponseCode}==200
         body: ''
         executeWithPreviousSteps: false
+        method: GET
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags:
+        - diego-koala-delegate
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 10000
+        url: http://${instance.name}:8080
+        useProxy: false
+    - type: HTTP
+      name: HTTP Deployment HealthCheck
+      properties:
+        assertion: ${httpResponseCode}==200
+        body: ''
+        executeWithPreviousSteps: true
         method: PUT
         publishAsVar: false
         responseProcessingExpressions: ''
         sweepingOutputName: null
         sweepingOutputScope: null
-        tags: null
+        tags:
+        - diego-koala-delegate
         templateUuid: null
         templateVariables: null
         templateVersion: null
         timeoutMillis: 15000
-        url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=${artifact.displayName}
+        url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=blabla
         useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
