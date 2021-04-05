@@ -103,7 +103,7 @@ phases:
     - type: JIRA_CREATE_UPDATE
       name: Evidence Export
       properties:
-        comment: ''
+        comment: Successful tested using Datadog.
         customFields: null
         description: ''
         issueId: ${jira_production.issueId}
@@ -115,8 +115,11 @@ phases:
         priority: P1
         project: HD
         publishAsVar: false
-        status: ''
+        status: QA Test
         summary: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   provisionNodes: false
   serviceName: diego-java-springboot-service
