@@ -131,7 +131,7 @@ phases:
     name: Wrap Up
     steps:
     - type: JIRA_CREATE_UPDATE
-      name: Update JIRA to "Ready for Testing"
+      name: Update JIRA to "Ready for QA"
       properties:
         comment: Finished deploying to development.  Successfully passed HTTP Test.
         customFields: null
