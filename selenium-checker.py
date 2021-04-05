@@ -27,7 +27,6 @@ print("Starting Selenium Test for URL: "+url_service)
 driver.get(url_service)
 print("Success - Selenium Test for URL: "+url)
 """ print(driver.title)
-
-print
+"""
 
 print("Selenium Test Finished")
