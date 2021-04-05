@@ -43,7 +43,7 @@ phases:
         priority: P2
         project: HD
         publishAsVar: false
-        status: QA Test
+        status: In Progress
         summary: ''
         templateUuid: null
         templateVariables: null
