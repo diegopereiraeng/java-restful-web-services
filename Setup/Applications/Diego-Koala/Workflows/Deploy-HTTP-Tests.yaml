@@ -27,7 +27,7 @@ phases:
     name: Deploy
     steps:
     - type: JIRA_CREATE_UPDATE
-      name: Jira
+      name: Create Jira Ticket
       properties:
         customFields: null
         description: "Deployment (${app.name}) and artifact (${artifact.displayName})\
