@@ -88,6 +88,22 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
+    - type: JIRA_CREATE_UPDATE
+      name: Jira_2
+      properties:
+        customFields: null
+        description: |-
+          Ticket with evidence tracking from Dev to QA.
+
+          Jira Ticket: ${Jiravar.issueId}
+        issueType: Change
+        jiraAction: CREATE_TICKET
+        jiraConnectorId: -4V_2W76RC27nYQBghdb5Q
+        labels:
+        - diego-koala
+        priority: P1
+        project: HD
+        summary: Change for production deployment
     stepsInParallel: false
   provisionNodes: false
   serviceName: diego-java-springboot-service
