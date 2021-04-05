@@ -116,6 +116,21 @@ phases:
   provisionNodes: false
   serviceName: diego-java-springboot-service
   statefulSet: false
+  templateExpressions:
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: SERVICE
+  - expression: ${InfraDefinition_KUBERNETES}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: relatedField
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
@@ -139,4 +154,57 @@ rollbackPhases:
   provisionNodes: false
   serviceName: diego-java-springboot-service
   statefulSet: false
-templatized: false
+  templateExpressions:
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: SERVICE
+  - expression: ${InfraDefinition_KUBERNETES}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: relatedField
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
+templateExpressions:
+- expression: ${Environment}
+  fieldName: envId
+  metadata:
+  - name: relatedField
+    value: ${InfraDefinition_KUBERNETES}
+  - name: entityType
+    value: ENVIRONMENT
+- expression: ${Service}
+  fieldName: serviceId
+  metadata:
+  - name: relatedField
+  - name: artifactType
+    value: DOCKER
+  - name: entityType
+    value: SERVICE
+- expression: ${InfraDefinition_KUBERNETES}
+  fieldName: infraDefinitionId
+  metadata:
+  - name: relatedField
+  - name: entityType
+    value: INFRASTRUCTURE_DEFINITION
+templatized: true
+userVariables:
+- type: ENTITY
+  description: Variable for Environment entity
+  fixed: false
+  mandatory: true
+  name: Environment
+- type: ENTITY
+  description: Variable for Service entity in Rollback Rolling
+  fixed: false
+  mandatory: true
+  name: Service
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Rollback Rolling
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_KUBERNETES

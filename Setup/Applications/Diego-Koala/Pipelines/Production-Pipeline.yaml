@@ -27,13 +27,23 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: STAGE 2
   workflowName: QA-Workflow
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: QA
+  - entityType: SERVICE
+    name: Service
+    value: diego-java-springboot-service
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: Diego-GKE-QA
 - type: APPROVAL
   name: Approval 2
   parallel: false
   properties:
     userGroups:
     - Account Administrator
-    variables: null
+    workflowVariables: null
     stageName: STAGE 3
     timeoutMillis: 1800000
     approvalStateType: USER_GROUP
