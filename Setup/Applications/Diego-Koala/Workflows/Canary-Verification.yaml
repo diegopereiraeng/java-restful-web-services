@@ -120,7 +120,7 @@ preDeploymentSteps:
     customFields: null
     description: |
       Trigger: ${deploymentTriggeredBy}
-    issueId: ${infra.name}
+    issueId: ${jira_production.issueId}
     issueType: Change
     jiraAction: UPDATE_TICKET
     jiraConnectorId: -4V_2W76RC27nYQBghdb5Q
