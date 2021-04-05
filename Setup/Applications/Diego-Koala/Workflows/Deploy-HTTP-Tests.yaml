@@ -33,6 +33,19 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
+    - type: JIRA_CREATE_UPDATE
+      name: Jira
+      properties:
+        customFields: null
+        description: Deployment (${app.name}) and artifact (${artifact.displayName}) , tag ${artifact.metadata.tag}, pipeline ${instance.name}
+        issueType: Test
+        jiraAction: CREATE_TICKET
+        jiraConnectorId: -4V_2W76RC27nYQBghdb5Q
+        labels:
+        - diego-koala
+        priority: P2
+        project: HD
+        summary: Deployment Track
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
