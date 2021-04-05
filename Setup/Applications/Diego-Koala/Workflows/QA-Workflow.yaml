@@ -93,6 +93,8 @@ phases:
       properties:
         customFields: null
         description: |-
+          Deployment: ${deploymentUrl}
+          Registry: ${artifact.source.registryUrl}
           Ticket with evidence tracking from Dev to QA.
 
           Jira Ticket: ${Jiravar.issueId}
@@ -104,7 +106,7 @@ phases:
         priority: P1
         project: HD
         publishAsVar: true
-        summary: Change for production deployment
+        summary: 'Production Deployment - App ${app.name} - Service: ${service.name}'
         sweepingOutputName: jira_production
         sweepingOutputScope: PIPELINE
         templateUuid: null
