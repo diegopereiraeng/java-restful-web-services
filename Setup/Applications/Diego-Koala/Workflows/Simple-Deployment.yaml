@@ -140,4 +140,4 @@ userVariables:
   fixed: false
   mandatory: true
   name: API_URL
-  value: http://${context.api_service.URL}
+  value: http://${context.api_service.URL}:8080
