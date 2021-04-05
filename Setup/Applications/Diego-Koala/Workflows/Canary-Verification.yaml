@@ -131,6 +131,9 @@ preDeploymentSteps:
     publishAsVar: false
     status: In Progress
     summary: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
