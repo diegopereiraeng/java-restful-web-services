@@ -103,7 +103,10 @@ phases:
         - diego-koala
         priority: P1
         project: HD
+        publishAsVar: true
         summary: Change for production deployment
+        sweepingOutputName: jira_production
+        sweepingOutputScope: PIPELINE
         templateUuid: null
         templateVariables: null
         templateVersion: null
