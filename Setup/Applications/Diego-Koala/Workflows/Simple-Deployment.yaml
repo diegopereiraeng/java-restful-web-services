@@ -105,7 +105,7 @@ phases:
         url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=blabla
         useProxy: false
     - type: SHELL_SCRIPT
-      name: Shell Script_2
+      name: Execute Selenium Test
       properties:
         commandPath: null
         connectionAttributes: null
@@ -125,7 +125,9 @@ phases:
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     stepsInParallel: false
   - type: K8S_PHASE_STEP
