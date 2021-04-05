@@ -1,9 +1,11 @@
 harnessApiVersion: '1.0'
 type: TRIGGER
 artifactSelections:
-- regex: false
+- artifactFilter: .*
+  artifactStreamName: diegokoala_java-restful-web-services
+  regex: true
   serviceName: diego-java-springboot-service
-  type: ARTIFACT_SOURCE
+  type: LAST_COLLECTED
 continueWithDefaultValues: false
 executionName: Production-Pipeline
 executionType: Pipeline
