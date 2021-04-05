@@ -132,6 +132,24 @@ phases:
       value: DOCKER
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
+postDeploymentSteps:
+- type: JIRA_CREATE_UPDATE
+  name: Close the change request
+  properties:
+    comment: ''
+    customFields: null
+    description: ''
+    issueId: ${jira_production.issueId}
+    issueType: Change
+    jiraAction: UPDATE_TICKET
+    jiraConnectorId: -4V_2W76RC27nYQBghdb5Q
+    labels:
+    - ''
+    priority: P1
+    project: HD
+    publishAsVar: false
+    status: ''
+    summary: ''
 preDeploymentSteps:
 - type: JIRA_CREATE_UPDATE
   name: Jira Change Request Start
