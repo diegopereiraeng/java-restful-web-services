@@ -31,7 +31,7 @@ phases:
     - type: JIRA_CREATE_UPDATE
       name: Update JIRA to "Ready for Testing"
       properties:
-        comment: Finished deploying to QA. Ready for tests.
+        comment: Finished deploying to QA. Ready for automated tests.
         customFields: null
         description: ''
         issueId: ${Jiravar.issueId}
