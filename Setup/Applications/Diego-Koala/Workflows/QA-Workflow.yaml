@@ -67,6 +67,24 @@ phases:
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
+    steps:
+    - type: JIRA_CREATE_UPDATE
+      name: Jira
+      properties:
+        comment: ''
+        customFields: null
+        description: ''
+        issueId: '123'
+        issueType: Test
+        jiraAction: UPDATE_TICKET
+        jiraConnectorId: -4V_2W76RC27nYQBghdb5Q
+        labels:
+        - ''
+        priority: P2
+        project: HD
+        publishAsVar: false
+        status: ''
+        summary: ''
     stepsInParallel: false
   provisionNodes: false
   serviceName: diego-java-springboot-service
