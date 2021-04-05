@@ -30,7 +30,10 @@ phases:
       name: Jira
       properties:
         customFields: null
-        description: Deployment (${app.name}) and artifact (${artifact.displayName}) , tag ${artifact.metadata.tag}, pipeline ${instance.name}
+        description: "Deployment (${app.name}) and artifact (${artifact.displayName})\
+          \ , tag ${artifact.metadata.tag}, pipeline ${instance.name}\nDeployment\
+          \ url : ${deploymentUrl}\nArtifact: ${artifact.displayName}\nBuild number:\
+          \ ${artifact.buildNo} "
         issueType: Test
         jiraAction: CREATE_TICKET
         jiraConnectorId: -4V_2W76RC27nYQBghdb5Q
@@ -38,7 +41,13 @@ phases:
         - diego-koala
         priority: P2
         project: HD
-        summary: Deployment Track
+        publishAsVar: true
+        summary: Ticket to track deployment of ${service.name} via ${pipeline.name}
+        sweepingOutputName: Jiravar
+        sweepingOutputScope: PIPELINE
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     - type: K8S_DEPLOYMENT_ROLLING
       name: Rollout Deployment
       properties:
