@@ -26,12 +26,12 @@ public class ResumeController
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
         }
-        return "{ Message: 'Welcome to Harness, Your Deployment 1.15 was successful implemented', status: 'UP' }";
+        return "{ Message: 'Welcome to Harness, Your Deployment 1.1 was successful implemented', status: 'UP' }";
 
     }
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String GetRoot(){
-        return "{ Message: 'Welcome to Harness, Your Deployment 1.15 was successful implemented', status: 'UP' }";
+        return "{ Message: 'Welcome to Harness, Your Deployment 1.1 was successful implemented', status: 'UP' }";
 
     }
 
