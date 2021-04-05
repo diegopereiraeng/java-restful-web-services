@@ -136,9 +136,9 @@ postDeploymentSteps:
 - type: JIRA_CREATE_UPDATE
   name: Close the change request
   properties:
-    comment: ''
+    comment: Deployment successful implemented in production
     customFields: null
-    description: ''
+    description: ${deploymentUrl}
     issueId: ${jira_production.issueId}
     issueType: Change
     jiraAction: UPDATE_TICKET
@@ -148,8 +148,11 @@ postDeploymentSteps:
     priority: P1
     project: HD
     publishAsVar: false
-    status: ''
+    status: Done
     summary: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
 preDeploymentSteps:
 - type: JIRA_CREATE_UPDATE
   name: Jira Change Request Start
