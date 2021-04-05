@@ -33,7 +33,7 @@ pipelineStages:
   properties:
     userGroups:
     - Account Administrator
-    workflowVariables: null
+    variables: null
     stageName: STAGE 3
     timeoutMillis: 1800000
     approvalStateType: USER_GROUP
