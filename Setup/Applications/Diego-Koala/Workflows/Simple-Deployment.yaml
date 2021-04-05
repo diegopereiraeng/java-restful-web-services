@@ -66,25 +66,6 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 60000
-    - type: HTTP
-      name: HTTP Root HealthCheck
-      properties:
-        assertion: ${httpResponseCode}==200
-        body: ''
-        executeWithPreviousSteps: false
-        method: GET
-        publishAsVar: false
-        responseProcessingExpressions: ''
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        tags:
-        - diego-koala-delegate
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 10000
-        url: http://${service.name}.${infra.kubernetes.namespace}.svc.cluster.local:8080
-        useProxy: false
     - type: SHELL_SCRIPT
       name: Execute Selenium Test
       properties:
