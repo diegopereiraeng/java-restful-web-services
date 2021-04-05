@@ -85,25 +85,6 @@ phases:
         timeoutMillis: 10000
         url: http://${service.name}.${infra.kubernetes.namespace}.svc.cluster.local:8080
         useProxy: false
-    - type: HTTP
-      name: HTTP Deployment HealthCheck
-      properties:
-        assertion: ${httpResponseCode}==200
-        body: ''
-        executeWithPreviousSteps: true
-        method: PUT
-        publishAsVar: false
-        responseProcessingExpressions: ''
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        tags:
-        - diego-koala-delegate
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 15000
-        url: http://${workflow.variables.API_URL}/health_check/${artifact.buildNo}?name=${artifact.displayName}
-        useProxy: false
     - type: SHELL_SCRIPT
       name: Execute Selenium Test
       properties:
