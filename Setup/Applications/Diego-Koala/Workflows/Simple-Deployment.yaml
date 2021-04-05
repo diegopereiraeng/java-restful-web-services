@@ -79,7 +79,7 @@ phases:
         publishAsVar: false
         scriptString: |-
           export TESTURL=${workflow.variables.API_URL}
-          rm -rf harness-selenium
+          rm -rf java-restful-web-services
           git clone https://github.com/diegopereiraeng/java-restful-web-services
           python java-restful-web-services/${workflow.variables.TEST_SCRIPT} $TESTURL
         scriptType: BASH
