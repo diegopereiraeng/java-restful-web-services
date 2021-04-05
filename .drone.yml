@@ -22,6 +22,6 @@ steps:
     repo: diegokoala/java-restful-web-services
     tags:
       - latest
-      - '1.1.0'
+      - '1.1.1'
     environment:
       - DOCKER_LAUNCH_DEBUG=true
