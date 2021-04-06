@@ -21,15 +21,15 @@ Calls = 1000
 
 for call in range(Calls):
     driver.get(url)
-    print("Success - Selenium Test number "+call+" for URL: "+url)
+    print("Success - Selenium Test number "+str(call)+" for URL: "+url)
     url_service = url + "/api/v1/resume"
-    print("Starting Selenium Test number "+call+" for URL: "+url_service)
+    print("Starting Selenium Test number "+str(call)+" for URL: "+url_service)
     driver.get(url_service)
-    print("Success - Selenium Test number "+call+" for URL: "+url)
+    print("Success - Selenium Test number "+str(call)+" for URL: "+url)
     url_service = url + "/api/v1/harness"
-    print("Starting Selenium Test number "+call+" for URL: "+url_service)
+    print("Starting Selenium Test number "+str(call)+" for URL: "+url_service)
     driver.get(url_service)
-    print("Success - Selenium Test number "+call+" for URL: "+url)
+    print("Success - Selenium Test number "+str(call)+" for URL: "+url)
 """ print(driver.title)
 """
 
