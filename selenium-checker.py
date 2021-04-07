@@ -19,6 +19,10 @@ driver = webdriver.Chrome(options=chrome_options)
 
 Calls = 10
 
+if sys.argv[1] != "":
+    Calls = sys.argv[1]
+
+
 for call in range(Calls):
     driver.get(url)
     print("Success - Selenium Test number "+str(call)+" for URL: "+url)
