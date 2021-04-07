@@ -168,8 +168,12 @@ phases:
         analysisServerConfigId: UgyUhvKnS3akwdXfYQfEMA
         analysisTolerance: MEDIUM
         comparisonStrategy: COMPARE_WITH_CURRENT
+        executeWithPreviousSteps: true
         hostnameTemplate: ${instance.hostName}
         metrics: docker.cpu.usage,docker.mem.rss,kubernetes.cpu.usage.total,kubernetes.memory.usage_pct
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeDuration: 5
     stepsInParallel: false
   - type: K8S_PHASE_STEP
