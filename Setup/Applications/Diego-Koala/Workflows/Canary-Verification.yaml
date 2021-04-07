@@ -84,6 +84,7 @@ phases:
           rm -rf java-restful-web-services
           git clone https://github.com/diegopereiraeng/java-restful-web-services
           python java-restful-web-services/${workflow.variables.TEST_SCRIPT} $TESTURL
+          python java-restful-web-services/${workflow.variables.TEST_SCRIPT} $TESTURL
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
