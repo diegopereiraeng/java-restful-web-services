@@ -186,8 +186,8 @@ phases:
         description: |-
           HTTP Test Result:
 
-          ResponseCode: ${http-prod-test.httpResponseCode}
-          Response Body: ${http-prod-test.httpResponseBody}
+          ResponseCode: ${context.prod-http-test.httpResponseCode}
+          Response Body: ${context.http-prod-test.httpResponseBody}
         issueId: ${jira_production.issueId}
         issueType: Change
         jiraAction: UPDATE_TICKET
