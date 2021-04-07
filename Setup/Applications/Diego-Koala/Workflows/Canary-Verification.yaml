@@ -270,6 +270,25 @@ rollbackPhases:
     name: Deploy
     phaseStepNameForRollback: Deploy
     statusForRollback: SUCCESS
+    steps:
+    - type: JIRA_CREATE_UPDATE
+      name: Jira
+      properties:
+        comment: 'Failed to deploy in production using pipeline:  ${pipeline.name}
+          and Workflow: ${workflow.name} on Infra: ${workflow.variables.InfraDefinition_Kubernetes}'
+        customFields: null
+        description: ''
+        issueId: ${jira_production.issueId}
+        issueType: Change
+        jiraAction: UPDATE_TICKET
+        jiraConnectorId: -4V_2W76RC27nYQBghdb5Q
+        labels:
+        - ''
+        priority: P1
+        project: HD
+        publishAsVar: false
+        status: Rejected
+        summary: ''
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
