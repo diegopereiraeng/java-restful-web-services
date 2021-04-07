@@ -20,7 +20,7 @@ driver = webdriver.Chrome(options=chrome_options)
 Calls = 10
 
 if sys.argv[1] != "":
-    Calls = sys.argv[1]
+    Calls = int(sys.argv[1])
 
 
 for call in range(Calls):
