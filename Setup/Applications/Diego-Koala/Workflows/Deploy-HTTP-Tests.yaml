@@ -76,7 +76,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 10000
-        url: http://${service.name}.${infra.kubernetes.namespace}.svc.cluster.local:8080
+        url: http://${service.name}.${infra.kubernetes.namespace}.svc.cluster.local:8080/
         useProxy: false
     - type: SHELL_SCRIPT
       name: Get LoadBalancer IP
