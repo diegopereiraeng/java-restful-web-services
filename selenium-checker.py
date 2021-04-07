@@ -19,7 +19,7 @@ driver = webdriver.Chrome(options=chrome_options)
 
 Calls = 10
 
-if sys.argv[2] != "":
+if len(sys.argv) > 2:
     Calls = int(sys.argv[2])
 
 
