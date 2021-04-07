@@ -240,7 +240,7 @@ preDeploymentSteps:
   name: Jira Change Request Start
   properties:
     comment: 'Starting deployment in production using pipeline:  ${pipeline.name}
-      and Workflow: ${workflow.name} on Infra: ${InfraDefinition_Kubernetes}'
+      and Workflow: ${workflow.name} on Infra: ${workflow.variables.InfraDefinition_Kubernetes}'
     customFields: null
     description: |
       Trigger: ${deploymentTriggeredBy}
