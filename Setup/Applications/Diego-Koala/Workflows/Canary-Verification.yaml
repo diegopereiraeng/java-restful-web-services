@@ -99,6 +99,7 @@ phases:
         analysisServerConfigId: UgyUhvKnS3akwdXfYQfEMA
         analysisTolerance: LOW
         comparisonStrategy: COMPARE_WITH_CURRENT
+        executeWithPreviousSteps: true
         hostnameTemplate: ${instance.hostName}
         metrics: system.load.1,system.mem.used,system.cpu.iowait,docker.cpu.usage,kubernetes.memory.usage_pct,kubernetes.cpu.usage.total
         templateUuid: null
