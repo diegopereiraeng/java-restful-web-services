@@ -39,6 +39,60 @@ phases:
   - type: K8S_PHASE_STEP
     name: Verify
     steps:
+    - type: SHELL_SCRIPT
+      name: Get LoadBalancer IP
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        delegateSelectors:
+        - diego-koala
+        executeOnDelegate: true
+        host: null
+        outputVars: URL
+        publishAsVar: true
+        scriptString: |
+          echo "Getting External LoadBalancer IP"
+
+          export URL=$(kubectl get svc ${service.name} -n ${infra.kubernetes.namespace} --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") # Get the load balancer from k8s service
+
+          sleep 2
+
+          echo "External LoadBalancer IP: $URL"
+        scriptType: BASH
+        secretOutputVars: ''
+        sshKeyRef: null
+        sweepingOutputName: api_service
+        sweepingOutputScope: PIPELINE
+        templateExpressions: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 60000
+    - type: SHELL_SCRIPT
+      name: Execute Selenium Test
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        delegateSelectors:
+        - diego-koala
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: false
+        scriptString: |-
+          export TESTURL=${workflow.variables.API_URL}
+          rm -rf java-restful-web-services
+          git clone https://github.com/diegopereiraeng/java-restful-web-services
+          python java-restful-web-services/${workflow.variables.TEST_SCRIPT} $TESTURL
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 60000
     - type: DATA_DOG
       name: Datadog Metrics
       properties:
