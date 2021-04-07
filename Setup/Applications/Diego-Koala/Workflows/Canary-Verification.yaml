@@ -83,8 +83,8 @@ phases:
           export TESTURL=${workflow.variables.API_URL}
           rm -rf java-restful-web-services
           git clone https://github.com/diegopereiraeng/java-restful-web-services
-          python java-restful-web-services/${workflow.variables.TEST_SCRIPT} $TESTURL
-          python java-restful-web-services/${workflow.variables.TEST_SCRIPT} $TESTURL
+          python java-restful-web-services/${workflow.variables.TEST_SCRIPT} $TESTURL 100
+          python java-restful-web-services/${workflow.variables.TEST_SCRIPT} $TESTURL 100
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
@@ -93,7 +93,7 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
-        timeoutMillis: 60000
+        timeoutMillis: 300000
     - type: DATA_DOG
       name: Datadog Metrics
       properties:
