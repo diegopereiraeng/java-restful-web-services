@@ -131,7 +131,6 @@ phases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
-  infraDefinitionName: Diego-Koala-GKE
   name: Primary
   phaseSteps:
   - type: K8S_PHASE_STEP
@@ -208,7 +207,7 @@ phases:
   serviceName: diego-java-springboot-service
   statefulSet: false
   templateExpressions:
-  - expression: ${InfraDefinition_Kubernetes2}
+  - expression: ${InfraDefinition_Kubernetes}
     fieldName: infraDefinitionId
     metadata:
     - name: artifactType
@@ -290,7 +289,6 @@ rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
-  infraDefinitionName: Diego-Koala-GKE
   name: Rollback Primary
   phaseNameForRollback: Primary
   phaseSteps:
@@ -310,7 +308,7 @@ rollbackPhases:
   serviceName: diego-java-springboot-service
   statefulSet: false
   templateExpressions:
-  - expression: ${InfraDefinition_Kubernetes2}
+  - expression: ${InfraDefinition_Kubernetes}
     fieldName: infraDefinitionId
     metadata:
     - name: artifactType
@@ -332,15 +330,10 @@ userVariables:
   mandatory: true
   name: Environment
 - type: ENTITY
-  description: Variable for Infrastructure Definition entity in Rollback Canary
-  fixed: false
-  mandatory: true
-  name: InfraDefinition_Kubernetes
-- type: ENTITY
   description: Variable for Infrastructure Definition entity in Rollback Primary
   fixed: false
   mandatory: true
-  name: InfraDefinition_Kubernetes2
+  name: InfraDefinition_Kubernetes
 - type: TEXT
   fixed: false
   mandatory: true
