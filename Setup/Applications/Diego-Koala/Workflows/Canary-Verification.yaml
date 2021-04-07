@@ -144,14 +144,14 @@ phases:
     - type: HTTP
       name: Internal HTTP Root HealthCheck
       properties:
-        assertion: ${httpResponseCode}==200
+        assertion: ${httpResponseCode}==200$
         body: ''
         executeWithPreviousSteps: false
         method: GET
-        publishAsVar: false
+        publishAsVar: true
         responseProcessingExpressions: ''
-        sweepingOutputName: null
-        sweepingOutputScope: null
+        sweepingOutputName: prod-http-test
+        sweepingOutputScope: PIPELINE
         tags:
         - diego-koala-delegate
         templateUuid: null
