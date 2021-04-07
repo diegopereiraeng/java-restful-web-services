@@ -69,7 +69,7 @@ phases:
         templateVersion: null
         timeoutMillis: 60000
     - type: SHELL_SCRIPT
-      name: Execute Selenium Test
+      name: Load
       properties:
         commandPath: null
         connectionAttributes: null
