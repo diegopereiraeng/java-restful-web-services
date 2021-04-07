@@ -178,7 +178,11 @@ phases:
       properties:
         comment: Successful tested using Datadog.
         customFields: null
-        description: ''
+        description: |-
+          HTTP Test Result:
+
+          ResponseCode: ${http-prod-test.httpResponseCode}
+          Response Body: ${http-prod-test.httpResponseBody}
         issueId: ${jira_production.issueId}
         issueType: Change
         jiraAction: UPDATE_TICKET
