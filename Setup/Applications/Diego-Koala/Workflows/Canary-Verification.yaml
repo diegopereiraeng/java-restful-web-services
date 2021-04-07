@@ -102,7 +102,7 @@ phases:
         comparisonStrategy: COMPARE_WITH_CURRENT
         executeWithPreviousSteps: true
         hostnameTemplate: ${instance.hostName}
-        metrics: system.load.1,system.mem.used,system.cpu.iowait,docker.cpu.usage,kubernetes.memory.usage_pct,kubernetes.cpu.usage.total
+        metrics: docker.cpu.usage,docker.cpu.throttled,docker.mem.rss
         templateUuid: null
         templateVariables: null
         templateVersion: null
