@@ -124,7 +124,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 15000
-        url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=blabla
+        url: ${workflow.variables.API_URL}:8080/health_check/${artifact.buildNo}?name=${app.name}
         useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
