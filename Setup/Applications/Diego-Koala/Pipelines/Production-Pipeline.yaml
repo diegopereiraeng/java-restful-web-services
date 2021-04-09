@@ -19,7 +19,7 @@ pipelineStages:
     value: ${Service}
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ${InfraDefinition_KUBERNETES}
+    value: ${infraname}
 - type: ENV_STATE
   name: Deploy QA
   parallel: false
