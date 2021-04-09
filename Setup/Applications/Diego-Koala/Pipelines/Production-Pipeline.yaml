@@ -13,13 +13,13 @@ pipelineStages:
     value: http://${context.api_service.URL}
   - entityType: ENVIRONMENT
     name: Environment
-    value: Dev
+    value: ${Environment}
   - entityType: SERVICE
     name: Service
-    value: diego-java-springboot-service
+    value: ${Service}
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: Diego-Koala-GKE
+    value: ${InfraDefinition_KUBERNETES}
 - type: ENV_STATE
   name: Deploy QA
   parallel: false
