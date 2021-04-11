@@ -1,13 +1,13 @@
-name: redis-master
+name: redis-slave
 
 app: redis
 
-replicas: 1
+replicas: 2
 
 cpu: 100m
 memory: 100Mi
 
-role: master
+role: slave
 tier: backend
 
 image: ${artifact.metadata.image}
