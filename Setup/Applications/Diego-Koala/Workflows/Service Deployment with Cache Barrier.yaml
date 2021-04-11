@@ -26,9 +26,9 @@ phases:
     name: Deploy
     steps:
     - type: BARRIER
-      name: Wait for databases
+      name: Wait for caches
       properties:
-        identifier: database-completed
+        identifier: caches-completed
         templateUuid: null
         templateVariables: null
         templateVersion: null
