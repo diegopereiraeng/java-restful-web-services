@@ -6,13 +6,13 @@ spec:
   replicas: {{int .Values.replicas}}
   selector:
     matchLabels:
-      app: {{.Values.name}}
+      app: {{.Values.app}}
       role: {{.Values.role}}
       tier: {{.Values.tier}}
   template:
     metadata:
       labels:
-        app: {{.Values.name}}
+        app: {{.Values.app}}
         role: {{.Values.role}}
         tier: {{.Values.tier}}
     spec:
