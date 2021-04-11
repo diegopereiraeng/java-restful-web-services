@@ -13,7 +13,7 @@ pipelineStages:
     value: http://${context.api_service.URL}
   - entityType: ENVIRONMENT
     name: Environment
-    value: ${Environment}
+    value: Dev
   - entityType: SERVICE
     name: Service
     value: ${Service}
