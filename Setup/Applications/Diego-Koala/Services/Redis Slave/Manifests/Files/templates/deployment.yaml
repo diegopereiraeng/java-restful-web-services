@@ -17,7 +17,7 @@ spec:
         tier: {{.Values.tier}}
     spec:
       containers:
-      - name: {{.Values.name}}
+      - name: {{.Values.container}}
         image: {{.Values.image}}
         resources:
           requests:
