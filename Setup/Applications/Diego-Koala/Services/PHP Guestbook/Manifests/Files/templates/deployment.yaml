@@ -1,21 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{.Values.name}}
-  labels:
-    app.kubernetes.io/name: {{.Values.name}}
-    app.kubernetes.io/component: {{.Values.name}}
+  name: frontend
 spec:
   replicas: {{int .Values.replicas}}
   selector:
     matchLabels:
       app: {{.Values.name}}
-      tier: frontend
+      tier: {{.Values.tier}}
   template:
     metadata:
       labels:
         app: {{.Values.name}}
-        tier: frontend
+        tier: {{.Values.tier}}
     spec:
       containers:
       - name: {{.Values.container}}
