@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.name}}-svc
+  labels:
+    app: redis
+    tier: backend
+    role: master
+spec:
+  type: {{.Values.serviceType}}
+  ports:
+  - port: {{.Values.servicePort}}
+    targetPort: {{.Values.serviceTargetPort}}
+    protocol: TCP
+  selector:
+    app: {{.Values.app}}
+    tier: {{.Values.tier}}
+    role: {{.Values.role}}
