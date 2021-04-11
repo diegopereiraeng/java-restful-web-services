@@ -1,5 +1,7 @@
 name: redis-slave
 
+container: slave-redis-xfusion
+
 app: redis
 
 replicas: 2
