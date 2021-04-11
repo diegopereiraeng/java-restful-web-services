@@ -4,20 +4,20 @@ metadata:
   name: {{.Values.name}}
   labels:
     app.kubernetes.io/name: {{.Values.name}}
-    app.kubernetes.io/component: {{.Values.name}}
+    app.kubernetes.io/component: {{.Values.component}}
 spec:
   replicas: {{int .Values.replicas}}
   selector:
     matchLabels:
       app: {{.Values.name}}
       app.kubernetes.io/name: {{.Values.name}}
-      app.kubernetes.io/component: {{.Values.name}}
+      app.kubernetes.io/component: {{.Values.component}}
   template:
     metadata:
       labels:
         app: {{.Values.name}}
         app.kubernetes.io/name: {{.Values.name}}
-        app.kubernetes.io/component: {{.Values.name}}
+        app.kubernetes.io/component: {{.Values.component}}
     spec:
       containers:
       - name: {{.Values.name}}
