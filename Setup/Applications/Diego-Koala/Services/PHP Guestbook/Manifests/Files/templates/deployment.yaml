@@ -16,6 +16,8 @@ spec:
     metadata:
       labels:
         app: {{.Values.name}}
+        app.kubernetes.io/name: {{.Values.name}}
+        app.kubernetes.io/component: {{.Values.name}}
     spec:
       {{- if .Values.dockercfg}}
       imagePullSecrets:
