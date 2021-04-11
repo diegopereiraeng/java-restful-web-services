@@ -1,4 +1,4 @@
 harnessApiVersion: '1.0'
 type: DOCKER
-imageName: mongo/mongo
+imageName: library/mongo
 serverName: Harness Docker Hub
