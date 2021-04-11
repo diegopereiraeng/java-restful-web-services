@@ -35,6 +35,9 @@ pipelineStages:
     value: ${Service}
   - name: TEST_SCRIPT
     value: selenium-checker.py
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: INFRA-QA
+    value: ${infra}
 - type: APPROVAL
   name: Approval 2
   parallel: false
