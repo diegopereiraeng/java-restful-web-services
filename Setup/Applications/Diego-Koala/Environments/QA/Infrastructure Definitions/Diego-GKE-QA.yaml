@@ -5,5 +5,5 @@ deploymentType: KUBERNETES
 infrastructure:
 - type: DIRECT_KUBERNETES
   cloudProviderName: Kubernetes Cluster Diego-GKE
-  namespace: qa
+  namespace: ${service.name}-qa
   releaseName: release-${infra.kubernetes.infraId}
