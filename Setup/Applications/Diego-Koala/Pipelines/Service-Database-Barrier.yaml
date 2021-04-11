@@ -23,7 +23,7 @@ pipelineStages:
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: STAGE 2
+  stageName: STAGE 1
   workflowName: Redis Slave Deployment - Barrier Unlock
   workflowVariables:
   - entityType: INFRASTRUCTURE_DEFINITION
@@ -37,7 +37,7 @@ pipelineStages:
     value: Redis Slave
 - type: ENV_STATE
   name: Service Deployment with Database Barrier
-  parallel: false
+  parallel: true
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 1
