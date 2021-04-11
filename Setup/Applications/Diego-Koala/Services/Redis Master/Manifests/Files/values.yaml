@@ -1,5 +1,7 @@
 name: redis-master
 
+app: redis
+
 replicas: 1
 
 cpu: 100m
