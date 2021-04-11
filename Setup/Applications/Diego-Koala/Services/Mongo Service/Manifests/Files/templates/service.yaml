@@ -4,7 +4,7 @@ metadata:
   name: {{.Values.name}}
   labels:
     app.kubernetes.io/name: {{.Values.name}}
-    app.kubernetes.io/component: {{.Values.name}}
+    app.kubernetes.io/component: {{.Values.component}}
 spec:
   type: {{.Values.serviceType}}
   ports:
@@ -14,4 +14,4 @@ spec:
   selector:
     app: {{.Values.name}}
     app.kubernetes.io/name: {{.Values.name}}
-    app.kubernetes.io/component: {{.Values.name}}
+    app.kubernetes.io/component: {{.Values.component}}
