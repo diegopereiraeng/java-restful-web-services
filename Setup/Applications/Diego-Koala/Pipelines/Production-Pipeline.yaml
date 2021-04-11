@@ -74,4 +74,5 @@ pipelineStages:
   - name: TEST_SCRIPT
     value: selenium-checker.py
 tags:
+  Selenium: 'True'
   verification_enabled: ''
