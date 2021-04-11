@@ -7,3 +7,8 @@ infrastructure:
   cloudProviderName: Lucca AWS
   iamRole: arn:aws:iam::759984737373:role/AWSLambdaEC2FullAccess
   region: us-east-2
+  securityGroupIds:
+  - sg-0854fdf62a7a25c74
+  subnetIds:
+  - subnet-82d8b4ea
+  vpcId: vpc-72c6b71a
