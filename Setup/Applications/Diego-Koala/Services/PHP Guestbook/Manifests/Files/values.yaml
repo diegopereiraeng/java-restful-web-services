@@ -2,6 +2,10 @@ name: guestbook
 
 replicas: 1
 
+cpu: 100m
+
+memory: 100Mi
+
 image: ${artifact.metadata.image}
 dockercfg: ${artifact.source.dockerconfig}
 
