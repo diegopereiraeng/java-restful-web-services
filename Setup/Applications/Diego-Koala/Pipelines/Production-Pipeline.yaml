@@ -65,6 +65,9 @@ pipelineStages:
     value: ${Infra-Prod}
   - name: API_URL
     value: http://${context.api_service.URL}:8080
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: PROD
   - entityType: SERVICE
     name: Service
     value: ${Service}
