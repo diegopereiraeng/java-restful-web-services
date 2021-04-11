@@ -41,7 +41,7 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 1
-  workflowName: Service Deployment with Database Barrier
+  workflowName: Service Deployment with Cache Barrier
   workflowVariables:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_Kubernetes
