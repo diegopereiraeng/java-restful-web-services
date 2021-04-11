@@ -214,7 +214,7 @@ phases:
   serviceName: diego-java-springboot-service
   statefulSet: false
   templateExpressions:
-  - expression: ${InfraDefinition_Kubernetes}
+  - expression: ${INFRA-PROD}
     fieldName: infraDefinitionId
     metadata:
     - name: artifactType
@@ -360,7 +360,7 @@ rollbackPhases:
   serviceName: diego-java-springboot-service
   statefulSet: false
   templateExpressions:
-  - expression: ${InfraDefinition_Kubernetes}
+  - expression: ${INFRA-PROD}
     fieldName: infraDefinitionId
     metadata:
     - name: artifactType
@@ -376,11 +376,6 @@ userVariables:
   name: Service
 - type: ENTITY
   description: Variable for Infrastructure Definition entity in Rollback Primary
-  fixed: false
-  mandatory: true
-  name: InfraDefinition_Kubernetes
-- type: ENTITY
-  description: Variable for Infrastructure Definition entity in Rollback Canary
   fixed: false
   mandatory: true
   name: INFRA-PROD
