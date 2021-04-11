@@ -17,12 +17,8 @@ spec:
         app: {{.Values.name}}
         tier: frontend
     spec:
-      {{- if .Values.dockercfg}}
-      imagePullSecrets:
-      - name: {{.Values.name}}-dockercfg
-      {{- end}}
       containers:
-      - name: {{.Values.name}}
+      - name: {{.Values.container}}
         image: {{.Values.image}}
         resources:
           requests:
