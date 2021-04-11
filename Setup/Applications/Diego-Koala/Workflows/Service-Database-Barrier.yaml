@@ -16,6 +16,73 @@ notificationRules:
   userGroupAsExpression: false
   userGroupIds:
   - PFIVcv84TVW6OEpQEDvmGw
+phases:
+- type: KUBERNETES
+  computeProviderName: Kubernetes Cluster Diego-GKE
+  daemonSet: false
+  infraDefinitionName: Diego-GKE-DEV
+  name: Canary
+  phaseSteps:
+  - type: K8S_PHASE_STEP
+    name: Deploy
+    steps:
+    - type: K8S_CANARY_DEPLOY
+      name: Canary Deployment
+      properties:
+        instanceUnitType: COUNT
+        instances: '1'
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: Verify
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: Wrap Up
+    steps:
+    - type: K8S_DELETE
+      name: Canary Delete
+      properties:
+        instanceUnitType: COUNT
+        resources: ${k8s.canaryWorkload}
+    stepsInParallel: false
+  provisionNodes: false
+  serviceName: Mongo Service
+  statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
+rollbackPhases:
+- type: KUBERNETES
+  computeProviderName: Kubernetes Cluster Diego-GKE
+  daemonSet: false
+  infraDefinitionName: Diego-GKE-DEV
+  name: Rollback Canary
+  phaseNameForRollback: Canary
+  phaseSteps:
+  - type: K8S_PHASE_STEP
+    name: Deploy
+    phaseStepNameForRollback: Deploy
+    statusForRollback: SUCCESS
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: Wrap Up
+    phaseStepNameForRollback: Wrap Up
+    stepsInParallel: false
+  provisionNodes: false
+  serviceName: Mongo Service
+  statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 templateExpressions:
 - expression: ${Environment}
   fieldName: envId
@@ -30,3 +97,8 @@ userVariables:
   fixed: false
   mandatory: true
   name: Environment
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Rollback Canary
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_Kubernetes
