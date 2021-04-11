@@ -28,9 +28,9 @@ phases:
     - type: K8S_DEPLOYMENT_ROLLING
       name: Rollout Deployment
     - type: BARRIER
-      name: Redis Master Completed
+      name: Redis Completed
       properties:
-        identifier: redis-master-completed
+        identifier: redis-completed
         templateUuid: null
         templateVariables: null
         templateVersion: null
