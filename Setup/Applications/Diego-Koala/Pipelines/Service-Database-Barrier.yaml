@@ -7,17 +7,17 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 1
-  workflowName: Database Deployment - Barrier Unlock
+  workflowName: Simple-Deployment
   workflowVariables:
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: InfraDefinition_Kubernetes
-    value: Diego-GKE-DEV
   - entityType: ENVIRONMENT
     name: Environment
     value: Dev
   - entityType: SERVICE
     name: Service
-    value: Mongo Service
+    value: Redis Master
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: Diego-GKE-DEV
 - type: ENV_STATE
   name: Service Deployment with Database Barrier
   parallel: true
