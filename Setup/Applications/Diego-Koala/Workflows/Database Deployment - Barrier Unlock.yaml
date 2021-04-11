@@ -15,12 +15,11 @@ notificationRules:
   notificationGroupAsExpression: false
   userGroupAsExpression: false
   userGroupIds:
-  - PFIVcv84TVW6OEpQEDvmGw
+  - OSKQ6itbSMq_QXZPrI7a_A
 phases:
 - type: KUBERNETES
-  computeProviderName: Kubernetes Cluster Diego-GKE
+  computeProviderName: harness-demo-gke
   daemonSet: false
-  infraDefinitionName: Diego-GKE-DEV
   name: Rolling
   phaseSteps:
   - type: K8S_PHASE_STEP
@@ -28,6 +27,14 @@ phases:
     steps:
     - type: K8S_DEPLOYMENT_ROLLING
       name: Rollout Deployment
+    - type: BARRIER
+      name: Databases Completed
+      properties:
+        identifier: database-completed
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 60000
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
@@ -36,28 +43,29 @@ phases:
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: Mongo Service
   statefulSet: false
   templateExpressions:
   - expression: ${Service}
     fieldName: serviceId
     metadata:
-    - name: relatedField
     - name: artifactType
       value: DOCKER
+    - name: relatedField
+      value: ${InfraDefinition_Kubernetes}
     - name: entityType
       value: SERVICE
-  - expression: ${InfraDefinition_KUBERNETES}
+  - expression: ${InfraDefinition_Kubernetes}
     fieldName: infraDefinitionId
     metadata:
+    - name: artifactType
+      value: DOCKER
     - name: relatedField
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
 rollbackPhases:
 - type: KUBERNETES
-  computeProviderName: Kubernetes Cluster Diego-GKE
+  computeProviderName: harness-demo-gke
   daemonSet: false
-  infraDefinitionName: Diego-GKE-DEV
   name: Rollback Rolling
   phaseNameForRollback: Rolling
   phaseSteps:
@@ -74,20 +82,22 @@ rollbackPhases:
     phaseStepNameForRollback: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: Mongo Service
   statefulSet: false
   templateExpressions:
   - expression: ${Service}
     fieldName: serviceId
     metadata:
-    - name: relatedField
     - name: artifactType
       value: DOCKER
+    - name: relatedField
+      value: ${InfraDefinition_Kubernetes}
     - name: entityType
       value: SERVICE
-  - expression: ${InfraDefinition_KUBERNETES}
+  - expression: ${InfraDefinition_Kubernetes}
     fieldName: infraDefinitionId
     metadata:
+    - name: artifactType
+      value: DOCKER
     - name: relatedField
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
@@ -95,21 +105,25 @@ templateExpressions:
 - expression: ${Environment}
   fieldName: envId
   metadata:
+  - name: artifactType
+    value: DOCKER
   - name: relatedField
-    value: ${InfraDefinition_KUBERNETES}
   - name: entityType
     value: ENVIRONMENT
 - expression: ${Service}
   fieldName: serviceId
   metadata:
-  - name: relatedField
   - name: artifactType
     value: DOCKER
+  - name: relatedField
+    value: ${InfraDefinition_Kubernetes}
   - name: entityType
     value: SERVICE
-- expression: ${InfraDefinition_KUBERNETES}
+- expression: ${InfraDefinition_Kubernetes}
   fieldName: infraDefinitionId
   metadata:
+  - name: artifactType
+    value: DOCKER
   - name: relatedField
   - name: entityType
     value: INFRASTRUCTURE_DEFINITION
@@ -129,4 +143,4 @@ userVariables:
   description: Variable for Infrastructure Definition entity in Rollback Rolling
   fixed: false
   mandatory: true
-  name: InfraDefinition_KUBERNETES
+  name: InfraDefinition_Kubernetes
