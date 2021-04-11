@@ -31,12 +31,12 @@ userVariables:
   mandatory: true
   name: Environment
 - type: ENTITY
-  description: Variable for Service entity in Rollback Collect Service 2 Metadata
-  fixed: false
-  mandatory: true
-  name: Service2
-- type: ENTITY
   description: Variable for Service entity in Rollback Collect Service 1 Metadata
   fixed: false
   mandatory: true
   name: Service1
+- type: ENTITY
+  description: Variable for Service entity in Rollback Collect Service 2 Metadata
+  fixed: false
+  mandatory: true
+  name: Service2
