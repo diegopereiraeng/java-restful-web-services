@@ -9,6 +9,9 @@ pipelineStages:
   stageName: STAGE 1
   workflowName: Deploy-HTTP-Tests
   workflowVariables:
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: INFRA-DEV
+    value: ${infra}
   - name: API_URL
     value: http://${context.api_service.URL}
   - entityType: ENVIRONMENT
@@ -17,9 +20,6 @@ pipelineStages:
   - entityType: SERVICE
     name: Service
     value: ${Service}
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: InfraDefinition_KUBERNETES
-    value: ${infraname}
 - type: ENV_STATE
   name: Deploy QA
   parallel: false
@@ -35,9 +35,6 @@ pipelineStages:
     value: ${Service}
   - name: TEST_SCRIPT
     value: selenium-checker.py
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: InfraDefinition_KUBERNETES
-    value: Diego-GKE-QA
 - type: APPROVAL
   name: Approval 2
   parallel: false
@@ -60,9 +57,6 @@ pipelineStages:
   stageName: STAGE 4
   workflowName: Canary-Verification
   workflowVariables:
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: InfraDefinition_Kubernetes
-    value: Diego-GKE-PROD
   - name: API_URL
     value: http://${context.api_service.URL}:8080
   - entityType: SERVICE
