@@ -1,7 +1,10 @@
 name: guestbook
 container: guestbook-xfusion
+tier: frontend
 
 replicas: 1
+
+
 
 cpu: 100m
 
