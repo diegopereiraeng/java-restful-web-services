@@ -1,45 +1,17 @@
-{{- if .Values.env.config}}
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{.Values.name}}
-data:
-{{.Values.env.config | toYaml | indent 2}}
----
-{{- end}}
-
-{{- if .Values.env.secrets}}
-apiVersion: v1
-kind: Secret
-metadata:
-  name: {{.Values.name}}
-stringData:
-{{.Values.env.secrets | toYaml | indent 2}}
----
-{{- end}}
-
-{{- if .Values.dockercfg}}
-apiVersion: v1
-kind: Secret
-metadata:
-  name: {{.Values.name}}-dockercfg
-  annotations:
-    harness.io/skip-versioning: true
-data:
-  .dockercfg: {{.Values.dockercfg}}
-type: kubernetes.io/dockercfg
----
-{{- end}}
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{.Values.name}}-deployment
+  name: {{.Values.name}}
+  labels:
+    app.kubernetes.io/name: {{.Values.name}}
+    app.kubernetes.io/component: {{.Values.name}}
 spec:
   replicas: {{int .Values.replicas}}
   selector:
     matchLabels:
       app: {{.Values.name}}
+      app.kubernetes.io/name: {{.Values.name}}
+      app.kubernetes.io/component: {{.Values.name}}
   template:
     metadata:
       labels:
@@ -52,14 +24,12 @@ spec:
       containers:
       - name: {{.Values.name}}
         image: {{.Values.image}}
-        {{- if or .Values.env.config .Values.env.secrets}}
-        envFrom:
-        {{- if .Values.env.config}}
-        - configMapRef:
-            name: {{.Values.name}}
-        {{- end}}
-        {{- if .Values.env.secrets}}
-        - secretRef:
-            name: {{.Values.name}}
-        {{- end}}
-        {{- end}}
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        ports:
+        - containerPort: {{.Values.container_port}}
