@@ -51,7 +51,6 @@ phases:
     - name: artifactType
       value: DOCKER
     - name: relatedField
-      value: ${InfraDefinition_Kubernetes}
     - name: entityType
       value: SERVICE
   - expression: ${InfraDefinition_Kubernetes}
@@ -90,7 +89,6 @@ rollbackPhases:
     - name: artifactType
       value: DOCKER
     - name: relatedField
-      value: ${InfraDefinition_Kubernetes}
     - name: entityType
       value: SERVICE
   - expression: ${InfraDefinition_Kubernetes}
@@ -116,7 +114,6 @@ templateExpressions:
   - name: artifactType
     value: DOCKER
   - name: relatedField
-    value: ${InfraDefinition_Kubernetes}
   - name: entityType
     value: SERVICE
 - expression: ${InfraDefinition_Kubernetes}
