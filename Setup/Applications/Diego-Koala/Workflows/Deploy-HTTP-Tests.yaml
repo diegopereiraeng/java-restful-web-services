@@ -20,7 +20,7 @@ phases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
-  infraDefinitionName: Diego-Koala-GKE
+  infraDefinitionName: Diego-GKE-DEV
   name: Rolling
   phaseSteps:
   - type: K8S_PHASE_STEP
@@ -173,7 +173,7 @@ rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
-  infraDefinitionName: Diego-Koala-GKE
+  infraDefinitionName: Diego-GKE-DEV
   name: Rollback Rolling
   phaseNameForRollback: Rolling
   phaseSteps:
