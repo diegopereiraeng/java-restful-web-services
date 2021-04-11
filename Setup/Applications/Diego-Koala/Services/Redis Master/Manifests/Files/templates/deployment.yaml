@@ -7,19 +7,15 @@ spec:
   selector:
     matchLabels:
       app: {{.Values.name}}
-      role: master
-      tier: backend
+      role: {{.Values.role}}
+      tier: {{.Values.tier}}
   template:
     metadata:
       labels:
         app: {{.Values.name}}
-        role: master
-        tier: backend
+        role: {{.Values.role}}
+        tier: {{.Values.tier}}
     spec:
-      {{- if .Values.dockercfg}}
-      imagePullSecrets:
-      - name: {{.Values.name}}-dockercfg
-      {{- end}}
       containers:
       - name: {{.Values.name}}
         image: {{.Values.image}}
