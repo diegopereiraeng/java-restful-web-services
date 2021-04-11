@@ -1,5 +1,7 @@
 name: redis-master
 
+container: redis-master-xfusion
+
 app: redis
 
 replicas: 1
