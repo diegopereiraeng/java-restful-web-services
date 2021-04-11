@@ -53,7 +53,7 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: STAGE 3
 - type: ENV_STATE
-  name: Canary-Verification
+  name: Deploy Canary-Verification
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
