@@ -1,7 +1,7 @@
 harnessApiVersion: '1.0'
 type: CANARY
 concurrencyStrategy: INFRA
-envName: Dev
+envName: PROD
 failureStrategies:
 - executionScope: WORKFLOW
   failureTypes:
@@ -268,7 +268,6 @@ preDeploymentSteps:
     templateVersion: null
 rollbackPhases:
 - type: KUBERNETES
-  computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
   infraDefinitionName: Diego-Koala-GKE
   name: Rollback Canary
@@ -322,7 +321,6 @@ rollbackPhases:
     - name: entityType
       value: SERVICE
 - type: KUBERNETES
-  computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
   name: Rollback Primary
   phaseNameForRollback: Primary
@@ -371,20 +369,8 @@ rollbackPhases:
       value: DOCKER
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
-templateExpressions:
-- expression: ${Environment}
-  fieldName: envId
-  metadata:
-  - name: relatedField
-  - name: entityType
-    value: ENVIRONMENT
 templatized: true
 userVariables:
-- type: ENTITY
-  description: Variable for Environment entity
-  fixed: false
-  mandatory: true
-  name: Environment
 - type: ENTITY
   description: Variable for Service entity in Rollback Canary
   fixed: false
