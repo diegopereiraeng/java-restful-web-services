@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.name}}-deployment
+spec:
+  replicas: {{int .Values.replicas}}
+  selector:
+    matchLabels:
+      app: {{.Values.app}}
+      role: {{.Values.role}}
+      tier: {{.Values.tier}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.app}}
+        role: {{.Values.role}}
+        tier: {{.Values.tier}}
+    spec:
+      containers:
+      - name: {{.Values.name}}
+        image: {{.Values.image}}
+        resources:
+          requests:
+            cpu: {{.Values.cpu}}
+            memory: {{.Values.memory}}
+        ports:
+        - containerPort: {{.Values.servicePort}}
