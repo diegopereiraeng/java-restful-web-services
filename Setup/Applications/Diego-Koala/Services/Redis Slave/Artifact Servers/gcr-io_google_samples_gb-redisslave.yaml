@@ -1,0 +1,5 @@
+harnessApiVersion: '1.0'
+type: GCR
+dockerImageName: google_samples/gb-redisslave
+registryHostName: gcr.io
+serverName: Harness SE
