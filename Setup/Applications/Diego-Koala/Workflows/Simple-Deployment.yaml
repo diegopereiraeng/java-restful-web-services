@@ -135,13 +135,3 @@ userVariables:
   fixed: false
   mandatory: true
   name: InfraDefinition_KUBERNETES
-- type: TEXT
-  fixed: false
-  mandatory: true
-  name: API_URL
-  value: http://${context.api_service.URL}:8080
-- type: TEXT
-  fixed: false
-  mandatory: false
-  name: TEST_SCRIPT
-  value: selenium-checker.py
