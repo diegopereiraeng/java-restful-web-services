@@ -19,6 +19,23 @@ pipelineStages:
     name: InfraDefinition_KUBERNETES
     value: Diego-GKE-DEV
 - type: ENV_STATE
+  name: Redis Slave Deployment - Barrier Unlock
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+  workflowName: Redis Slave Deployment - Barrier Unlock
+  workflowVariables:
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_Kubernetes
+    value: Diego-GKE-DEV
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: Dev
+  - entityType: SERVICE
+    name: Service
+    value: Redis Slave
+- type: ENV_STATE
   name: Service Deployment with Database Barrier
   parallel: false
   skipCondition:
