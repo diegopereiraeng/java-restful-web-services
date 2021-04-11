@@ -30,4 +30,4 @@ spec:
             cpu: {{.Values.cpu}}
             memory: {{.Values.memory}}
         ports:
-        - containerPort: {{.Values.serviceport}}
+        - containerPort: {{.Values.servicePort}}
