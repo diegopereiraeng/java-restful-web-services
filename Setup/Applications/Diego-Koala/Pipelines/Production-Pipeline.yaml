@@ -11,7 +11,7 @@ pipelineStages:
   workflowVariables:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: INFRA-DEV
-    value: ${infra}
+    value: ${Infra-Dev}
   - name: API_URL
     value: http://${context.api_service.URL}
   - entityType: ENVIRONMENT
