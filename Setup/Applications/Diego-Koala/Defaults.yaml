@@ -10,4 +10,4 @@ defaults:
 - name: WINDOWS_RUNTIME_PATH
   value: '%USERPROFILE%\${app.name}\${service.name}\${env.name}\runtime'
 - name: project
-  value: ${Project)
+  value: diego-koala
