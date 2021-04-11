@@ -13,6 +13,6 @@ spec:
     targetPort: {{.Values.serviceTargetPort}}
     protocol: TCP
   selector:
-    app: {{.Values.name}}
+    app: {{.Values.app}}
     tier: {{.Values.tier}}
     role: {{.Values.role}}
