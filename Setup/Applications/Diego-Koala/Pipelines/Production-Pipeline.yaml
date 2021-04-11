@@ -73,3 +73,5 @@ pipelineStages:
     value: ${Service}
   - name: TEST_SCRIPT
     value: selenium-checker.py
+tags:
+  verification_enabled: ''
