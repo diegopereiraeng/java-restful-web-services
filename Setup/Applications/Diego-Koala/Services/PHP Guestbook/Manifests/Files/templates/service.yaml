@@ -10,4 +10,4 @@ spec:
     protocol: TCP
   selector:
     app: {{.Values.name}}
-    tier: frontend
+    tier: {{.Values.tier}}
