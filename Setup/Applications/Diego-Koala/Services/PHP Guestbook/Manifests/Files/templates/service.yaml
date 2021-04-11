@@ -1,10 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{.Values.name}}
-  labels:
-    app.kubernetes.io/name: {{.Values.name}}
-    app.kubernetes.io/component: {{.Values.name}}
+  name: frontend
 spec:
   type: {{.Values.serviceType}}
   ports:
@@ -13,5 +10,4 @@ spec:
     protocol: TCP
   selector:
     app: {{.Values.name}}
-    app.kubernetes.io/name: {{.Values.name}}
-    app.kubernetes.io/component: {{.Values.name}}
+    tier: frontend
