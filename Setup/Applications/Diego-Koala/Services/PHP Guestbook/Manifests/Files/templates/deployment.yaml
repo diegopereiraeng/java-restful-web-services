@@ -26,8 +26,8 @@ spec:
         image: {{.Values.image}}
         resources:
           requests:
-            cpu: 100m
-            memory: 100Mi
+            cpu: {{.Values.cpu}}
+            memory: {{.Values.memory}}
         env:
         - name: GET_HOSTS_FROM
           value: dns
