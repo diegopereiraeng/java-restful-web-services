@@ -1,0 +1,4 @@
+harnessApiVersion: '1.0'
+type: DOCKER
+imageName: paulczar/gb-frontend
+serverName: Diego-Koala-Docker
