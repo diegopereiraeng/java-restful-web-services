@@ -10,14 +10,12 @@ spec:
   selector:
     matchLabels:
       app: {{.Values.name}}
-      app.kubernetes.io/name: {{.Values.name}}
-      app.kubernetes.io/component: {{.Values.name}}
+      tier: frontend
   template:
     metadata:
       labels:
         app: {{.Values.name}}
-        app.kubernetes.io/name: {{.Values.name}}
-        app.kubernetes.io/component: {{.Values.name}}
+        tier: frontend
     spec:
       {{- if .Values.dockercfg}}
       imagePullSecrets:
