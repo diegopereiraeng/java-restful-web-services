@@ -18,3 +18,20 @@ pipelineStages:
   - entityType: SERVICE
     name: Service
     value: Mongo Service
+- type: ENV_STATE
+  name: Service Deployment with Database Barrier
+  parallel: true
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 1
+  workflowName: Service Deployment with Database Barrier
+  workflowVariables:
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_Kubernetes
+    value: Diego-GKE-DEV
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: Dev
+  - entityType: SERVICE
+    name: Service
+    value: PHP Guestbook
