@@ -65,5 +65,8 @@ pipelineStages:
     value: Diego-GKE-PROD
   - name: API_URL
     value: http://${context.api_service.URL}:8080
+  - entityType: SERVICE
+    name: Service
+    value: ${Service}
   - name: TEST_SCRIPT
     value: selenium-checker.py
