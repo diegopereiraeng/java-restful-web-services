@@ -1,4 +1,5 @@
 name: mongo
+component: backend
 
 replicas: 1
 
