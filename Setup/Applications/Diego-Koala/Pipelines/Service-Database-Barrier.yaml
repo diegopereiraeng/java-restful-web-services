@@ -20,7 +20,7 @@ pipelineStages:
     value: Diego-GKE-DEV
 - type: ENV_STATE
   name: Service Deployment with Database Barrier
-  parallel: true
+  parallel: false
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 1
