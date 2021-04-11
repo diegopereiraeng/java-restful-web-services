@@ -37,7 +37,7 @@ pipelineStages:
     value: selenium-checker.py
   - entityType: INFRASTRUCTURE_DEFINITION
     name: INFRA-QA
-    value: ${infra}
+    value: ${infra-qa}
 - type: APPROVAL
   name: Approval 2
   parallel: false
