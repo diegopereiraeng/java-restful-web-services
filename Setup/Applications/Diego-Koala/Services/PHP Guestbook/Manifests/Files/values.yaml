@@ -1,4 +1,5 @@
 name: guestbook
+container: guestbook-xfusion
 
 replicas: 1
 
