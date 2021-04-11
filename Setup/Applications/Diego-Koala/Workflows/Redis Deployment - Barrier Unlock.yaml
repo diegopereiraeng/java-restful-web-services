@@ -30,7 +30,7 @@ phases:
     - type: BARRIER
       name: Databases Completed
       properties:
-        identifier: database-completed
+        identifier: redis-master-completed
         templateUuid: null
         templateVariables: null
         templateVersion: null
