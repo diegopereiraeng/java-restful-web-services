@@ -1,5 +1,0 @@
-harnessApiVersion: '1.0'
-type: GCR
-dockerImageName: google-samples/gb-frontend
-registryHostName: gcr.io
-serverName: Harness SE
