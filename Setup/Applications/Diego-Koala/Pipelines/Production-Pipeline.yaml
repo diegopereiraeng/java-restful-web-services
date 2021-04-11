@@ -28,12 +28,16 @@ pipelineStages:
   stageName: STAGE 2
   workflowName: QA-Workflow
   workflowVariables:
+  - name: API_URL
+    value: http://${context.api_service.URL}:8080
   - entityType: ENVIRONMENT
     name: Environment
     value: QA
   - entityType: SERVICE
     name: Service
-    value: diego-java-springboot-service
+    value: ${Service}
+  - name: TEST_SCRIPT
+    value: selenium-checker.py
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: Diego-GKE-QA
