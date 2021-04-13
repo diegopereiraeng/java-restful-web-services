@@ -39,6 +39,9 @@ preDeploymentSteps:
     tfVarGitFileConfig: null
     timeoutMillis: 600000
     variables:
+    - name: zone
+      valueType: TEXT
+      value: us-west1-a
     - name: gcp_sa
       value: ${secrets.getValue("Diego-GCP-SA")}
       valueType: TEXT
