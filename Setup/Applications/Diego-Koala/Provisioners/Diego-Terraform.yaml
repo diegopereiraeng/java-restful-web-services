@@ -1,0 +1,19 @@
+harnessApiVersion: '1.0'
+type: TERRAFORM
+path: VM/
+repoName: terraform-gcp
+secretMangerName: 'Harness Secrets Manager '
+skipRefreshBeforeApplyingPlan: false
+sourceRepoBranch: main
+sourceRepoSettingName: Diego-Koala-Github
+variables:
+- name: gcp_sa
+  valueType: TEXT
+- name: instance_type
+  valueType: TEXT
+- name: project
+  valueType: TEXT
+- name: region
+  valueType: TEXT
+- name: ssh_keys
+  valueType: TEXT
