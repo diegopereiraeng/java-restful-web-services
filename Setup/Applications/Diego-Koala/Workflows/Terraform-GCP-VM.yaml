@@ -118,7 +118,7 @@ preDeploymentSteps:
     host: null
     outputVars: ''
     publishAsVar: false
-    scriptString: echo ${terraform.ip}
+    scriptString: echo "${terraform}"
     scriptType: BASH
     sshKeyRef: null
     sweepingOutputName: null
