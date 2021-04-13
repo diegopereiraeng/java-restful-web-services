@@ -63,7 +63,7 @@ preDeploymentSteps:
     backendConfigs: null
     delegateTag: diego-koala-delegate
     environmentVariables: null
-    exportPlanToApplyStep: false
+    exportPlanToApplyStep: true
     inheritApprovedPlan: false
     name: Terraform Plan
     provisionerName: Diego-Terraform
