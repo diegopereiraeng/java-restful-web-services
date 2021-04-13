@@ -114,6 +114,8 @@ preDeploymentSteps:
   properties:
     commandPath: null
     connectionAttributes: null
+    delegateSelectors:
+    - diego-koala-delegate
     executeOnDelegate: true
     host: null
     outputVars: ''
