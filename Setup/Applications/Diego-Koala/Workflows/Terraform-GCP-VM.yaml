@@ -33,6 +33,39 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
+    - type: TERRAFORM_APPLY
+      name: Terraform Apply
+      properties:
+        backendConfigs: null
+        delegateTag: diego-koala-delegate
+        environmentVariables: null
+        exportPlanToApplyStep: false
+        inheritApprovedPlan: false
+        name: Terraform Apply
+        provisionerName: Diego-Terraform
+        runPlanOnly: false
+        targets:
+        - random_id.instance_id
+        tfVarFiles: ''
+        tfVarGitFileConfig: null
+        timeoutMillis: 600000
+        variables:
+        - name: gcp_sa
+          value: null
+          valueType: TEXT
+        - name: ssh_keys
+          value: ''
+          valueType: TEXT
+        - name: project
+          value: sales
+          valueType: TEXT
+        - name: region
+          value: us-central1-a
+          valueType: TEXT
+        - name: instance_type
+          value: f1-micro
+          valueType: TEXT
+        workspace: ''
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
