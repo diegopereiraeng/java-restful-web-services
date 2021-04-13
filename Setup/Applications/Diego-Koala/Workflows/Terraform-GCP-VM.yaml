@@ -29,7 +29,7 @@ preDeploymentSteps:
     provisionerName: Diego-Terraform
     runPlanOnly: true
     targets:
-    - random_id.instance_id
+    - google_compute_instance.default
     templateUuid: null
     templateVariables: null
     templateVersion: null
