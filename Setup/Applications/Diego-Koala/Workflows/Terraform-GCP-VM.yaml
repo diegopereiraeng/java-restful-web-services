@@ -58,22 +58,6 @@ preDeploymentSteps:
     templateVariables: ''
     timeoutMillis: 60000
 - type: TERRAFORM_APPLY
-  name: Terraform Apply
-  properties:
-    delegateTag: ''
-    exportPlanToApplyStep: false
-    inheritApprovedPlan: true
-    name: Terraform Apply
-    provisionerName: Diego-Terraform
-    runPlanOnly: false
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    tfVarFiles: ''
-    tfVarGitFileConfig: null
-    timeoutMillis: 600000
-    workspace: ''
-- type: TERRAFORM_APPLY
   name: Terraform Plan
   properties:
     backendConfigs: null
@@ -108,6 +92,22 @@ preDeploymentSteps:
     - name: instance_type
       value: f1-micro
       valueType: TEXT
+    workspace: ''
+- type: TERRAFORM_APPLY
+  name: Terraform Apply
+  properties:
+    delegateTag: ''
+    exportPlanToApplyStep: false
+    inheritApprovedPlan: true
+    name: Terraform Apply
+    provisionerName: Diego-Terraform
+    runPlanOnly: false
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    tfVarFiles: ''
+    tfVarGitFileConfig: null
+    timeoutMillis: 600000
     workspace: ''
 - type: SHELL_SCRIPT
   name: Terraform Vars
