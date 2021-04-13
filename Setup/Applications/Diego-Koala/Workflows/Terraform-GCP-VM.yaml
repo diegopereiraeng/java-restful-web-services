@@ -96,8 +96,8 @@ preDeploymentSteps:
 templatized: true
 userVariables:
 - type: TEXT
-  allowedValues: t2.micro , t2.xlarge
+  allowedValues: f1-micro, t2.micro , t2.xlarge
   fixed: false
   mandatory: true
-  name: instance-type
-  value: t2.micro
+  name: instance_type
+  value: f1-micro
