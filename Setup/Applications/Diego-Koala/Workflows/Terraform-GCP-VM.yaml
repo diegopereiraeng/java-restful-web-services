@@ -39,24 +39,6 @@ preDeploymentSteps:
     templateVariables: null
     templateVersion: null
     timeoutMillis: 60000
-- type: SHELL_SCRIPT
-  name: Print Variables
-  properties:
-    commandPath: null
-    connectionAttributes: null
-    executeOnDelegate: true
-    host: null
-    outputVars: ''
-    publishAsVar: false
-    scriptString: echo ${context.vars.variavel}
-    scriptType: BASH
-    sshKeyRef: null
-    sweepingOutputName: null
-    sweepingOutputScope: null
-    tags: null
-    templateExpressions: null
-    templateVariables: ''
-    timeoutMillis: 60000
 - type: TERRAFORM_APPLY
   name: Terraform Plan
   properties:
