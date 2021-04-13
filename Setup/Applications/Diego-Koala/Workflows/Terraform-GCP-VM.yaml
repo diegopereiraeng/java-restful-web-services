@@ -30,6 +30,8 @@ preDeploymentSteps:
     runPlanOnly: true
     targets:
     - google_compute_instance.default
+    - random_id.instance_id
+    - google_compute_firewall.default
     templateUuid: null
     templateVariables: null
     templateVersion: null
