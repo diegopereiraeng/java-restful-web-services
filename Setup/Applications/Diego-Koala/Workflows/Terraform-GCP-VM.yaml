@@ -1,0 +1,139 @@
+harnessApiVersion: '1.0'
+type: CANARY
+concurrencyStrategy: INFRA
+envName: Dev
+failureStrategies:
+- executionScope: WORKFLOW
+  failureTypes:
+  - APPLICATION_ERROR
+  repairActionCode: ROLLBACK_WORKFLOW
+  retryCount: 0
+notificationRules:
+- conditions:
+  - FAILED
+  executionScope: WORKFLOW
+  notificationGroupAsExpression: false
+  userGroupAsExpression: false
+  userGroupIds:
+  - PFIVcv84TVW6OEpQEDvmGw
+preDeploymentSteps:
+- type: SHELL_SCRIPT
+  name: Chamada API
+  properties:
+    commandPath: null
+    connectionAttributes: null
+    executeOnDelegate: true
+    host: null
+    outputVars: variavel
+    publishAsVar: true
+    scriptString: |-
+      variavel="123"
+      export variavel
+    scriptType: BASH
+    sshKeyRef: null
+    sweepingOutputName: vars
+    sweepingOutputScope: WORKFLOW
+    tags: null
+    templateExpressions: null
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    timeoutMillis: 60000
+- type: SHELL_SCRIPT
+  name: Print Variables
+  properties:
+    commandPath: null
+    connectionAttributes: null
+    executeOnDelegate: true
+    host: null
+    outputVars: ''
+    publishAsVar: false
+    scriptString: echo ${context.vars.variavel}
+    scriptType: BASH
+    sshKeyRef: null
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    tags: null
+    templateExpressions: null
+    templateVariables: ''
+    timeoutMillis: 60000
+- type: TERRAFORM_APPLY
+  name: Terraform Plan
+  properties:
+    backendConfigs: null
+    delegateTag: diego-koala-delegate
+    environmentVariables: null
+    exportPlanToApplyStep: false
+    inheritApprovedPlan: false
+    name: Terraform Plan
+    provisionerName: Diego-Terraform
+    runPlanOnly: true
+    targets:
+    - random_id.instance_id
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    tfVarFiles: ''
+    tfVarGitFileConfig: null
+    timeoutMillis: 600000
+    variables:
+    - name: gcp_sa
+      value: ${secrets.getValue("Diego-GCP-SA")}
+      valueType: TEXT
+    - name: ssh_keys
+      value: ${secrets.getValue("Diego-Harness-GCP-SSH")}
+      valueType: TEXT
+    - name: project
+      value: sales
+      valueType: TEXT
+    - name: region
+      value: us-central1-a
+      valueType: TEXT
+    - name: instance_type
+      value: f1-micro
+      valueType: TEXT
+    workspace: ''
+- type: TERRAFORM_APPLY
+  name: Terraform Apply
+  properties:
+    delegateTag: ''
+    exportPlanToApplyStep: false
+    inheritApprovedPlan: true
+    name: Terraform Apply
+    provisionerName: Diego-Terraform
+    runPlanOnly: false
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    tfVarFiles: ''
+    tfVarGitFileConfig: null
+    timeoutMillis: 600000
+    workspace: ''
+- type: SHELL_SCRIPT
+  name: Terraform Vars
+  properties:
+    commandPath: null
+    connectionAttributes: null
+    executeOnDelegate: true
+    host: null
+    outputVars: ''
+    publishAsVar: false
+    scriptString: |-
+      echo ${terraform.public_ip}
+      echo ${terraform.subnet_id}
+    scriptType: BASH
+    sshKeyRef: null
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    tags: null
+    templateExpressions: null
+    templateVariables: ''
+    timeoutMillis: 60000
+templatized: true
+userVariables:
+- type: TEXT
+  allowedValues: t2.micro , t2.xlarge
+  fixed: false
+  mandatory: true
+  name: instance-type
+  value: t2.micro
