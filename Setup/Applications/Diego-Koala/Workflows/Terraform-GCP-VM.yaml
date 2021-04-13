@@ -17,28 +17,6 @@ notificationRules:
   userGroupIds:
   - PFIVcv84TVW6OEpQEDvmGw
 preDeploymentSteps:
-- type: SHELL_SCRIPT
-  name: Chamada API
-  properties:
-    commandPath: null
-    connectionAttributes: null
-    executeOnDelegate: true
-    host: null
-    outputVars: variavel
-    publishAsVar: true
-    scriptString: |-
-      variavel="123"
-      export variavel
-    scriptType: BASH
-    sshKeyRef: null
-    sweepingOutputName: vars
-    sweepingOutputScope: WORKFLOW
-    tags: null
-    templateExpressions: null
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    timeoutMillis: 60000
 - type: TERRAFORM_APPLY
   name: Terraform Plan
   properties:
