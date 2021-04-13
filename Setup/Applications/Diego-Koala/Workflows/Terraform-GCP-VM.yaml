@@ -118,16 +118,16 @@ preDeploymentSteps:
     host: null
     outputVars: ''
     publishAsVar: false
-    scriptString: |-
-      echo ${terraform.public_ip}
-      echo ${terraform.subnet_id}
+    scriptString: echo ${terraform.ip}
     scriptType: BASH
     sshKeyRef: null
     sweepingOutputName: null
     sweepingOutputScope: null
     tags: null
     templateExpressions: null
-    templateVariables: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     timeoutMillis: 60000
 templatized: true
 userVariables:
