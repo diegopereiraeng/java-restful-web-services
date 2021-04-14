@@ -157,6 +157,24 @@ preDeploymentSteps:
     templateVariables: null
     templateVersion: null
     timeoutMillis: 300000
+- type: SHELL_SCRIPT
+  name: Shell Script_2
+  properties:
+    commandPath: /tmp
+    connectionAttributes: null
+    connectionType: SSH
+    executeOnDelegate: false
+    host: ${terraform.public_ip}
+    outputVars: ''
+    publishAsVar: false
+    scriptString: echo ${terraform.public_ip}
+    scriptType: BASH
+    sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    templateExpressions: null
+    templateVariables: ''
+    timeoutMillis: 60000
 templatized: true
 userVariables:
 - type: TEXT
