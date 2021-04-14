@@ -158,7 +158,7 @@ preDeploymentSteps:
     templateVersion: null
     timeoutMillis: 300000
 - type: SHELL_SCRIPT
-  name: Shell Script_2
+  name: Download/Configure/Start App 2
   properties:
     commandPath: /tmp
     connectionAttributes: null
