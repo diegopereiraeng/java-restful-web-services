@@ -11,4 +11,12 @@ commandUnits:
   deploymentType: SSH
   name: Exec
   scriptType: BASH
+- command: |
+    apt install -y mongodb
+    systemctl status mongodb
+    systemctl start mongodb
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Exec-1
+  scriptType: BASH
 targetToAllEnv: true
