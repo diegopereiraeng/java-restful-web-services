@@ -163,8 +163,7 @@ preDeploymentSteps:
     commandPath: /tmp
     connectionAttributes: null
     connectionType: SSH
-    delegateSelectors:
-    - diego-koala-delegate
+    delegateSelectors: null
     executeOnDelegate: false
     host: ${terraform.public_ip}
     outputVars: ''
@@ -207,7 +206,7 @@ preDeploymentSteps:
     templateUuid: null
     templateVariables: null
     templateVersion: null
-    timeoutMillis: 60000
+    timeoutMillis: 300000
 templatized: true
 userVariables:
 - type: TEXT
