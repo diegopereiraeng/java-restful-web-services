@@ -186,7 +186,7 @@ preDeploymentSteps:
     scriptString: |+
       echo "Copying ssh key"
 
-      echo ${secrets.getValue("Diego-Harness-GCP-SSH")} >  diego.private
+      echo ${workflow.variables.ssh_secret} >  diego.private
 
       #base64 -d diego.private > diego.private
 
