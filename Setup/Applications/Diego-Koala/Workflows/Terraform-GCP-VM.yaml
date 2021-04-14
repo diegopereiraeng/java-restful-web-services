@@ -41,7 +41,7 @@ preDeploymentSteps:
     variables:
     - name: zone
       valueType: TEXT
-      value: us-central1-a
+      value: us-west1-a
     - name: gcp_sa
       value: ${secrets.getValue("Diego-Personal-GCP-SA")}
       valueType: TEXT
@@ -52,7 +52,7 @@ preDeploymentSteps:
       value: Teste
       valueType: TEXT
     - name: region
-      value: us-central1
+      value: us-west1
       valueType: TEXT
     - name: instance_type
       value: f1-micro
