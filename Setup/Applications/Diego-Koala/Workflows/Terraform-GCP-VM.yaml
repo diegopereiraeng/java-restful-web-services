@@ -133,17 +133,10 @@ preDeploymentSteps:
     host: null
     outputVars: ''
     publishAsVar: false
-    scriptString: |-
-      echo ${workflow.variables.ssh_secret} | base64 -d > diego.pub
-
-
-      ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
-
-      apt-get install git-all
-      git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
-      cd nodeJS_Employees_App
-      cd EmployeeKoalaDB
-      ls -ltr
+    scriptString: "echo ${workflow.variables.ssh_secret}  > \n\nbase64 -d diego.pub\
+      \ > diego.pub\n\nssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}\n\
+      \napt-get install git-all\ngit clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git\n\
+      cd nodeJS_Employees_App\ncd EmployeeKoalaDB\nls -ltr"
     scriptType: BASH
     sshKeyRef: null
     sweepingOutputName: null
