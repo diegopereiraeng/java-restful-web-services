@@ -49,7 +49,7 @@ preDeploymentSteps:
       value: ${secrets.getValue("Diego-Harness-GCP-SSH")}
       valueType: TEXT
     - name: project
-      value: Teste
+      value: sales
       valueType: TEXT
     - name: region
       value: us-central1
