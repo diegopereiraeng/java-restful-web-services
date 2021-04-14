@@ -147,7 +147,8 @@ preDeploymentSteps:
       ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
 
       echo "Cloning Git repo"
-
+      mkdir /opt/harnessapp
+      cd /opt/harnessapp
       rm -rf nodeJS_Employees_App
 
       echo "Downloading App"
