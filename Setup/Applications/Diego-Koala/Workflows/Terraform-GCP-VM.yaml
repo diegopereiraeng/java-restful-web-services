@@ -133,7 +133,7 @@ preDeploymentSteps:
     host: null
     outputVars: ''
     publishAsVar: false
-    scriptString: |-
+    scriptString: |+
       echo "Copying ssh key"
 
       echo ${workflow.variables.ssh_secret}  >  diego.pub
@@ -146,33 +146,6 @@ preDeploymentSteps:
 
       ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
 
-      echo "Cloning Git repo"
-      mkdir /opt/harnessapp
-      cd /opt/harnessapp
-      rm -rf nodeJS_Employees_App
-
-      echo "Downloading App"
-
-      git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
-      cd nodeJS_Employees_App
-      cd EmployeeKoalaDB
-      ls -ltr
-
-      echo "Starting MongoDB"
-
-      pwd
-      #/bin/bash
-
-      whoami
-      echo "Starting APP"
-      source ~/.bashrc
-
-      env
-
-      whereis node
-
-      #netstat -an | grep "LISTEN"
-      #node app.js
     scriptType: BASH
     sshKeyRef: null
     sweepingOutputName: null
