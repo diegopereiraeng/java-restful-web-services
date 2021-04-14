@@ -17,6 +17,6 @@ commandUnits:
     systemctl start mongodb
   commandUnitType: EXEC
   deploymentType: SSH
-  name: Exec-1
+  name: MongoDB install
   scriptType: BASH
 targetToAllEnv: true
