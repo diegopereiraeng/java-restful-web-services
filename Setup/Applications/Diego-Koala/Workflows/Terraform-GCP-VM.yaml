@@ -161,7 +161,7 @@ preDeploymentSteps:
 
       pwd
 
-      mongod
+      netstat -an | grep "LISTEN"
 
       echo "Starting APP"
 
