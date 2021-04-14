@@ -134,23 +134,33 @@ preDeploymentSteps:
     outputVars: ''
     publishAsVar: false
     scriptString: |-
+      echo "Copying ssh key"
+
       echo ${workflow.variables.ssh_secret}  >  diego.pub
 
       base64 -d diego.pub > diego.pub
 
       chmod 400 diego.pub
 
+      echo "Connecting to Instance ${terraform.public_ip}"
+
       ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
+
+      echo "Installing Git on Instance"
 
       apt-get install git-all -y
       rm -rf nodeJS_Employees_App
+
+      echo "Downloading App"
+
       git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
       cd nodeJS_Employees_App
       cd EmployeeKoalaDB
       ls -ltr
 
       echo "Installing MongoDB"
-      apt install -y mongodb
+
+      apt-get install -y mongodb-org
       systemctl status mongodb
       systemctl start mongodb
       systemctl enable mongodb
