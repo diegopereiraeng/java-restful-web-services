@@ -159,9 +159,7 @@ preDeploymentSteps:
 
       echo "Starting MongoDB"
 
-      systemctl start mongod
-      systemctl status mongod
-      systemctl enable mongod
+      /bin/systemctl status mongod
 
       echo "Starting APP"
 
