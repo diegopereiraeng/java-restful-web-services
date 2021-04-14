@@ -19,7 +19,10 @@ commandUnits:
   deploymentType: SSH
   name: MongoDB install
   scriptType: BASH
-- command: 'cd '
+- command: |-
+    cd nodeJS_Employees_App
+    cd EmployeeKoalaDB
+    node app.js
   commandUnitType: EXEC
   deploymentType: SSH
   name: App Start
