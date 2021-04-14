@@ -123,7 +123,7 @@ preDeploymentSteps:
     templateVersion: null
     timeoutMillis: 60000
 - type: SHELL_SCRIPT
-  name: Download/Configure/Install App
+  name: Download/Configure/Start App
   properties:
     commandPath: null
     connectionAttributes: null
@@ -157,14 +157,8 @@ preDeploymentSteps:
       cd EmployeeKoalaDB
       ls -ltr
 
-      echo "Installing MongoDB"
+      echo "Starting MongoDB"
 
-      wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add -
-
-      echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.4 main" | tee /etc/apt/sources.list.d/mongodb-org-4.4.list
-
-      rm /var/lib/apt/lists/lock-frontend
-      apt-get install -y mongodb-org
 
       service mongod start
       service mongod status
