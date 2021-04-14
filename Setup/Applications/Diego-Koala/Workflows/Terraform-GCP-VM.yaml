@@ -16,6 +16,17 @@ notificationRules:
   userGroupAsExpression: false
   userGroupIds:
   - PFIVcv84TVW6OEpQEDvmGw
+postDeploymentSteps:
+- type: TERRAFORM_DESTROY
+  name: Terraform Destroy
+  properties:
+    delegateTag: diego-koala-delegate
+    inheritApprovedPlan: false
+    provisionerName: Diego-Terraform
+    runPlanOnly: true
+    tfVarGitFileConfig: null
+    timeoutMillis: 300000
+    workspace: ''
 preDeploymentSteps:
 - type: TERRAFORM_APPLY
   name: Terraform Plan
