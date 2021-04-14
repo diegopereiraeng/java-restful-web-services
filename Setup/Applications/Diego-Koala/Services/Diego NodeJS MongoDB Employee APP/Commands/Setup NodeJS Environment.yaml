@@ -3,6 +3,7 @@ type: SETUP
 commandUnitType: COMMAND
 commandUnits:
 - command: |-
+    apt-get install git-all
     git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
     cd nodeJS_Employees_App
     tar -cvf harness-employee.tar EmployeeKoalaDB
