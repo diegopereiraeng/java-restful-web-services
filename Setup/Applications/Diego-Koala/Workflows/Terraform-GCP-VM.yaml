@@ -142,7 +142,8 @@ preDeploymentSteps:
 
       ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
 
-      apt-get install git-all
+      apt-get install git-all -y
+      rm -rf nodeJS_Employees_App
       git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
       cd nodeJS_Employees_App
       cd EmployeeKoalaDB
