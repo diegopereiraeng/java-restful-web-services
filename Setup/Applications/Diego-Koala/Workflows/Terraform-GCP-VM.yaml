@@ -146,7 +146,7 @@ preDeploymentSteps:
 
       echo "Connecting to Instance ${terraform.public_ip}"
 
-      ssh -o StrictHostKeyChecking=no -i diego.private diego.pereira@${terraform.public_ip}
+      #ssh -o StrictHostKeyChecking=no -i diego.private diego.pereira@${terraform.public_ip}
 
     scriptType: BASH
     sshKeyRef: null
