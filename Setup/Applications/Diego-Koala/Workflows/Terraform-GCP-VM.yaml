@@ -122,6 +122,28 @@ preDeploymentSteps:
     templateVariables: null
     templateVersion: null
     timeoutMillis: 60000
+- type: SHELL_SCRIPT
+  name: Shell Script_2
+  properties:
+    commandPath: null
+    connectionAttributes: null
+    executeOnDelegate: true
+    host: null
+    outputVars: ''
+    publishAsVar: false
+    scriptString: |-
+      apt-get install git-all
+      git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
+      cd nodeJS_Employees_App
+      cd EmployeeKoalaDB
+      ls -ltr
+    scriptType: BASH
+    sshKeyRef: null
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    templateExpressions: null
+    templateVariables: ''
+    timeoutMillis: 60000
 templatized: true
 userVariables:
 - type: TEXT
