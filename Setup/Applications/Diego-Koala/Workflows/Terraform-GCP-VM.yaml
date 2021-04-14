@@ -146,9 +146,8 @@ preDeploymentSteps:
 
       ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
 
-      echo "Installing Git on Instance"
+      echo "Cloning Git repo"
 
-      apt-get install git -y
       rm -rf nodeJS_Employees_App
 
       echo "Downloading App"
