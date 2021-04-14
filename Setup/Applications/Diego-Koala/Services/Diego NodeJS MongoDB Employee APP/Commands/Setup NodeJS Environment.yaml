@@ -1,4 +1,13 @@
 harnessApiVersion: '1.0'
 type: SETUP
 commandUnitType: COMMAND
+commandUnits:
+- command: |-
+    git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
+    cd nodeJS_Employees_App
+    tar -cvf harness-employee.tar EmployeeKoalaDB
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Exec
+  scriptType: BASH
 targetToAllEnv: true
