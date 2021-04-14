@@ -24,6 +24,9 @@ postDeploymentSteps:
     inheritApprovedPlan: false
     provisionerName: Diego-Terraform
     runPlanOnly: true
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     tfVarGitFileConfig: null
     timeoutMillis: 300000
     workspace: ''
