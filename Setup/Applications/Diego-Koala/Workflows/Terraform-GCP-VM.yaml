@@ -161,3 +161,8 @@ userVariables:
   mandatory: true
   name: instance_type
   value: f1-micro
+- type: TEXT
+  fixed: true
+  mandatory: true
+  name: ssh_secret
+  value: ${secrets.getValue("Diego-Harness-GCP-SSH")}
