@@ -163,7 +163,7 @@ phases:
       value: DOCKER
     - name: entityType
       value: SERVICE
-  - expression: ${INFRA-DEV}
+  - expression: ${InfraDefinition_DEV}
     fieldName: infraDefinitionId
     metadata:
     - name: relatedField
@@ -201,20 +201,13 @@ rollbackPhases:
       value: DOCKER
     - name: entityType
       value: SERVICE
-  - expression: ${INFRA-DEV}
+  - expression: ${InfraDefinition_DEV}
     fieldName: infraDefinitionId
     metadata:
     - name: relatedField
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
 templateExpressions:
-- expression: ${Environment}
-  fieldName: envId
-  metadata:
-  - name: relatedField
-    value: ${INFRA-DEV}
-  - name: entityType
-    value: ENVIRONMENT
 - expression: ${Service}
   fieldName: serviceId
   metadata:
@@ -223,7 +216,7 @@ templateExpressions:
     value: DOCKER
   - name: entityType
     value: SERVICE
-- expression: ${INFRA-DEV}
+- expression: ${InfraDefinition_DEV}
   fieldName: infraDefinitionId
   metadata:
   - name: relatedField
@@ -231,11 +224,6 @@ templateExpressions:
     value: INFRASTRUCTURE_DEFINITION
 templatized: true
 userVariables:
-- type: ENTITY
-  description: Variable for Environment entity
-  fixed: false
-  mandatory: true
-  name: Environment
 - type: ENTITY
   description: Variable for Service entity in Rollback Rolling
   fixed: false
@@ -245,7 +233,12 @@ userVariables:
   description: Variable for Infrastructure Definition entity in Rollback Rolling
   fixed: false
   mandatory: true
-  name: INFRA-DEV
+  name: InfraDefinition_DEV
+- type: ENTITY
+  description: Variable for Environment entity
+  fixed: false
+  mandatory: true
+  name: Environment
 - type: TEXT
   fixed: false
   mandatory: true
