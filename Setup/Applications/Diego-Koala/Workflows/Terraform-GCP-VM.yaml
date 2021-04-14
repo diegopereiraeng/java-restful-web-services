@@ -138,6 +138,8 @@ preDeploymentSteps:
 
       base64 -d diego.pub > diego.pub
 
+      chmod 400 diego.pub
+
       ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
 
       apt-get install git-all
