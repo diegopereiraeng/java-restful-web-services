@@ -148,7 +148,7 @@ preDeploymentSteps:
 
       echo "Installing Git on Instance"
 
-      apt-get install git-all -y
+      apt-get install git -y
       rm -rf nodeJS_Employees_App
 
       echo "Downloading App"
@@ -164,6 +164,7 @@ preDeploymentSteps:
 
       echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.4 main" | tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 
+      rm /var/lib/apt/lists/lock-frontend
       apt-get install -y mongodb-org
 
       service mongod start
