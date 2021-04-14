@@ -123,7 +123,7 @@ preDeploymentSteps:
     templateVersion: null
     timeoutMillis: 60000
 - type: SHELL_SCRIPT
-  name: Shell Script_2
+  name: Download App
   properties:
     commandPath: null
     connectionAttributes: null
@@ -142,7 +142,9 @@ preDeploymentSteps:
     sweepingOutputName: null
     sweepingOutputScope: null
     templateExpressions: null
-    templateVariables: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     timeoutMillis: 60000
 templatized: true
 userVariables:
