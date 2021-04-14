@@ -174,7 +174,7 @@ preDeploymentSteps:
     host: null
     outputVars: ''
     publishAsVar: false
-    scriptString: |-
+    scriptString: |+
       echo ${workflow.variables.ssh_secret}  >  diego.pub
 
       base64 -d diego.pub > diego.pub
@@ -183,13 +183,14 @@ preDeploymentSteps:
 
       ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
 
-      node app.js
     scriptType: BASH
     sshKeyRef: null
     sweepingOutputName: null
     sweepingOutputScope: null
     templateExpressions: null
-    templateVariables: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     timeoutMillis: 60000
 templatized: true
 userVariables:
