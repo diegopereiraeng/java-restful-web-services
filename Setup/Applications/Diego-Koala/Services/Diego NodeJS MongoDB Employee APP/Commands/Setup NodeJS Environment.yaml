@@ -19,4 +19,9 @@ commandUnits:
   deploymentType: SSH
   name: MongoDB install
   scriptType: BASH
+- command: 'cd '
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: App Start
+  scriptType: BASH
 targetToAllEnv: true
