@@ -21,7 +21,10 @@ postDeploymentSteps:
   name: Terraform Destroy Approval
   properties:
     approvalStateType: USER_GROUP
-    timeoutMillis: 3600000
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    timeoutMillis: 86400000
     userGroups:
     - PFIVcv84TVW6OEpQEDvmGw
     - xsUUKuxzQ8upFNUpt7wBYQ
