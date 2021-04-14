@@ -23,7 +23,7 @@ postDeploymentSteps:
     delegateTag: diego-koala-delegate
     inheritApprovedPlan: false
     provisionerName: Diego-Terraform
-    runPlanOnly: true
+    runPlanOnly: false
     templateUuid: null
     templateVariables: null
     templateVersion: null
