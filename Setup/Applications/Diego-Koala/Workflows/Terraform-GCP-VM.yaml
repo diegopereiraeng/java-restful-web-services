@@ -27,6 +27,15 @@ postDeploymentSteps:
     tfVarGitFileConfig: null
     timeoutMillis: 300000
     workspace: ''
+- type: APPROVAL
+  name: Terraform Destroy Approval
+  properties:
+    approvalStateType: USER_GROUP
+    timeoutMillis: 3600000
+    userGroups:
+    - PFIVcv84TVW6OEpQEDvmGw
+    - xsUUKuxzQ8upFNUpt7wBYQ
+    - u-mGHdFRQA-NJj_KMnhTFQ
 preDeploymentSteps:
 - type: TERRAFORM_APPLY
   name: Terraform Plan
