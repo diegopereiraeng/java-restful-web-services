@@ -28,6 +28,11 @@ phases:
     steps:
     - type: K8S_DEPLOYMENT_ROLLING
       name: Rollout Deployment
+      properties:
+        stateTimeoutInMinutes: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     - type: JIRA_CREATE_UPDATE
       name: Update JIRA to "Ready for Testing"
       properties:
