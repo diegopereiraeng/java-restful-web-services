@@ -156,7 +156,7 @@ preDeploymentSteps:
     templateUuid: null
     templateVariables: null
     templateVersion: null
-    timeoutMillis: 60000
+    timeoutMillis: 300000
 templatized: true
 userVariables:
 - type: TEXT
