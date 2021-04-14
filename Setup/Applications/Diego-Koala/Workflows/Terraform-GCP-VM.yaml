@@ -163,17 +163,50 @@ preDeploymentSteps:
     commandPath: /tmp
     connectionAttributes: null
     connectionType: SSH
+    delegateSelectors:
+    - diego-koala-delegate
     executeOnDelegate: false
     host: ${terraform.public_ip}
     outputVars: ''
     publishAsVar: false
-    scriptString: echo ${terraform.public_ip}
+    scriptString: |-
+      echo "Running commands on ${terraform.public_ip}"
+
+      echo "Cloning Git repo"
+      mkdir /opt/harnessapp
+      cd /opt/harnessapp
+      rm -rf nodeJS_Employees_App
+
+      echo "Downloading App"
+
+      git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
+      cd nodeJS_Employees_App
+      cd EmployeeKoalaDB
+      ls -ltr
+
+      echo "Starting MongoDB"
+
+      pwd
+      #/bin/bash
+
+      whoami
+      echo "Starting APP"
+      source ~/.bashrc
+
+      env
+
+      whereis node
+
+      #netstat -an | grep "LISTEN"
+      #node app.js
     scriptType: BASH
     sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
     sweepingOutputName: null
     sweepingOutputScope: null
     templateExpressions: null
-    templateVariables: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     timeoutMillis: 60000
 templatized: true
 userVariables:
