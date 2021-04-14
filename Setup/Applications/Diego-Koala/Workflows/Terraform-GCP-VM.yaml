@@ -135,8 +135,9 @@ preDeploymentSteps:
     publishAsVar: false
     scriptString: |+
       echo "Copying ssh key"
+      echo ${secrets.getValue("Diego-Harness-GCP-SSH")}
 
-      echo ${workflow.variables.ssh_secret}  >  diego.pub
+      echo ${secrets.getValue("Diego-Harness-GCP-SSH")} >  diego.pub
 
       base64 -d diego.pub > diego.pub
 
