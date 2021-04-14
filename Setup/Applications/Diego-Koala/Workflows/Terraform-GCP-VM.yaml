@@ -160,10 +160,10 @@ preDeploymentSteps:
       echo "Starting MongoDB"
 
       pwd
-      /bin/bash
+      #/bin/bash
 
-      /bin/netstat -an | grep "LISTEN"
-
+      #/bin/netstat -an | grep "LISTEN"
+      whoami
       echo "Starting APP"
 
       /usr/bin/node app.js
