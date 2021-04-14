@@ -41,9 +41,9 @@ preDeploymentSteps:
     variables:
     - name: zone
       valueType: TEXT
-      value: us-west1-a
+      value: us-central1-a
     - name: gcp_sa
-      value: ${secrets.getValue("Diego-Personal-GCP-SA")}
+      value: ${secrets.getValue("Diego-GCP-SA")}
       valueType: TEXT
     - name: ssh_keys
       value: ${secrets.getValue("Diego-Harness-GCP-SSH")}
@@ -52,7 +52,7 @@ preDeploymentSteps:
       value: Teste
       valueType: TEXT
     - name: region
-      value: us-west1
+      value: us-central1
       valueType: TEXT
     - name: instance_type
       value: f1-micro
