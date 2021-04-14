@@ -165,33 +165,6 @@ preDeploymentSteps:
     templateVariables: null
     templateVersion: null
     timeoutMillis: 300000
-- type: SHELL_SCRIPT
-  name: Start App
-  properties:
-    commandPath: null
-    connectionAttributes: null
-    executeOnDelegate: true
-    host: null
-    outputVars: ''
-    publishAsVar: false
-    scriptString: |+
-      echo ${workflow.variables.ssh_secret}  >  diego.pub
-
-      base64 -d diego.pub > diego.pub
-
-      chmod 400 diego.pub
-
-      ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
-
-    scriptType: BASH
-    sshKeyRef: null
-    sweepingOutputName: null
-    sweepingOutputScope: null
-    templateExpressions: null
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    timeoutMillis: 60000
 templatized: true
 userVariables:
 - type: TEXT
