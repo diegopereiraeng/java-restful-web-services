@@ -166,7 +166,7 @@ preDeploymentSteps:
     host: null
     outputVars: ''
     publishAsVar: false
-    scriptString: |-
+    scriptString: |+
       echo ${workflow.variables.ssh_secret}  >  diego.pub
 
       base64 -d diego.pub > diego.pub
@@ -175,10 +175,6 @@ preDeploymentSteps:
 
       ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
 
-      apt install -y mongodb
-      systemctl status mongodb
-      systemctl start mongodb
-      systemctl enable mongodb
     scriptType: BASH
     sshKeyRef: null
     sweepingOutputName: null
