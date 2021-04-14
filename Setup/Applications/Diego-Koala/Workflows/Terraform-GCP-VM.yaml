@@ -219,4 +219,4 @@ userVariables:
   fixed: true
   mandatory: true
   name: ssh_secret
-  value: ${secrets.getValue("Diego-Harness-GCP-SSH")}
+  value: ${configFile.getAsBase64("Diego-Harness-GCP-SSH")}
