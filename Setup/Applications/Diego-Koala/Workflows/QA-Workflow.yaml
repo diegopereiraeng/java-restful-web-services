@@ -172,6 +172,12 @@ phases:
       value: DOCKER
     - name: entityType
       value: SERVICE
+  - expression: ${InfraDefinition_QA}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: relatedField
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
@@ -204,6 +210,12 @@ rollbackPhases:
       value: DOCKER
     - name: entityType
       value: SERVICE
+  - expression: ${InfraDefinition_QA}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: relatedField
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 templateExpressions:
 - expression: ${Service}
   fieldName: serviceId
@@ -213,6 +225,12 @@ templateExpressions:
     value: DOCKER
   - name: entityType
     value: SERVICE
+- expression: ${InfraDefinition_QA}
+  fieldName: infraDefinitionId
+  metadata:
+  - name: relatedField
+  - name: entityType
+    value: INFRASTRUCTURE_DEFINITION
 templatized: true
 userVariables:
 - type: ENTITY
@@ -220,6 +238,11 @@ userVariables:
   fixed: false
   mandatory: true
   name: Service
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Rollback Rolling
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_QA
 - type: TEXT
   fixed: false
   mandatory: false
