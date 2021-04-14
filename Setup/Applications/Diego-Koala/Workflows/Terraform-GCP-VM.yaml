@@ -160,7 +160,7 @@ preDeploymentSteps:
 
       echo "Installing MongoDB"
 
-      wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+      wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add -
 
       apt-get install -y gnupg
       wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add -
@@ -173,6 +173,7 @@ preDeploymentSteps:
 
 
       echo "Starting APP"
+      url -fsSL https://deb.nodesource.com/setup_14.x | bash -
       apt-get install -y nodejs
       node app.js
     scriptType: BASH
