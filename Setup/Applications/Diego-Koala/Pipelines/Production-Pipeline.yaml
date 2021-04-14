@@ -9,17 +9,14 @@ pipelineStages:
   stageName: STAGE 1
   workflowName: Deploy-HTTP-Tests
   workflowVariables:
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: INFRA-DEV
-    value: ${Infra-Dev}
   - name: API_URL
     value: http://${context.api_service.URL}
-  - entityType: ENVIRONMENT
-    name: Environment
-    value: Dev
   - entityType: SERVICE
     name: Service
     value: ${Service}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_DEV
+    value: Diego-GKE-DEV
 - type: ENV_STATE
   name: Deploy QA
   parallel: false
@@ -35,9 +32,6 @@ pipelineStages:
     value: ${Service}
   - name: TEST_SCRIPT
     value: selenium-checker.py
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: INFRA-QA
-    value: ${Infra-QA}
 - type: APPROVAL
   name: Approval 2
   parallel: false
