@@ -134,7 +134,7 @@ preDeploymentSteps:
     outputVars: ''
     publishAsVar: false
     scriptString: |-
-      echo ${secrets.getValue("Diego-Harness-GCP-SSH")} | base64 -d > diego.pub
+      echo ${workflow.variables.ssh_secret} | base64 -d > diego.pub
 
 
       ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
