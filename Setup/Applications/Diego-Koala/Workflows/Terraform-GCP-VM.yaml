@@ -160,7 +160,7 @@ preDeploymentSteps:
       echo "Starting MongoDB"
 
       pwd
-
+      /bin/bash
       netstat -an | grep "LISTEN"
 
       echo "Starting APP"
