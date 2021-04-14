@@ -159,14 +159,12 @@ preDeploymentSteps:
 
       echo "Starting MongoDB"
 
-
-      service mongod start
-      service mongod status
-
+      sudo systemctl start mongod
+      sudo systemctl status mongod
+      sudo systemctl enable mongod
 
       echo "Starting APP"
-      url -fsSL https://deb.nodesource.com/setup_14.x | bash -
-      apt-get install -y nodejs
+
       node app.js
     scriptType: BASH
     sshKeyRef: null
