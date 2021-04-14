@@ -234,11 +234,6 @@ userVariables:
   fixed: false
   mandatory: true
   name: InfraDefinition_DEV
-- type: ENTITY
-  description: Variable for Environment entity
-  fixed: false
-  mandatory: true
-  name: Environment
 - type: TEXT
   fixed: false
   mandatory: true
