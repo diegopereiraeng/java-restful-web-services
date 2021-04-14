@@ -132,11 +132,10 @@ preDeploymentSteps:
     outputVars: ''
     publishAsVar: false
     scriptString: |-
-      echo ${secrets.getValue("Diego-Harness-GCP-SSH")} > diego.pub
+      echo ${secrets.getValue("Diego-Harness-GCP-SSH")} | base64 -d > diego.pub
 
-      echo diego.pub
 
-      ssh -o StrictHostKeyChecking=no -i ${configFile.getAsString("secret_name")} diego.pereira@${terraform.public_ip}
+      ssh -o StrictHostKeyChecking=no -i diego.pub diego.pereira@${terraform.public_ip}
 
       apt-get install git-all
       git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
