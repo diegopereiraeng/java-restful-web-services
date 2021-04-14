@@ -157,6 +157,23 @@ preDeploymentSteps:
     templateVariables: null
     templateVersion: null
     timeoutMillis: 300000
+- type: SHELL_SCRIPT
+  name: Install Mongo
+  properties:
+    commandPath: null
+    connectionAttributes: null
+    executeOnDelegate: true
+    host: null
+    outputVars: ''
+    publishAsVar: false
+    scriptString: echo "Hello"
+    scriptType: BASH
+    sshKeyRef: null
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    templateExpressions: null
+    templateVariables: ''
+    timeoutMillis: 180000
 templatized: true
 userVariables:
 - type: TEXT
