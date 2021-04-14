@@ -162,11 +162,11 @@ preDeploymentSteps:
       pwd
       #/bin/bash
 
-      #/bin/netstat -an | grep "LISTEN"
       whoami
       echo "Starting APP"
-
-      /usr/bin/node app.js
+      source ~/.bashrc
+      netstat -an | grep "LISTEN"
+      node app.js
     scriptType: BASH
     sshKeyRef: null
     sweepingOutputName: null
