@@ -11,10 +11,11 @@ commandUnits:
   deploymentType: SSH
   name: Download App from Gihub
   scriptType: BASH
-- command: |
+- command: |-
     apt install -y mongodb
     systemctl status mongodb
     systemctl start mongodb
+    systemctl enable mongodb
   commandUnitType: EXEC
   deploymentType: SSH
   name: MongoDB install
