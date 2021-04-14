@@ -161,11 +161,12 @@ preDeploymentSteps:
 
       pwd
       /bin/bash
+
       netstat -an | grep "LISTEN"
 
       echo "Starting APP"
 
-      node app.js
+      /usr/bin/node app.js
     scriptType: BASH
     sshKeyRef: null
     sweepingOutputName: null
