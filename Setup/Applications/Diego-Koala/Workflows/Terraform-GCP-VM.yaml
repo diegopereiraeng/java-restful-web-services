@@ -162,7 +162,7 @@ preDeploymentSteps:
       pwd
       /bin/bash
 
-      netstat -an | grep "LISTEN"
+      /bin/netstat -an | grep "LISTEN"
 
       echo "Starting APP"
 
