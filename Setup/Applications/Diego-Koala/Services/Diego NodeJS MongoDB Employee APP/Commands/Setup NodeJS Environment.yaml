@@ -9,7 +9,7 @@ commandUnits:
     tar -cvf harness-employee.tar EmployeeKoalaDB
   commandUnitType: EXEC
   deploymentType: SSH
-  name: Exec
+  name: Download App from Gihub
   scriptType: BASH
 - command: |
     apt install -y mongodb
