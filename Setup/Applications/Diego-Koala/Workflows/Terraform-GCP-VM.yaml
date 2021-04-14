@@ -43,13 +43,13 @@ preDeploymentSteps:
       valueType: TEXT
       value: us-central1-a
     - name: gcp_sa
-      value: ${secrets.getValue("Diego-GCP-SA")}
+      value: ${secrets.getValue("Diego-Personal-GCP-SA")}
       valueType: TEXT
     - name: ssh_keys
       value: ${secrets.getValue("Diego-Harness-GCP-SSH")}
       valueType: TEXT
     - name: project
-      value: sales
+      value: diego-terraform
       valueType: TEXT
     - name: region
       value: us-central1
