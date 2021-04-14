@@ -168,11 +168,12 @@ preDeploymentSteps:
       apt-get update
       apt-get install -y mongodb-org
 
-      systemctl daemon-reload
-      systemctl start mongod
+      service mongod start
+      service mongod status
 
 
       echo "Starting APP"
+      apt-get install -y nodejs
       node app.js
     scriptType: BASH
     sshKeyRef: null
