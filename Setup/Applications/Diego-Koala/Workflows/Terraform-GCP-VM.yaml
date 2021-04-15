@@ -138,7 +138,7 @@ preDeploymentSteps:
 
       echo "Checking MongoDB"
 
-      sudo systemctl status mongod
+      echo `sudo systemctl status mongod`
 
       echo "Cloning Git repo"
       sudo mkdir /opt/harnessapp
