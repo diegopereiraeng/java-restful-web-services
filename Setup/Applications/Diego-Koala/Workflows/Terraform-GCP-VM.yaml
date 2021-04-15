@@ -149,10 +149,6 @@ preDeploymentSteps:
       cd EmployeeKoalaDB
       ls -ltr
 
-      echo "Checking MongoDB"
-
-      sudo systemctl status mongod
-
       pwd
 
       whoami
