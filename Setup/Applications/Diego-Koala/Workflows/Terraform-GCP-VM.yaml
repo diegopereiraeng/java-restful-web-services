@@ -123,7 +123,7 @@ preDeploymentSteps:
     templateVersion: null
     timeoutMillis: 60000
 - type: SHELL_SCRIPT
-  name: Download/Configure/Start App 2
+  name: Download/Configure/Start App
   properties:
     commandPath: /tmp
     connectionAttributes: null
@@ -156,7 +156,9 @@ preDeploymentSteps:
       pwd
 
       whoami
+
       echo "Starting APP"
+
       #source ~/.bashrc
 
       node app.js
