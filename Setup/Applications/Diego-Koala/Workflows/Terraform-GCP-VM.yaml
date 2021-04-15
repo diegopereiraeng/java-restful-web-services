@@ -173,41 +173,6 @@ preDeploymentSteps:
     templateVariables: null
     templateVersion: null
     timeoutMillis: 300000
-- type: SHELL_SCRIPT
-  name: Download/Configure/Start App
-  properties:
-    commandPath: null
-    connectionAttributes: null
-    delegateSelectors:
-    - diego-koala-delegate
-    executeOnDelegate: true
-    host: null
-    outputVars: ''
-    publishAsVar: false
-    scriptString: |+
-      echo "Copying ssh key"
-
-      echo ${workflow.variables.ssh_secret} >  diego.private
-
-      #base64 -d diego.private > diego.private
-
-      chmod 400 diego.private
-
-      #echo diego.private
-
-      echo "Connecting to Instance ${terraform.public_ip}"
-
-      ssh -o StrictHostKeyChecking=no -i diego.private diego.pereira@${terraform.public_ip}
-
-    scriptType: BASH
-    sshKeyRef: null
-    sweepingOutputName: null
-    sweepingOutputScope: null
-    templateExpressions: null
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    timeoutMillis: 300000
 templatized: true
 userVariables:
 - type: TEXT
