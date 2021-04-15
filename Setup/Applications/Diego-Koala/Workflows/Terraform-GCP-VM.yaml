@@ -149,21 +149,21 @@ preDeploymentSteps:
       cd EmployeeKoalaDB
       ls -ltr
 
-      echo "Starting MongoDB"
+      echo "Checking MongoDB"
+
+      systemctl status mongod
 
       pwd
-      #/bin/bash
 
       whoami
       echo "Starting APP"
       source ~/.bashrc
 
-      env
-
       whereis node
 
-      #netstat -an | grep "LISTEN"
-      #node app.js
+      netstat -an | grep "LISTEN"
+
+      node app.js
     scriptType: BASH
     sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
     sweepingOutputName: null
