@@ -166,7 +166,7 @@ preDeploymentSteps:
       sudo ln -s /usr/local/bin/npm /usr/bin/npm
       sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf
 
-      sudo node app.js
+      sudo /usr/bin/node app.js
 
       sudo netstat -an | grep "LISTEN"
 
