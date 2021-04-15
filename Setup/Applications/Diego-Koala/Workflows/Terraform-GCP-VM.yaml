@@ -134,7 +134,7 @@ preDeploymentSteps:
     host: ${terraform.public_ip}
     outputVars: ''
     publishAsVar: false
-    scriptString: |-
+    scriptString: |+
       echo "Running commands on ${terraform.public_ip}"
 
       echo "Cloning Git repo"
@@ -159,11 +159,10 @@ preDeploymentSteps:
       echo "Starting APP"
       #source ~/.bashrc
 
-      whereis node
+      node app.js
 
       netstat -an | grep "LISTEN"
 
-      node app.js
     scriptType: BASH
     sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
     sweepingOutputName: null
