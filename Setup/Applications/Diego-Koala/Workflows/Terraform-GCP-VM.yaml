@@ -41,6 +41,22 @@ postDeploymentSteps:
     templateVersion: null
     tfVarGitFileConfig: null
     timeoutMillis: 300000
+    variables:
+    - name: gcp_sa
+      value: null
+      valueType: TEXT
+    - name: ssh_keys
+      value: null
+      valueType: TEXT
+    - name: project
+      value: null
+      valueType: TEXT
+    - name: region
+      value: null
+      valueType: TEXT
+    - name: instance_type
+      value: null
+      valueType: TEXT
     workspace: ''
 preDeploymentSteps:
 - type: TERRAFORM_APPLY
