@@ -72,7 +72,7 @@ preDeploymentSteps:
       value: ${secrets.getValue("Diego-Personal-GCP-SA")}
       valueType: TEXT
     - name: ssh_keys
-      value: ${secrets.getValue("Diego-Harness-GCP-SSH-PUB")}
+      value: ${secrets.getValue("Diego-Text-SSH")}
       valueType: TEXT
     - name: project
       value: diego-terraform
