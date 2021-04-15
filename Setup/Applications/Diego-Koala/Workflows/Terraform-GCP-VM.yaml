@@ -131,17 +131,20 @@ preDeploymentSteps:
     host: ${terraform.public_ip}
     outputVars: ''
     publishAsVar: false
-    scriptString: |+
+    scriptString: |2+
+
+
       echo "Running commands on ${terraform.public_ip}"
+      echo "getting Root Access"
+      sudo su -
 
       echo "Checking MongoDB"
 
-      source ~/.bashrc
-
-      sudo systemctl status mongod
+      systemctl status mongod
 
       echo "Cloning Git repo"
-      sudo mkdir /opt/harnessapp
+      mkdir /opt/harnessapp
+
       cd /opt/harnessapp
       rm -rf nodeJS_Employees_App
 
@@ -161,9 +164,9 @@ preDeploymentSteps:
       #source ~/.bashrc
 
 
-      sudo /usr/bin/node app.js
+      nohup node app.js &
 
-      sudo netstat -an | grep "LISTEN"
+      netstat -an | grep "LISTEN"
 
     scriptType: BASH
     sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
