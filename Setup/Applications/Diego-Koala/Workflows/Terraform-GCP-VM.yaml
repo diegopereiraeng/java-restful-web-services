@@ -128,7 +128,8 @@ preDeploymentSteps:
     commandPath: /tmp
     connectionAttributes: null
     connectionType: SSH
-    delegateSelectors: null
+    delegateSelectors:
+    - diego-koala-delegate
     executeOnDelegate: false
     host: ${terraform.public_ip}
     outputVars: ''
