@@ -137,6 +137,10 @@ preDeploymentSteps:
     scriptString: |+
       echo "Running commands on ${terraform.public_ip}"
 
+      echo "Checking MongoDB"
+
+      sudo systemctl status mongod
+
       echo "Cloning Git repo"
       mkdir /opt/harnessapp
       cd /opt/harnessapp
