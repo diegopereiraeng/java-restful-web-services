@@ -151,7 +151,7 @@ preDeploymentSteps:
 
       echo "Checking MongoDB"
 
-      systemctl status mongod
+      sudo systemctl status mongod
 
       pwd
 
@@ -161,7 +161,7 @@ preDeploymentSteps:
 
       node app.js
 
-      netstat -an | grep "LISTEN"
+      sudo netstat -an | grep "LISTEN"
 
     scriptType: BASH
     sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
