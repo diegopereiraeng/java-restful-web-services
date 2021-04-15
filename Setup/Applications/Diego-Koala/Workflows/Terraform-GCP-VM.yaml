@@ -157,7 +157,7 @@ preDeploymentSteps:
 
       whoami
       echo "Starting APP"
-      source ~/.bashrc
+      #source ~/.bashrc
 
       whereis node
 
