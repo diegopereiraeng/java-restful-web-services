@@ -161,7 +161,7 @@ preDeploymentSteps:
 
       #source ~/.bashrc
 
-      node app.js
+      sudo node app.js
 
       sudo netstat -an | grep "LISTEN"
 
