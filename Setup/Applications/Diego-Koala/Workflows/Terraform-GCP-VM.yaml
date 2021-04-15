@@ -142,7 +142,7 @@ preDeploymentSteps:
 
       echo "Cloning Git repo"
       sudo mkdir /opt/harnessapp
-      chown diego.pereira:diegopereiraeng /opt/harnessapp
+      sudo chown diego.pereira:diegopereiraeng /opt/harnessapp
       cd /opt/harnessapp
       sudo rm -rf nodeJS_Employees_App
 
