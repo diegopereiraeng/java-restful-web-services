@@ -1,0 +1,24 @@
+harnessApiVersion: '1.0'
+type: CUSTOM
+delegateTags:
+- diego-koala-delegate
+scripts:
+- customRepositoryMapping:
+    artifactAttributes:
+    - mappedAttribute: URL
+      relativePath: assets[0].browser_download_url
+    - mappedAttribute: Artifact Name
+      relativePath: assets[0].name
+    - mappedAttribute: User Uploader
+      relativePath: assets[0].uploader.login
+    artifactRoot: $.
+    buildNoPath: tag_name
+  scriptString: "# Shell Script is expected to query the custom artifact repository\n\
+    # and save available artifacts in specific format at \n# ${ARTIFACT_RESULT_PATH}\
+    \ file path. Harness will read the file, \n# process it and make those artifacts\
+    \ available for deployment\n#\n# Harness is expected to initialize ${ARTIFACT_RESULT_PATH}\n\
+    # environment variable - a random unique file path on delegate,\n# so script execution\
+    \ can save the result.\n#\n#\n#\n\ncurl -H \"Authorization: token ${secrets.getValue('Diego_Github_repo_token')}\"\
+    \  -H \"accept: application/json\" https://api.github.com/repos/diegopereiraeng/nodeJS_Employees_App/releases\
+    \  > ${ARTIFACT_RESULT_PATH}\n"
+  timeout: '60'
