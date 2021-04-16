@@ -42,6 +42,11 @@ phases:
     stepsInParallel: false
   - type: DEPLOY_SERVICE
     name: Deploy Service
+    steps:
+    - type: COMMAND
+      name: Copy and Expand Node App
+      properties:
+        commandName: Copy and Expand Node App
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
