@@ -11,7 +11,7 @@ commandUnits:
 - command: |-
     sudo apt-get -y install zip
 
-    unzip -o ${artifact.metadata.URL}
+    unzip -o ${artifact.metadata.Artifact_Name}
   commandUnitType: EXEC
   deploymentType: SSH
   name: Expand Artifact
