@@ -9,6 +9,15 @@ commandUnits:
   name: Copy Artifacts
   source: ARTIFACTS
 - command: |-
+    sudo apt-get -y install zip
+
+    unzip -o ARTIFACT_FILE_NAME
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Expand Artifact
+  scriptType: BASH
+  workingDirectory: $WINGS_RUNTIME_PATH
+- command: |-
     cd EmployeeKoalaDB
     node app.js
   commandUnitType: EXEC
