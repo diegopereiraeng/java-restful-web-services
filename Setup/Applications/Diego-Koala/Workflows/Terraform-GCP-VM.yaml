@@ -218,7 +218,7 @@ preDeploymentSteps:
       cd nodeJS_Employees_App
       cd EmployeeKoalaDB
 
-      sudo node app.js
+      nohup sudo node app.js &
 
     scriptType: BASH
     sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
