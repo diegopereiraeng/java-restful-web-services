@@ -201,34 +201,6 @@ preDeploymentSteps:
     templateVariables: null
     templateVersion: null
     timeoutMillis: 300000
-- type: SHELL_SCRIPT
-  name: Start App
-  properties:
-    commandPath: /tmp
-    connectionAttributes: null
-    connectionType: SSH
-    executeOnDelegate: false
-    host: ${terraform.public_ip}
-    outputVars: ''
-    publishAsVar: false
-    scriptString: |+
-      echo "Starting APP"
-
-      cd /opt/harnessapp
-      cd nodeJS_Employees_App
-      cd EmployeeKoalaDB
-
-      nohup sudo node app.js &
-
-    scriptType: BASH
-    sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
-    sweepingOutputName: null
-    sweepingOutputScope: null
-    templateExpressions: null
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    timeoutMillis: 180000
 templatized: true
 userVariables:
 - type: TEXT
