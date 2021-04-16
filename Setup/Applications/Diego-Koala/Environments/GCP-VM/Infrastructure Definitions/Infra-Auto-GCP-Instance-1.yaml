@@ -7,7 +7,7 @@ infrastructure:
   cloudProviderName: Diego Physical Data Center
   expressions:
     hostArrayPath: items
-    hostname: networkInterfaces[0].accessConfigs[0].natIP
+    hostname: networkInterfaces[0].accessConfigs[0].natIPnetworkInterfaces[0].accessConfigs[0].natIP
     network_type: networkInterfaces[0].accessConfigs[0].type
   hostConnectionAttrsName: Diego-SSH-Private
 provisioner: List GCP Instances
