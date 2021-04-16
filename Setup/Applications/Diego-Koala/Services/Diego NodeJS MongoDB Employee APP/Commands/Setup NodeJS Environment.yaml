@@ -9,11 +9,11 @@ commandUnits:
   name: Copy Artifacts
   source: ARTIFACTS
 - command: |-
-    cd nodeJS_Employees_App
     cd EmployeeKoalaDB
     node app.js
   commandUnitType: EXEC
   deploymentType: SSH
   name: App Start
   scriptType: BASH
+  workingDirectory: $WINGS_RUNTIME_PATH
 targetToAllEnv: true
