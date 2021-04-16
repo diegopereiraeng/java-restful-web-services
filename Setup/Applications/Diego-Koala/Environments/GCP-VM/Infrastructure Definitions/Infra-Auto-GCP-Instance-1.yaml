@@ -4,7 +4,7 @@ cloudProviderType: PHYSICAL_DATA_CENTER
 deploymentType: SSH
 infrastructure:
 - type: PHYSICAL_DATA_CENTER_SSH
-  cloudProviderName: Physical Data Center GN
+  cloudProviderName: Diego Physical Data Center
   hostConnectionAttrsName: Diego-SSH-Private
   hostNames:
   - hostname123
