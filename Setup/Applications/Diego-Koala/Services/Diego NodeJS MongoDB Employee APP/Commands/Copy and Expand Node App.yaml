@@ -15,7 +15,7 @@ commandUnits:
 
   commandUnitType: EXEC
   deploymentType: SSH
-  name: Exec
+  name: Expand Artifact
   scriptType: BASH
-  workingDirectory: /
+  workingDirectory: $WINGS_RUNTIME_PATH
 targetToAllEnv: true
