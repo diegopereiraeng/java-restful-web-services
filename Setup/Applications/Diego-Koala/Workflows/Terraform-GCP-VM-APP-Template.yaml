@@ -204,6 +204,10 @@ preDeploymentSteps:
     timeoutMillis: 60000
 - type: ARTIFACT_CHECK
   name: Artifact Check
+  properties:
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
 rollbackPhases:
 - type: SSH
   computeProviderName: Diego Physical Data Center
