@@ -19,7 +19,7 @@ commandUnits:
   workingDirectory: $WINGS_RUNTIME_PATH
 - command: |-
     cd EmployeeKoalaDB
-    node app.js
+    sudo node app.js
   commandUnitType: EXEC
   deploymentType: SSH
   name: App Start
