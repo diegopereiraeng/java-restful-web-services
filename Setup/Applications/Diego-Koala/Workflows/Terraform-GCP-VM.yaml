@@ -18,7 +18,7 @@ notificationRules:
   - PFIVcv84TVW6OEpQEDvmGw
 postDeploymentSteps:
 - type: HTTP
-  name: HTTP
+  name: Check Harness APP
   properties:
     assertion: ''
     body: ''
@@ -30,7 +30,9 @@ postDeploymentSteps:
     sweepingOutputScope: null
     tags:
     - diego-koala-delegate
-    templateVariables: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     timeoutMillis: 10000
     url: http://${terraform.public_ip}:3000
     useProxy: false
