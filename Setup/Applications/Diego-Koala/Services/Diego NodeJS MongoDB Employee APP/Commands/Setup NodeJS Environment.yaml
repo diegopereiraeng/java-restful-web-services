@@ -11,6 +11,12 @@ commandUnits:
   deploymentType: SSH
   name: Download App from Gihub
   scriptType: BASH
+- artifactVariableName: artifact
+  commandUnitType: SCP
+  deploymentType: SSH
+  destinationDirectoryPath: $WINGS_RUNTIME_PATH
+  name: Copy
+  source: ARTIFACTS
 - command: |-
     apt install -y mongodb
     systemctl status mongodb
