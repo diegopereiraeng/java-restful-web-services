@@ -1,6 +1,7 @@
 harnessApiVersion: '1.0'
 type: SHELL_SCRIPT
 scriptBody: |-
+  #!/bin/bash
   curl https://storage.googleapis.com/oauth2l/latest/linux_amd64.tgz > linux_amd64.tar.gz
   tar -xzvf linux_amd64.tar.gz
   cat ${secrets.getValue("Diego-PERSONAL-GCP-SA-TEXT")} > oauth.json
