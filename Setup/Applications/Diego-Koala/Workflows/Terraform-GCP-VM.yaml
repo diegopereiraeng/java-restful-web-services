@@ -147,7 +147,7 @@ preDeploymentSteps:
     host: ${terraform.public_ip}
     outputVars: ''
     publishAsVar: false
-    scriptString: |2+
+    scriptString: |2-
 
 
       echo "Running commands on ${terraform.public_ip}"
@@ -173,18 +173,6 @@ preDeploymentSteps:
       pwd
 
       whoami
-
-      echo "Starting APP"
-
-      #source ~/.bashrc
-
-
-      sudo nohup node app.js &
-
-      sleep 5s
-
-      sudo netstat -an | grep "LISTEN"
-
     scriptType: BASH
     sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
     sweepingOutputName: null
