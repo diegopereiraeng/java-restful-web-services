@@ -39,6 +39,16 @@ postDeploymentSteps:
     tfVarGitFileConfig: null
     timeoutMillis: 300000
     workspace: ''
+- type: TERRAFORM_DESTROY
+  name: Terraform Destroy
+  properties:
+    delegateTag: diego-koala-delegate
+    inheritApprovedPlan: true
+    provisionerName: Diego-Terraform
+    runPlanOnly: false
+    tfVarGitFileConfig: null
+    timeoutMillis: 300000
+    workspace: ''
 preDeploymentSteps:
 - type: TERRAFORM_APPLY
   name: Terraform Plan
