@@ -179,7 +179,7 @@ preDeploymentSteps:
       #source ~/.bashrc
 
 
-      sudo nohup /usr/bin/node app.js &
+      sudo nohup node app.js &
 
       sleep 5s
 
