@@ -154,53 +154,6 @@ preDeploymentSteps:
     templateVariables: null
     templateVersion: null
     timeoutMillis: 60000
-- type: SHELL_SCRIPT
-  name: Download/Configure App
-  properties:
-    commandPath: /tmp
-    connectionAttributes: null
-    connectionType: SSH
-    delegateSelectors:
-    - diego-koala-delegate
-    executeOnDelegate: false
-    host: ${terraform.public_ip}
-    outputVars: ''
-    publishAsVar: false
-    scriptString: |2-
-
-
-      echo "Running commands on ${terraform.public_ip}"
-
-      echo "Checking MongoDB"
-
-      echo `sudo systemctl status mongod`
-
-      echo "Cloning Git repo"
-      sudo rm -rf /opt/harnessapp
-      sudo mkdir /opt/harnessapp
-      sudo chown diego.pereira:adm /opt/harnessapp
-      cd /opt/harnessapp
-
-
-      echo "Downloading App"
-
-      git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
-      cd nodeJS_Employees_App
-      cd EmployeeKoalaDB
-      ls -ltr
-
-      pwd
-
-      whoami
-    scriptType: BASH
-    sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
-    sweepingOutputName: null
-    sweepingOutputScope: null
-    templateExpressions: null
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    timeoutMillis: 300000
 templatized: true
 userVariables:
 - type: TEXT
