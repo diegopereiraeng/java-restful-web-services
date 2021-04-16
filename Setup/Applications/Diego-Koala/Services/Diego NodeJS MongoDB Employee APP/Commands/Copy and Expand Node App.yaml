@@ -1,4 +1,11 @@
 harnessApiVersion: '1.0'
 type: SETUP
 commandUnitType: COMMAND
+commandUnits:
+- artifactVariableName: artifact
+  commandUnitType: SCP
+  deploymentType: SSH
+  destinationDirectoryPath: $WINGS_RUNTIME_PATH
+  name: Copy
+  source: ARTIFACTS
 targetToAllEnv: true
