@@ -5,6 +5,9 @@ deploymentType: SSH
 infrastructure:
 - type: PHYSICAL_DATA_CENTER_SSH
   cloudProviderName: Diego Physical Data Center
+  expressions:
+    hostArrayPath: items
+    hostname: networkInterfaces[0].accessConfigs[0].natIP
+    network_type: networkInterfaces[0].accessConfigs[0].type
   hostConnectionAttrsName: Diego-SSH-Private
-  hostNames:
-  - hostname123
+provisioner: List GCP Instances
