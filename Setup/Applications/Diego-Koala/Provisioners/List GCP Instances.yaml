@@ -1,12 +1,8 @@
 harnessApiVersion: '1.0'
 type: SHELL_SCRIPT
-scriptBody: |
+scriptBody: |-
   curl https://storage.googleapis.com/oauth2l/latest/linux_amd64.tgz > linux_amd64.tar.gz
   tar -xzvf linux_amd64.tar.gz
   echo ${secrets.getValue("Diego-Personal-GCP-SA")}
   ./linux_amd64/oauth2l curl --credentials ${secrets.getValue("Diego-Personal-GCP-SA")} --scope cloud-platform --url https://compute.googleapis.com/compute/v1/projects/diego-terraform/zones/us-central1-a/instances > "$PROVISIONER_OUTPUT_PATH"
-variables:
-- name: project
-  valueType: TEXT
-- name: zone
-  valueType: TEXT
+  cat $PROVISIONER_OUTPUT_PATH > /tmp/provision.log
