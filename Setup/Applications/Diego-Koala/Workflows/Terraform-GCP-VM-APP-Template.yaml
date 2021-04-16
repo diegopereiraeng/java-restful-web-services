@@ -1,7 +1,7 @@
 harnessApiVersion: '1.0'
 type: CANARY
 concurrencyStrategy: INFRA
-envName: Dev
+envName: GCP-VM
 failureStrategies:
 - executionScope: WORKFLOW
   failureTypes:
