@@ -1,4 +1,13 @@
 harnessApiVersion: '1.0'
 type: OTHER
 commandUnitType: COMMAND
+commandUnits:
+- command: |-
+    cd EmployeeKoalaDB
+    nohup sudo node app.js &
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Exec
+  scriptType: BASH
+  workingDirectory: $WINGS_RUNTIME_PATH
 targetToAllEnv: true
