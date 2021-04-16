@@ -157,10 +157,11 @@ preDeploymentSteps:
       echo `sudo systemctl status mongod`
 
       echo "Cloning Git repo"
+      sudo rm -rf /opt/harnessapp
       sudo mkdir /opt/harnessapp
-      sudo chown diego.pereira:diegopereiraeng /opt/harnessapp
+      sudo chown diego.pereira:adm /opt/harnessapp
       cd /opt/harnessapp
-      sudo rm -rf nodeJS_Employees_App
+
 
       echo "Downloading App"
 
