@@ -21,7 +21,7 @@ phases:
   computeProviderName: Diego Physical Data Center
   daemonSet: false
   infraDefinitionName: Infra-Auto-GCP-Instance-1
-  name: Phase 1
+  name: Deploy Node App
   phaseSteps:
   - type: INFRASTRUCTURE_NODE
     name: Prepare Infra
@@ -200,8 +200,8 @@ rollbackPhases:
   computeProviderName: Diego Physical Data Center
   daemonSet: false
   infraDefinitionName: Infra-Auto-GCP-Instance-1
-  name: Rollback Phase 1
-  phaseNameForRollback: Phase 1
+  name: Rollback Deploy Node App
+  phaseNameForRollback: Deploy Node App
   phaseSteps:
   - type: DISABLE_SERVICE
     name: Disable Service
