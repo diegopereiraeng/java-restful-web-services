@@ -8,6 +8,6 @@ infrastructure:
   expressions:
     hostArrayPath: items
     network_type: networkInterfaces[0].accessConfigs[0].type
-    hostname: networkInterfaces[0].accessConfigs[0].natIPnetworkInterfaces[*].accessConfigs[*].natIPnetworkInterfaces[0].accessConfigs[0].natIPnetworkInterfaces[*].accessConfigs[*].natIP
+    hostname: networkInterfaces[0].accessConfigs[0].natIPnetworkInterfaces[*].accessConfigs[*].natIP
   hostConnectionAttrsName: Diego-SSH-Private
 provisioner: List GCP Instances
