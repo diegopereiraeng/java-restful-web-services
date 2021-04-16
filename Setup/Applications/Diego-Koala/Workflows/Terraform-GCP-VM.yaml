@@ -177,6 +177,8 @@ preDeploymentSteps:
 
       sudo nohup /usr/bin/node app.js &
 
+      sleep 5s
+
       sudo netstat -an | grep "LISTEN"
 
     scriptType: BASH
