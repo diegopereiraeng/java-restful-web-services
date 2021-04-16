@@ -55,6 +55,23 @@ postDeploymentSteps:
     tfVarGitFileConfig: null
     timeoutMillis: 300000
     workspace: ''
+- type: HTTP
+  name: HTTP
+  properties:
+    assertion: ''
+    body: ''
+    executeWithPreviousSteps: false
+    method: GET
+    publishAsVar: false
+    responseProcessingExpressions: ''
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    tags:
+    - diego-koala-delegate
+    templateVariables: ''
+    timeoutMillis: 10000
+    url: http://${terraform.public_ip}:3000
+    useProxy: false
 preDeploymentSteps:
 - type: TERRAFORM_APPLY
   name: Terraform Plan
