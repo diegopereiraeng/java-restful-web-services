@@ -17,19 +17,6 @@ notificationRules:
   userGroupIds:
   - PFIVcv84TVW6OEpQEDvmGw
 postDeploymentSteps:
-- type: TERRAFORM_DESTROY
-  name: Terraform Destroy Plan
-  properties:
-    delegateTag: diego-koala-delegate
-    inheritApprovedPlan: false
-    provisionerName: Diego-Terraform
-    runPlanOnly: true
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    tfVarGitFileConfig: null
-    timeoutMillis: 300000
-    workspace: ''
 - type: HTTP
   name: HTTP
   properties:
@@ -47,6 +34,19 @@ postDeploymentSteps:
     timeoutMillis: 10000
     url: http://${terraform.public_ip}:3000
     useProxy: false
+- type: TERRAFORM_DESTROY
+  name: Terraform Destroy Plan
+  properties:
+    delegateTag: diego-koala-delegate
+    inheritApprovedPlan: false
+    provisionerName: Diego-Terraform
+    runPlanOnly: true
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    tfVarGitFileConfig: null
+    timeoutMillis: 300000
+    workspace: ''
 - type: APPROVAL
   name: Terraform Destroy Approval
   properties:
