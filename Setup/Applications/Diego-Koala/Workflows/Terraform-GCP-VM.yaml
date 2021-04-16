@@ -199,18 +199,16 @@ preDeploymentSteps:
       cd nodeJS_Employees_App
       cd EmployeeKoalaDB
 
-      sudo nohup node app.js &
-
-      sleep 5s
-
-      sudo netstat -an | grep "LISTEN"
+      node app.js
 
     scriptType: BASH
     sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
     sweepingOutputName: null
     sweepingOutputScope: null
     templateExpressions: null
-    templateVariables: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     timeoutMillis: 180000
 templatized: true
 userVariables:
