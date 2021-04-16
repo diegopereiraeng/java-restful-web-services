@@ -8,4 +8,14 @@ commandUnits:
   destinationDirectoryPath: $WINGS_RUNTIME_PATH
   name: Copy
   source: ARTIFACTS
+- command: |+
+    sudo apt-get -y install zip
+
+    unzip -o ${artifact.metadata.Artifact_Name}
+
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Exec
+  scriptType: BASH
+  workingDirectory: /
 targetToAllEnv: true
