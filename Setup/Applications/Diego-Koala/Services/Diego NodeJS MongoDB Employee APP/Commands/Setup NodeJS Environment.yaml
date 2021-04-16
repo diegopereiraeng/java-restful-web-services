@@ -6,7 +6,7 @@ commandUnits:
   commandUnitType: SCP
   deploymentType: SSH
   destinationDirectoryPath: $WINGS_RUNTIME_PATH
-  name: Copy
+  name: Copy Artifacts
   source: ARTIFACTS
 - command: |-
     apt install -y mongodb
