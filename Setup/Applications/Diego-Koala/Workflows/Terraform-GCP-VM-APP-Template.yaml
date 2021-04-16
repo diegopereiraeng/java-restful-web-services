@@ -31,7 +31,11 @@ phases:
       properties:
         excludeSelectedHostsFromFuturePhases: true
         instanceCount: 1
+        instanceUnitType: COUNT
         specificHosts: false
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   - type: DISABLE_SERVICE
     name: Disable Service
