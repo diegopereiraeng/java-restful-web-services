@@ -1,0 +1,244 @@
+harnessApiVersion: '1.0'
+type: CANARY
+concurrencyStrategy: INFRA
+envName: Dev
+failureStrategies:
+- executionScope: WORKFLOW
+  failureTypes:
+  - APPLICATION_ERROR
+  repairActionCode: ROLLBACK_WORKFLOW
+  retryCount: 0
+notificationRules:
+- conditions:
+  - FAILED
+  executionScope: WORKFLOW
+  notificationGroupAsExpression: false
+  userGroupAsExpression: false
+  userGroupIds:
+  - PFIVcv84TVW6OEpQEDvmGw
+postDeploymentSteps:
+- type: HTTP
+  name: Check Harness APP
+  properties:
+    assertion: ''
+    body: ''
+    executeWithPreviousSteps: false
+    method: GET
+    publishAsVar: false
+    responseProcessingExpressions: ''
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    tags:
+    - diego-koala-delegate
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    timeoutMillis: 10000
+    url: http://${terraform.public_ip}:3000
+    useProxy: false
+- type: TERRAFORM_DESTROY
+  name: Terraform Destroy Plan
+  properties:
+    delegateTag: diego-koala-delegate
+    inheritApprovedPlan: false
+    provisionerName: Diego-Terraform
+    runPlanOnly: true
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    tfVarGitFileConfig: null
+    timeoutMillis: 300000
+    workspace: ''
+- type: APPROVAL
+  name: Terraform Destroy Approval
+  properties:
+    approvalStateType: USER_GROUP
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    timeoutMillis: 86400000
+    userGroups:
+    - PFIVcv84TVW6OEpQEDvmGw
+    - xsUUKuxzQ8upFNUpt7wBYQ
+    - u-mGHdFRQA-NJj_KMnhTFQ
+- type: TERRAFORM_DESTROY
+  name: Terraform Destroy
+  properties:
+    delegateTag: diego-koala-delegate
+    inheritApprovedPlan: true
+    provisionerName: Diego-Terraform
+    runPlanOnly: false
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    tfVarGitFileConfig: null
+    timeoutMillis: 300000
+    workspace: ''
+preDeploymentSteps:
+- type: TERRAFORM_APPLY
+  name: Terraform Plan
+  properties:
+    backendConfigs: null
+    delegateTag: diego-koala-delegate
+    environmentVariables: null
+    exportPlanToApplyStep: true
+    inheritApprovedPlan: false
+    name: Terraform Plan
+    provisionerName: Diego-Terraform
+    runPlanOnly: true
+    targets:
+    - google_compute_instance.default
+    - random_id.instance_id
+    - google_compute_firewall.default
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    tfVarFiles: ''
+    tfVarGitFileConfig: null
+    timeoutMillis: 600000
+    variables:
+    - name: zone
+      valueType: TEXT
+      value: us-central1-a
+    - name: gcp_sa
+      value: ${secrets.getValue("Diego-Personal-GCP-SA")}
+      valueType: TEXT
+    - name: ssh_keys
+      value: ${secrets.getValue("Diego-Text-SSH")}
+      valueType: TEXT
+    - name: project
+      value: diego-terraform
+      valueType: TEXT
+    - name: region
+      value: us-central1
+      valueType: TEXT
+    - name: instance_type
+      value: f1-micro
+      valueType: TEXT
+    workspace: ''
+- type: TERRAFORM_APPLY
+  name: Terraform Apply
+  properties:
+    delegateTag: ''
+    exportPlanToApplyStep: false
+    inheritApprovedPlan: true
+    name: Terraform Apply
+    provisionerName: Diego-Terraform
+    runPlanOnly: false
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    tfVarFiles: ''
+    tfVarGitFileConfig: null
+    timeoutMillis: 600000
+    workspace: ''
+- type: SHELL_SCRIPT
+  name: Terraform Vars
+  properties:
+    commandPath: null
+    connectionAttributes: null
+    delegateSelectors:
+    - diego-koala-delegate
+    executeOnDelegate: true
+    host: null
+    outputVars: ''
+    publishAsVar: false
+    scriptString: echo ${terraform.public_ip}
+    scriptType: BASH
+    sshKeyRef: null
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    tags: null
+    templateExpressions: null
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    timeoutMillis: 60000
+- type: SHELL_SCRIPT
+  name: Download/Configure App
+  properties:
+    commandPath: /tmp
+    connectionAttributes: null
+    connectionType: SSH
+    delegateSelectors:
+    - diego-koala-delegate
+    executeOnDelegate: false
+    host: ${terraform.public_ip}
+    outputVars: ''
+    publishAsVar: false
+    scriptString: |2-
+
+
+      echo "Running commands on ${terraform.public_ip}"
+
+      echo "Checking MongoDB"
+
+      echo `sudo systemctl status mongod`
+
+      echo "Cloning Git repo"
+      sudo rm -rf /opt/harnessapp
+      sudo mkdir /opt/harnessapp
+      sudo chown diego.pereira:adm /opt/harnessapp
+      cd /opt/harnessapp
+
+
+      echo "Downloading App"
+
+      git clone https://github.com/diegopereiraeng/nodeJS_Employees_App.git
+      cd nodeJS_Employees_App
+      cd EmployeeKoalaDB
+      ls -ltr
+
+      pwd
+
+      whoami
+    scriptType: BASH
+    sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    templateExpressions: null
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    timeoutMillis: 300000
+- type: SHELL_SCRIPT
+  name: Start App
+  properties:
+    commandPath: /tmp
+    connectionAttributes: null
+    connectionType: SSH
+    executeOnDelegate: false
+    host: ${terraform.public_ip}
+    outputVars: ''
+    publishAsVar: false
+    scriptString: |+
+      echo "Starting APP"
+
+      cd /opt/harnessapp
+      cd nodeJS_Employees_App
+      cd EmployeeKoalaDB
+
+      nohup sudo node app.js &
+
+    scriptType: BASH
+    sshKeyRef: Ojhq6lJUQQOboSeDk-stuA
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    templateExpressions: null
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
+    timeoutMillis: 180000
+templatized: true
+userVariables:
+- type: TEXT
+  allowedValues: f1-micro, t2.micro , t2.xlarge
+  fixed: false
+  mandatory: true
+  name: instance_type
+  value: f1-micro
+- type: TEXT
+  fixed: true
+  mandatory: true
+  name: ssh_secret
+  value: ${configFile.getAsBase64("Diego-Harness-GCP-SSH")}
