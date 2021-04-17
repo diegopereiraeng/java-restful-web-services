@@ -158,6 +158,16 @@ phases:
         userGroups:
         - xsUUKuxzQ8upFNUpt7wBYQ
         - u-mGHdFRQA-NJj_KMnhTFQ
+    - type: TERRAFORM_DESTROY
+      name: Terraform Destroy
+      properties:
+        delegateTag: diego-koala-delegate
+        inheritApprovedPlan: true
+        provisionerName: Diego-Terraform
+        runPlanOnly: false
+        tfVarGitFileConfig: null
+        timeoutMillis: 300000
+        workspace: ''
     stepsInParallel: false
   provisionNodes: false
   serviceName: Diego NodeJS MongoDB Employee APP
