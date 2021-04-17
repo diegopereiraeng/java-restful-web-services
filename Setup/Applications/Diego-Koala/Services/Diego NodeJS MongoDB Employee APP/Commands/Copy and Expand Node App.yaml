@@ -21,15 +21,15 @@ commandUnits:
   name: Download Artifact
   scriptType: BASH
   workingDirectory: ${app.defaults.RUNTIME_PATH}
-- command: |+
+- command: |
     echo "Expanding artifact ${artifact.metadata.NAME}"
 
     pwd
 
     ls -ltr
 
-    sudo unzip EmployeeKoalaDB.zip
-
+    #sudo unzip EmployeeKoalaDB.zip
+    tar -xvf EmployeeKoalaDB.tar
   commandUnitType: EXEC
   deploymentType: SSH
   name: Expand Artifact
