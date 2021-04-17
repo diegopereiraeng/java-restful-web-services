@@ -163,19 +163,6 @@ postDeploymentSteps:
     timeoutMillis: 10000
     url: http://${terraform.public_ip}:3000
     useProxy: false
-- type: TERRAFORM_DESTROY
-  name: Terraform Destroy
-  properties:
-    delegateTag: diego-koala-delegate
-    inheritApprovedPlan: true
-    provisionerName: Diego-Terraform
-    runPlanOnly: false
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    tfVarGitFileConfig: null
-    timeoutMillis: 300000
-    workspace: ''
 preDeploymentSteps:
 - type: ARTIFACT_CHECK
   name: Artifact Check
