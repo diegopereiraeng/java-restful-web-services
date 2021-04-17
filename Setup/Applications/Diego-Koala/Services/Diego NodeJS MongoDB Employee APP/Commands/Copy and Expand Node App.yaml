@@ -5,7 +5,9 @@ commandUnits:
 - command: |-
     echo "Downloading artifact ${artifact.metadata.URL}"
 
-    curl -s https://github.com/diegopereiraeng/nodeJS_Employees_App/releases/download/1.0.0/EmployeeKoalaDB.tar --output EmployeeKoalaDB.tar
+    sudo rm -f EmployeeKoalaDB.tar
+
+    wget https://github.com/diegopereiraeng/nodeJS_Employees_App/releases/download/1.0.0/EmployeeKoalaDB.tar
 
     ls
 
