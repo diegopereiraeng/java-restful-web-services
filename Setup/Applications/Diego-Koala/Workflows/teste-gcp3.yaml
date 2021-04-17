@@ -38,8 +38,7 @@ phases:
         outputVars: ''
         publishAsVar: false
         scriptString: |-
-          cat > $INSTANCE_OUTPUT_PATH << _EOF_
-          {
+          echo '{
             "Instances": [
               {
                 "Hostname": "35.202.56.138",
@@ -47,14 +46,15 @@ phases:
                 "artifactversion": "1.0.0"
               }
           ]
-          }
-          _EOF_
+          }' > $INSTANCE_OUTPUT_PATH
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     - type: DC_NODE_SELECT
       name: Select Nodes
