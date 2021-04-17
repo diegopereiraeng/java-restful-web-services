@@ -29,7 +29,7 @@ commandUnits:
     ls -ltr
 
     #sudo unzip EmployeeKoalaDB.zip
-    tar -xvf EmployeeKoalaDB.tar
+    tar -xzvf EmployeeKoalaDB.tar
   commandUnitType: EXEC
   deploymentType: SSH
   name: Expand Artifact
