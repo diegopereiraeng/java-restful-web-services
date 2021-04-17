@@ -54,9 +54,13 @@ phases:
         templateVersion: null
         timeoutMillis: 300000
     - type: COMMAND
-      name: Start Node App_2
+      name: Start Node App
       properties:
         commandName: Start Node App
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 300000
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
