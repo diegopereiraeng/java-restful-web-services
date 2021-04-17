@@ -218,6 +218,14 @@ preDeploymentSteps:
     templateUuid: null
     templateVariables: null
     templateVersion: null
+- type: SHELL_SCRIPT_PROVISION
+  name: Shell Script Provision
+  properties:
+    backendConfigs: null
+    delegateSelectors:
+    - diego-koala-delegate
+    provisionerName: List GCP Instances
+    variables: null
 rollbackPhases:
 - type: SSH
   computeProviderName: Diego Physical Data Center
