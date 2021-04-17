@@ -6,11 +6,11 @@ scripts:
 - customRepositoryMapping:
     artifactAttributes:
     - mappedAttribute: URL
-      relativePath: assets[0].browser_download_url
+      relativePath: assets[2].browser_download_url
     - mappedAttribute: NAME
-      relativePath: assets[0].name
+      relativePath: assets[2].name
     - mappedAttribute: UPLOADER
-      relativePath: assets[0].uploader.login
+      relativePath: assets[2].uploader.login
     artifactRoot: $.
     buildNoPath: tag_name
   scriptString: "# Shell Script is expected to query the custom artifact repository\n\
