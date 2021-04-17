@@ -8,6 +8,5 @@ infrastructure:
   expressions:
     hostArrayPath: Instances
     hostname: Hostname
-    Instanceid: Ec2InstanceId
   hostConnectionAttrsName: Diego-SSH-Private
 provisioner: List GCP Instances
