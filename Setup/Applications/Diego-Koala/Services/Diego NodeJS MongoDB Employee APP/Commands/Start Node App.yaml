@@ -9,5 +9,5 @@ commandUnits:
   deploymentType: SSH
   name: Exec
   scriptType: BASH
-  workingDirectory: $WINGS_RUNTIME_PATH
+  workingDirectory: ${app.defaults.RUNTIME_PATH}
 targetToAllEnv: true
