@@ -1,11 +1,13 @@
 harnessApiVersion: '1.0'
 type: SHELL_SCRIPT
-scriptBody: |2-
-
-  touch diego.teste
-
-  cat "${secrets.getValue('Diego-PERSONAL-GCP-SA-TEXT')}" > oauth.json
-
-  ./linux_amd64/oauth2l curl --credentials ./oauth.json --scope cloud-platform --url https://compute.googleapis.com/compute/v1/projects/diego-terraform/zones/us-central1-a/instances > resultGCP.log 2>&1
-
-  cat resultGCP.log > "$PROVISIONER_OUTPUT_PATH"
+scriptBody: |-
+  echo '{
+    "Instances": [
+      {
+        "Hostname": "35.202.163.114",
+        "Ec2InstanceId": "i-5cd23551",
+        "environment": "dev",
+        "artifactversion": "EmployeeKoalaDB.zip"
+      }
+  ]
+  }'  >> "$PROVISIONER_OUTPUT_PATH"
