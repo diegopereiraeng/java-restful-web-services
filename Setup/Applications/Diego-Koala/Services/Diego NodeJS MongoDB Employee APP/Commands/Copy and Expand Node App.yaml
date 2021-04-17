@@ -7,7 +7,7 @@ commandUnits:
 
     curl ${artifact.metadata.URL} --output EmployeeKoalaDB.zip
 
-    ls
+    ls -ltr
 
     echo "Download Finished"
 
