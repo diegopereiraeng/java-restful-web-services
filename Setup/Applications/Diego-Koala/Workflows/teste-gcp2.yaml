@@ -20,6 +20,16 @@ phases:
     steps:
     - type: ARTIFACT_COLLECTION
       name: Artifact Collection
+      properties:
+        artifactStreamName: Employee NodeJS App
+        buildNo: 1.0.0
+        entityType: SERVICE
+        regex: false
+        serviceName: Diego NodeJS MongoDB Employee APP
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 300000
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
