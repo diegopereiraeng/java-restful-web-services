@@ -1,8 +1,0 @@
-harnessApiVersion: '1.0'
-type: SHELL_SCRIPT
-scriptString: gcloud compute instances list --format=json > "${INSTANCE_OUTPUT_PATH}"
-scriptType: BASH
-timeoutMillis: 600000
-variables:
-- description: The GCP Project ID is required for this
-  name: gcp_project_id
