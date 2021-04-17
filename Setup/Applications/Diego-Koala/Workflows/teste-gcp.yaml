@@ -26,12 +26,6 @@ phases:
   - type: INFRASTRUCTURE_NODE
     name: Prepare Infra
     steps:
-    - type: ROLLING_NODE_SELECT
-      name: Select Nodes
-      properties:
-        excludeSelectedHostsFromFuturePhases: true
-        instanceCount: 1
-        specificHosts: false
     - type: TERRAFORM_APPLY
       name: Terraform Apply
       properties:
@@ -67,6 +61,12 @@ phases:
           value: f1-micro
           valueType: TEXT
         workspace: ''
+    - type: ROLLING_NODE_SELECT
+      name: Select Nodes
+      properties:
+        excludeSelectedHostsFromFuturePhases: true
+        instanceCount: 1
+        specificHosts: false
     stepsInParallel: false
   - type: DISABLE_SERVICE
     name: Disable Service
