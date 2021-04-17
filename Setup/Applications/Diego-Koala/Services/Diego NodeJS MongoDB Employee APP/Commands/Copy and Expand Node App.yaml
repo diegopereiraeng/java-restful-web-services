@@ -2,7 +2,7 @@ harnessApiVersion: '1.0'
 type: SETUP
 commandUnitType: COMMAND
 commandUnits:
-- command: |
+- command: |-
     echo "Downloading artifact ${artifact.metadata.URL}"
 
     curl ${artifact.metadata.URL} --output EmployeeKoalaDB.zip
@@ -12,6 +12,10 @@ commandUnits:
     echo "Download Finished"
 
     echo "Next Step: Expand ${artifact.metadata.NAME} uploaded by ${artifact.metadata.UPLOADER}"
+
+    echo "Installing zip"
+    sudo apt-get -y install zip
+    echo "zip installed"
   commandUnitType: EXEC
   deploymentType: SSH
   name: Download Artifact
