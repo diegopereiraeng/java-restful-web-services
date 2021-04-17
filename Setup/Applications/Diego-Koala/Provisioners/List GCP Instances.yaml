@@ -1,8 +1,7 @@
 harnessApiVersion: '1.0'
 type: SHELL_SCRIPT
 scriptBody: |-
-  cat > $INSTANCE_OUTPUT_PATH << _EOF_
-  {
+  echo '{
     "Instances": [
       {
         "Hostname": "35.202.56.138",
@@ -10,5 +9,4 @@ scriptBody: |-
         "artifactversion": "1.0.0"
       }
   ]
-  }
-  _EOF_
+  }' > $INSTANCE_OUTPUT_PATH
