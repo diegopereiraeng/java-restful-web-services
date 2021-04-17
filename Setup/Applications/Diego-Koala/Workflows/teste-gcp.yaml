@@ -26,41 +26,6 @@ phases:
   - type: INFRASTRUCTURE_NODE
     name: Prepare Infra
     steps:
-    - type: TERRAFORM_APPLY
-      name: Terraform Apply
-      properties:
-        backendConfigs: null
-        delegateTag: diego-koala-delegate
-        environmentVariables: null
-        exportPlanToApplyStep: false
-        inheritApprovedPlan: false
-        name: Terraform Apply
-        provisionerName: Diego-Terraform
-        runPlanOnly: false
-        targets: null
-        tfVarFiles: ''
-        tfVarGitFileConfig: null
-        timeoutMillis: 300000
-        variables:
-        - name: zone
-          valueType: TEXT
-          value: us-central1-a
-        - name: gcp_sa
-          value: ${secrets.getValue("Diego-Personal-GCP-SA")}
-          valueType: TEXT
-        - name: ssh_keys
-          value: ${secrets.getValue("Diego-Text-SSH")}
-          valueType: TEXT
-        - name: project
-          value: diego-terraform
-          valueType: TEXT
-        - name: region
-          value: us-central1
-          valueType: TEXT
-        - name: instance_type
-          value: f1-micro
-          valueType: TEXT
-        workspace: ''
     - type: ROLLING_NODE_SELECT
       name: Select Nodes
       properties:
