@@ -32,6 +32,36 @@ phases:
         excludeSelectedHostsFromFuturePhases: true
         instanceCount: 1
         specificHosts: false
+    - type: SHELL_SCRIPT
+      name: Shell Script
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        delegateSelectors:
+        - diego-koala-delegate
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: false
+        scriptString: |-
+          cat > $INSTANCE_OUTPUT_PATH << _EOF_
+          {
+            "Instances": [
+              {
+                "Hostname": "35.202.56.138",
+                "environment": "dev",
+                "artifactversion": "1.0.0"
+              }
+          ]
+          }
+          _EOF_
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     stepsInParallel: false
   - type: DISABLE_SERVICE
     name: Disable Service
