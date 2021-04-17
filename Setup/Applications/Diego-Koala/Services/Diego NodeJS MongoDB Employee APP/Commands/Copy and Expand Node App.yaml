@@ -20,7 +20,7 @@ commandUnits:
 - command: |+
     echo "Expanding artifact ${artifact.metadata.NAME}"
 
-    unzip -o ${artifact.metadata.NAME}
+    unzip -o EmployeeKoalaDB.zip
 
   commandUnitType: EXEC
   deploymentType: SSH
