@@ -5,6 +5,6 @@ scriptBody: |-
   curl https://storage.googleapis.com/oauth2l/latest/linux_amd64.tgz > linux_amd64.tar.gz
   tar -xzvf linux_amd64.tar.gz
   cat "${secrets.getValue('Diego-PERSONAL-GCP-SA-TEXT')}" > oauth.json
-  ./linux_amd64/oauth2l curl --credentials ./oauth.json --scope cloud-platform --url https://compute.googleapis.com/compute/v1/projects/diego-terraform/zones/us-central1-a/instances > resultGCP.log
+  ./linux_amd64/oauth2l curl --credentials ./oauth.json --scope cloud-platform --url https://compute.googleapis.com/compute/v1/projects/diego-terraform/zones/us-central1-a/instances > resultGCP.log 2>&1
 
-  "$PROVISIONER_OUTPUT_PATH" < resultGCP.log
+  cat resultGCP.log > "$PROVISIONER_OUTPUT_PATH"
