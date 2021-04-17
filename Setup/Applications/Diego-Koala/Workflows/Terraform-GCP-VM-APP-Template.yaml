@@ -46,7 +46,7 @@ phases:
         templateVersion: null
         tfVarFiles: ''
         tfVarGitFileConfig: null
-        timeoutMillis: 600000
+        timeoutMillis: 300000
         variables:
         - name: zone
           valueType: TEXT
