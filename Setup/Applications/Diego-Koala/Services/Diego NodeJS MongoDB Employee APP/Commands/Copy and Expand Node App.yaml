@@ -2,7 +2,13 @@ harnessApiVersion: '1.0'
 type: SETUP
 commandUnitType: COMMAND
 commandUnits:
-- command: curl ${artifact.url} --output EmployeeKoalaDB.zip
+- command: |+
+    echo "Downloading Artifact from ${artifact.url}"
+
+    curl ${artifact.url} --output EmployeeKoalaDB.zip
+
+    ls
+
   commandUnitType: EXEC
   deploymentType: SSH
   name: Download Artifact
