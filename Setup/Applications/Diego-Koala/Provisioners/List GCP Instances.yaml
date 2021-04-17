@@ -1,13 +1,14 @@
 harnessApiVersion: '1.0'
 type: SHELL_SCRIPT
 scriptBody: |-
-  echo '{
+  cat > $INSTANCE_OUTPUT_PATH <<_EOF_
+  {
     "Instances": [
       {
         "Hostname": "35.202.56.138",
-        "Ec2InstanceId": "i-5cd23551",
         "environment": "dev",
         "artifactversion": "1.0.0"
       }
   ]
-  }'  >> "$PROVISIONER_OUTPUT_PATH"
+  }
+  _EOF_
