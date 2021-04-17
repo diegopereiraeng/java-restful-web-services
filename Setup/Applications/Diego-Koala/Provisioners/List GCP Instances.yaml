@@ -7,7 +7,7 @@ scriptBody: |-
         "Hostname": "35.202.163.114",
         "Ec2InstanceId": "i-5cd23551",
         "environment": "dev",
-        "artifactversion": "EmployeeKoalaDB.zip"
+        "artifactversion": "1.0.0"
       }
   ]
   }'  >> "$PROVISIONER_OUTPUT_PATH"
