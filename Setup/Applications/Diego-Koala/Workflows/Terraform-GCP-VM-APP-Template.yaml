@@ -63,6 +63,9 @@ phases:
     stepsInParallel: false
   provisionNodes: false
   serviceName: Diego NodeJS MongoDB Employee APP
+  serviceVariableOverrides:
+  - name: host
+    value: ${terraform.public_ip}
   statefulSet: false
 postDeploymentSteps:
 - type: HTTP
