@@ -6,9 +6,8 @@ infrastructure:
 - type: PHYSICAL_DATA_CENTER_SSH
   cloudProviderName: Diego Physical Data Center
   expressions:
-    hostArrayPath: items
-    hostname: networkInterfaces[*].accessConfigs[*].natIP
+    hostArrayPath: Instances
+    hostname: Hostname
+    Instanceid: Ec2InstanceId
   hostConnectionAttrsName: Diego-SSH-Private
 provisioner: List GCP Instances
-scopedServices:
-- Diego NodeJS MongoDB Employee APP
