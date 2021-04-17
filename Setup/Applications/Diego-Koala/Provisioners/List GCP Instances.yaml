@@ -1,7 +1,7 @@
 harnessApiVersion: '1.0'
 type: SHELL_SCRIPT
 scriptBody: |-
-  cat > $INSTANCE_OUTPUT_PATH <<_EOF_
+  cat > $INSTANCE_OUTPUT_PATH << _EOF_
   {
     "Instances": [
       {
