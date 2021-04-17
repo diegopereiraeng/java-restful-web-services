@@ -81,7 +81,7 @@ phases:
         templateVersion: null
         tfVarFiles: ''
         tfVarGitFileConfig: null
-        timeoutMillis: 600000
+        timeoutMillis: 300000
         workspace: ''
     - type: SHELL_SCRIPT
       name: Terraform Vars
