@@ -26,6 +26,85 @@ phases:
   - type: INFRASTRUCTURE_NODE
     name: Prepare Infra
     steps:
+    - type: TERRAFORM_APPLY
+      name: Terraform Plan
+      properties:
+        backendConfigs: null
+        delegateTag: diego-koala-delegate
+        environmentVariables: null
+        exportPlanToApplyStep: true
+        inheritApprovedPlan: false
+        name: Terraform Plan
+        provisionerName: Diego-Terraform
+        runPlanOnly: true
+        targets:
+        - google_compute_instance.default
+        - random_id.instance_id
+        - google_compute_firewall.default
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        tfVarFiles: ''
+        tfVarGitFileConfig: null
+        timeoutMillis: 600000
+        variables:
+        - name: zone
+          valueType: TEXT
+          value: us-central1-a
+        - name: gcp_sa
+          value: ${secrets.getValue("Diego-Personal-GCP-SA")}
+          valueType: TEXT
+        - name: ssh_keys
+          value: ${secrets.getValue("Diego-Text-SSH")}
+          valueType: TEXT
+        - name: project
+          value: diego-terraform
+          valueType: TEXT
+        - name: region
+          value: us-central1
+          valueType: TEXT
+        - name: instance_type
+          value: f1-micro
+          valueType: TEXT
+        workspace: ''
+    - type: TERRAFORM_APPLY
+      name: Terraform Apply
+      properties:
+        delegateTag: ''
+        exportPlanToApplyStep: false
+        inheritApprovedPlan: true
+        name: Terraform Apply
+        provisionerName: Diego-Terraform
+        runPlanOnly: false
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        tfVarFiles: ''
+        tfVarGitFileConfig: null
+        timeoutMillis: 600000
+        workspace: ''
+    - type: SHELL_SCRIPT
+      name: Terraform Vars
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        delegateSelectors:
+        - diego-koala-delegate
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: false
+        scriptString: echo ${terraform.public_ip}
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags: null
+        templateExpressions: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 60000
     - type: DC_NODE_SELECT
       name: Select Nodes
       properties:
