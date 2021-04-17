@@ -8,6 +8,12 @@ commandUnits:
   destinationDirectoryPath: $WINGS_RUNTIME_PATH
   name: Copy Artifact
   source: ARTIFACTS
+- artifactVariableName: artifact
+  commandUnitType: DOWNLOAD_ARTIFACT
+  deploymentType: SSH
+  name: Download Artifact
+  scriptType: BASH
+  workingDirectory: $WINGS_RUNTIME_PATH
 - command: |+
     unzip -o ${artifact.metadata.Artifact_Name}
 
