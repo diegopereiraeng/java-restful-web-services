@@ -228,7 +228,10 @@ preDeploymentSteps:
     templateUuid: null
     templateVariables: null
     templateVersion: null
-    variables: null
+    variables:
+    - name: public_ip
+      value: ${terraform.public_ip}
+      valueType: TEXT
 rollbackPhases:
 - type: SSH
   computeProviderName: Diego Physical Data Center
