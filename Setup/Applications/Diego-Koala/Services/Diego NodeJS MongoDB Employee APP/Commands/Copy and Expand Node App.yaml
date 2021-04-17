@@ -28,7 +28,7 @@ commandUnits:
 
     ls
 
-    unzip EmployeeKoalaDB.zip
+    sudo unzip EmployeeKoalaDB.zip
 
   commandUnitType: EXEC
   deploymentType: SSH
