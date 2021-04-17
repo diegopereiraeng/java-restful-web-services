@@ -219,12 +219,15 @@ preDeploymentSteps:
     templateVariables: null
     templateVersion: null
 - type: SHELL_SCRIPT_PROVISION
-  name: Shell Script Provision
+  name: GCP Shell Script Provision
   properties:
     backendConfigs: null
     delegateSelectors:
     - diego-koala-delegate
     provisionerName: List GCP Instances
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     variables: null
 rollbackPhases:
 - type: SSH
