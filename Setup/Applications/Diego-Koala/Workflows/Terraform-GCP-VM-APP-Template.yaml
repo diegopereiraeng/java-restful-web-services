@@ -139,6 +139,17 @@ phases:
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
+    steps:
+    - type: TERRAFORM_DESTROY
+      name: Terraform Destroy
+      properties:
+        delegateTag: diego-koala-delegate
+        inheritApprovedPlan: false
+        provisionerName: Diego-Terraform
+        runPlanOnly: true
+        tfVarGitFileConfig: null
+        timeoutMillis: 300000
+        workspace: ''
     stepsInParallel: false
   provisionNodes: false
   serviceName: Diego NodeJS MongoDB Employee APP
