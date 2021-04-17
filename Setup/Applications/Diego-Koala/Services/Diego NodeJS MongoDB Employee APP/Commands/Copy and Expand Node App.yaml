@@ -2,6 +2,12 @@ harnessApiVersion: '1.0'
 type: SETUP
 commandUnitType: COMMAND
 commandUnits:
+- artifactVariableName: artifact
+  commandUnitType: DOWNLOAD_ARTIFACT
+  deploymentType: SSH
+  name: Download Artifact
+  scriptType: BASH
+  workingDirectory: ${app.defaults.RUNTIME_PATH}
 - command: |+
     unzip -o ${artifact.metadata.Artifact_Name}
 
@@ -10,10 +16,4 @@ commandUnits:
   name: Expand Artifact
   scriptType: BASH
   workingDirectory: $WINGS_RUNTIME_PATH
-- artifactVariableName: artifact
-  commandUnitType: DOWNLOAD_ARTIFACT
-  deploymentType: SSH
-  name: Download Artifact
-  scriptType: BASH
-  workingDirectory: ${app.defaults.RUNTIME_PATH}
 targetToAllEnv: true
