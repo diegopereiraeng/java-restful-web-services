@@ -32,11 +32,11 @@ phases:
         backendConfigs: null
         delegateTag: diego-koala-delegate
         environmentVariables: null
-        exportPlanToApplyStep: true
+        exportPlanToApplyStep: false
         inheritApprovedPlan: false
         name: Terraform Plan
         provisionerName: Diego-Terraform
-        runPlanOnly: true
+        runPlanOnly: false
         targets: null
         templateUuid: null
         templateVariables: null
