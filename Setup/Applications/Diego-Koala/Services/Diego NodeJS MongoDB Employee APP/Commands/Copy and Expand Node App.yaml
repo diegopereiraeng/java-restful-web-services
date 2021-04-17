@@ -10,4 +10,10 @@ commandUnits:
   name: Expand Artifact
   scriptType: BASH
   workingDirectory: $WINGS_RUNTIME_PATH
+- artifactVariableName: artifact
+  commandUnitType: DOWNLOAD_ARTIFACT
+  deploymentType: SSH
+  name: Download Artifact
+  scriptType: BASH
+  workingDirectory: ${app.defaults.RUNTIME_PATH}
 targetToAllEnv: true
