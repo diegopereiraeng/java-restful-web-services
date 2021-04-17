@@ -13,7 +13,7 @@ commandUnits:
 
     echo "Download Finished"
 
-    echo "Next Step: Expand ${artifact.metadata.NAME} uploaded by ${artifact.metadata.UPLOADER}"
+    echo "Next Step: Expand ${artifact.fileName} ${artifact.buildNo} uploaded by ${artifact.source.username}"
 
     #echo "Installing zip"
     #sudo apt-get -y install zip
