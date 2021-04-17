@@ -12,9 +12,9 @@ commandUnits:
   scriptType: BASH
   workingDirectory: ${app.defaults.RUNTIME_PATH}
 - command: |+
-    echo "Expanding artifact ${artifact.metadata.Artifact_Name}"
+    echo "Expanding artifact ${artifact.metadata.Name}"
 
-    unzip -o ${artifact.metadata.Artifact_Name}
+    unzip -o ${artifact.metadata.Name}
 
   commandUnitType: EXEC
   deploymentType: SSH
