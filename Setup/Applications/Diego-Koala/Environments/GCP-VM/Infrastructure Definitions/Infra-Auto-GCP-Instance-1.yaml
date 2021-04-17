@@ -10,3 +10,5 @@ infrastructure:
     hostname: networkInterfaces[*].accessConfigs[*].natIP
   hostConnectionAttrsName: Diego-SSH-Private
 provisioner: List GCP Instances
+scopedServices:
+- Diego NodeJS MongoDB Employee APP
