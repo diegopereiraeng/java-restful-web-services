@@ -5,7 +5,7 @@ commandUnits:
 - command: |-
     echo "Downloading artifact ${artifact.metadata.URL}"
 
-    curl -s ${artifact.metadata.URL} --output EmployeeKoalaDB.zip
+    curl -s ${artifact.metadata.URL} --output EmployeeKoalaDB.tar
 
     ls
 
@@ -13,9 +13,9 @@ commandUnits:
 
     echo "Next Step: Expand ${artifact.fileName} ${artifact.buildNo} uploaded by ${artifact.source.username}"
 
-    echo "Installing zip"
-    sudo apt-get -y install zip
-    echo "zip installed"
+    #echo "Installing zip"
+    #sudo apt-get -y install zip
+    #echo "zip installed"
   commandUnitType: EXEC
   deploymentType: SSH
   name: Download Artifact
