@@ -64,22 +64,6 @@ phases:
           value: f1-micro
           valueType: TEXT
         workspace: ''
-    - type: TERRAFORM_APPLY
-      name: Terraform Apply
-      properties:
-        delegateTag: ''
-        exportPlanToApplyStep: false
-        inheritApprovedPlan: true
-        name: Terraform Apply
-        provisionerName: Diego-Terraform
-        runPlanOnly: false
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        tfVarFiles: ''
-        tfVarGitFileConfig: null
-        timeoutMillis: 300000
-        workspace: ''
     - type: SHELL_SCRIPT
       name: Terraform Vars
       properties:
