@@ -20,7 +20,7 @@ phases:
 - type: SSH
   computeProviderName: Diego Physical Data Center
   daemonSet: false
-  infraDefinitionName: Infra-Auto-GCP-Instance-1
+  infraDefinitionName: Teste-estatico
   name: Phase 1
   phaseSteps:
   - type: INFRASTRUCTURE_NODE
@@ -88,7 +88,7 @@ rollbackPhases:
 - type: SSH
   computeProviderName: Diego Physical Data Center
   daemonSet: false
-  infraDefinitionName: Infra-Auto-GCP-Instance-1
+  infraDefinitionName: Teste-estatico
   name: Rollback Phase 1
   phaseNameForRollback: Phase 1
   phaseSteps:
