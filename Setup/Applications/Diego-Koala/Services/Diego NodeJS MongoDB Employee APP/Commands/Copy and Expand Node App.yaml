@@ -9,12 +9,11 @@ commandUnits:
   scriptType: BASH
   workingDirectory: ${app.defaults.RUNTIME_PATH}
 - command: |+
-    cd ${app.defaults.RUNTIME_PATH}
     unzip -o ${artifact.metadata.Artifact_Name}
 
   commandUnitType: EXEC
   deploymentType: SSH
   name: Expand Artifact
   scriptType: BASH
-  workingDirectory: $WINGS_RUNTIME_PATH
+  workingDirectory: ${app.defaults.RUNTIME_PATH}
 targetToAllEnv: true
