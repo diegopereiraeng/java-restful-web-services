@@ -11,7 +11,7 @@ commandUnits:
 
     echo "Download Finished"
 
-    echo "Next Step: Expand ${artifact.metadata.artifactName} uploaded by ${artifact.metadata.Uploader}"
+    echo "Next Step: Expand ${artifact.metadata.NAME} uploaded by ${artifact.metadata.UPLOADER}"
   commandUnitType: EXEC
   deploymentType: SSH
   name: Download Artifact
