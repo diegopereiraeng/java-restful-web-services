@@ -47,6 +47,12 @@ phases:
       name: Copy and Expand Node App
       properties:
         commandName: Copy and Expand Node App
+        delegateSelectors:
+        - diego-koala-delegate
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 14400000
     - type: COMMAND
       name: Start Node App_2
       properties:
