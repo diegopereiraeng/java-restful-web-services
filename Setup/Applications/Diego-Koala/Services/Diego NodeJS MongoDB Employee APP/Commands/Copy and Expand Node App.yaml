@@ -5,7 +5,7 @@ commandUnits:
 - command: curl ${artifact.url} --output EmployeeKoalaDB.zip
   commandUnitType: EXEC
   deploymentType: SSH
-  name: Exec-1
+  name: Download Artifact
   scriptType: BASH
   workingDirectory: ${app.defaults.RUNTIME_PATH}
 - command: |+
