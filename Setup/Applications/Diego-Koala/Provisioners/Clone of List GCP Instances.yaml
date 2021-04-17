@@ -1,0 +1,12 @@
+harnessApiVersion: '1.0'
+type: SHELL_SCRIPT
+scriptBody: |-
+  echo '{
+    "Instances": [
+      {
+        "Hostname": "35.202.56.138",
+        "environment": "dev",
+        "artifactversion": "1.0.0"
+      }
+  ]
+  }' > "${INSTANCE_OUTPUT_PATH}"
