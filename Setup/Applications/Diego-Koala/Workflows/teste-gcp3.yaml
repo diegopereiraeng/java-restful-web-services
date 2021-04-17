@@ -37,7 +37,16 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: echo 'Teste'
+        scriptString: |-
+          echo '{
+            "Instances": [
+              {
+                "Hostname": "35.202.56.138",
+                "environment": "dev",
+                "artifactversion": "1.0.0"
+              }
+          ]
+          }' > $INSTANCE_OUTPUT_PATH
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
