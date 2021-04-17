@@ -9,8 +9,6 @@ commandUnits:
   name: Copy Artifact
   source: ARTIFACTS
 - command: |+
-    sudo apt-get -y install zip
-
     unzip -o ${artifact.metadata.Artifact_Name}
 
   commandUnitType: EXEC
