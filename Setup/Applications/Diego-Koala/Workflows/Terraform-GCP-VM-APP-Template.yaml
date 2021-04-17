@@ -192,18 +192,6 @@ postDeploymentSteps:
     timeoutMillis: 10000
     url: http://${terraform.public_ip}:3000
     useProxy: false
-- type: APPROVAL
-  name: Terraform Destroy Approval
-  properties:
-    approvalStateType: USER_GROUP
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    timeoutMillis: 86400000
-    userGroups:
-    - PFIVcv84TVW6OEpQEDvmGw
-    - xsUUKuxzQ8upFNUpt7wBYQ
-    - u-mGHdFRQA-NJj_KMnhTFQ
 - type: TERRAFORM_DESTROY
   name: Terraform Destroy
   properties:
