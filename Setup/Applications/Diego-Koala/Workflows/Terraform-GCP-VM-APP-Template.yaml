@@ -150,6 +150,14 @@ phases:
         tfVarGitFileConfig: null
         timeoutMillis: 300000
         workspace: ''
+    - type: APPROVAL
+      name: Approval
+      properties:
+        approvalStateType: USER_GROUP
+        timeoutMillis: 86400000
+        userGroups:
+        - xsUUKuxzQ8upFNUpt7wBYQ
+        - u-mGHdFRQA-NJj_KMnhTFQ
     stepsInParallel: false
   provisionNodes: false
   serviceName: Diego NodeJS MongoDB Employee APP
