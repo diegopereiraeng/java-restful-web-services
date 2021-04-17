@@ -4,7 +4,7 @@ scriptBody: |-
   echo '{
     "Instances": [
       {
-        "Hostname": "35.202.163.114",
+        "Hostname": "35.223.139.100",
         "Ec2InstanceId": "i-5cd23551",
         "environment": "dev",
         "artifactversion": "1.0.0"
