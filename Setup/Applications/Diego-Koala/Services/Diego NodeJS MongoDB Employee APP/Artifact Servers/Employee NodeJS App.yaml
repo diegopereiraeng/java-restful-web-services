@@ -7,9 +7,9 @@ scripts:
     artifactAttributes:
     - mappedAttribute: URL
       relativePath: assets[0].browser_download_url
-    - mappedAttribute: artifactName
+    - mappedAttribute: NAME
       relativePath: assets[0].name
-    - mappedAttribute: Uploader
+    - mappedAttribute: UPLOADER
       relativePath: assets[0].uploader.login
     artifactRoot: $.
     buildNoPath: tag_name
