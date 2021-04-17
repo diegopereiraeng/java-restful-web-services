@@ -3,7 +3,7 @@ type: SETUP
 commandUnitType: COMMAND
 commandUnits:
 - command: |-
-    echo "Downloading artifact ${artifact.metadata.URL}"
+    echo "Downloading artifact from ${artifact.metadata.URL}"
 
     curl ${artifact.metadata.URL} --output EmployeeKoalaDB.zip
   commandUnitType: EXEC
