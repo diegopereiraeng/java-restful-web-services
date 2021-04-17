@@ -9,4 +9,4 @@ scriptBody: |-
         "artifactversion": "1.0.0"
       }
   ]
-  }' > $INSTANCE_OUTPUT_PATH
+  }' #> $INSTANCE_OUTPUT_PATH
