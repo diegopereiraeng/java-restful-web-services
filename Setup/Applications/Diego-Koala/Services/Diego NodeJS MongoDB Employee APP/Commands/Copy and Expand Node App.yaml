@@ -3,7 +3,9 @@ type: SETUP
 commandUnitType: COMMAND
 commandUnits:
 - command: |-
-    echo "Downloading artifact ${artifact.metadata.URL}"
+    echo "Downloading artifact from ${artifact.metadata.URL}"
+
+    echo "Name: ${artifact.metadata.NAME}"
 
     sudo rm -f EmployeeKoalaDB.tar
 
