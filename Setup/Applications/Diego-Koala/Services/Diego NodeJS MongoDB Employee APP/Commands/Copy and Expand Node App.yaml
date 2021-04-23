@@ -10,7 +10,7 @@ commandUnits:
     sudo rm -f EmployeeKoalaDB.tar
 
     wget ${artifact.metadata.URL}
-    wget https://github.com/diegopereiraeng/nodeJS_Employees_App/releases/download/${artifact.metadata.tag}/EmployeeKoalaDB.tar
+    wget https://github.com/diegopereiraeng/nodeJS_Employees_App/releases/download/1.1.0/EmployeeKoalaDB.tar
 
     ls
 
