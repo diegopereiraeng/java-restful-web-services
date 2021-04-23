@@ -7,7 +7,7 @@ scripts:
     artifactAttributes:
     - mappedAttribute: URL
       relativePath: assets[0].browser_download_url
-    - mappedAttribute: ${name}
+    - mappedAttribute: NAME
       relativePath: assets[0].name
     artifactRoot: $.
     buildNoPath: tag_name
