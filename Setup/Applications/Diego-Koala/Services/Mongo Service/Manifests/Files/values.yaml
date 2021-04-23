@@ -3,7 +3,7 @@ component: backend
 
 replicas: 1
 
-cpu: 100m
+cpu: 50m
 memory: 100Mi
 
 image: ${artifact.metadata.image}
