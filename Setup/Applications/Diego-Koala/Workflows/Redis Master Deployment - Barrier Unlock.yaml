@@ -35,6 +35,32 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 60000
+    - type: SHELL_SCRIPT
+      name: Shell Script
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: false
+        scriptString: |-
+          echo ${artifact.buildNo}
+
+          echo ${artifact.metadata.image}
+          echo ${artifact.label}
+          echo ${artifact.source.repositoryName}
+
+          echo ${artifact.label}
+
+          echo${artifact.displayName}
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
