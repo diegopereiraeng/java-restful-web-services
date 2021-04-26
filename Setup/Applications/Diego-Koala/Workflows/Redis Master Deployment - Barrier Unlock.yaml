@@ -35,21 +35,23 @@ phases:
         outputVars: ''
         publishAsVar: false
         scriptString: |-
-          echo ${artifact.buildNo}
+          echo "${artifact.buildNo}"
 
-          echo ${artifact.metadata.image}
-          echo ${artifact.label}
-          echo ${artifact.source.repositoryName}
+          echo "${artifact.metadata.image}"
+          echo "${artifact.label}"
+          echo "${artifact.source.repositoryName}v
 
-          echo ${artifact.label}
+          echo "${artifact.label}"
 
-          echo${artifact.displayName}
+          echo "${artifact.displayName}"
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     - type: K8S_DEPLOYMENT_ROLLING
       name: Rollout Deployment
