@@ -35,15 +35,15 @@ phases:
         outputVars: ''
         publishAsVar: false
         scriptString: |-
-          echo "${artifact.buildNo}"
+          echo "artifact.buildNo : ${artifact.buildNo}"
 
-          echo "${artifact.metadata.image}"
-          echo "${artifact.label}"
-          echo "${artifact.source.repositoryName}v
+          echo "artifact.metadata.image : ${artifact.metadata.image}"
+          echo "artifact.label : ${artifact.label}"
+          echo "artifact.source.repositoryName - ${artifact.source.repositoryName}"
 
-          echo "${artifact.label}"
+          echo "artifact.label : ${artifact.label}"
 
-          echo "${artifact.displayName}"
+          echo "artifact.displayName : ${artifact.displayName}"
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
