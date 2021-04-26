@@ -27,14 +27,6 @@ phases:
     steps:
     - type: K8S_DEPLOYMENT_ROLLING
       name: Rollout Deployment
-    - type: BARRIER
-      name: Redis Completed
-      properties:
-        identifier: caches-completed
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 60000
     - type: SHELL_SCRIPT
       name: Shell Script
       properties:
@@ -60,6 +52,14 @@ phases:
         sweepingOutputScope: null
         templateExpressions: null
         templateVariables: ''
+        timeoutMillis: 60000
+    - type: BARRIER
+      name: Redis Completed
+      properties:
+        identifier: caches-completed
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     stepsInParallel: false
   - type: K8S_PHASE_STEP
