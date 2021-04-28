@@ -68,6 +68,12 @@ phases:
     name: Verify
     stepsInParallel: false
   - type: K8S_PHASE_STEP
+    name: Notify
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: Approve
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
