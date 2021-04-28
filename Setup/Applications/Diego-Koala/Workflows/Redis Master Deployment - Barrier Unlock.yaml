@@ -68,6 +68,9 @@ phases:
     name: Verify
     stepsInParallel: false
   - type: K8S_PHASE_STEP
+    name: Raja
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
     name: Notify
     stepsInParallel: false
   - type: K8S_PHASE_STEP
