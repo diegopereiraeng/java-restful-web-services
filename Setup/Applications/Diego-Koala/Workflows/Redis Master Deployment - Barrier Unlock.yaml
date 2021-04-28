@@ -79,6 +79,9 @@ phases:
   - type: K8S_PHASE_STEP
     name: Wrap Up
     stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: test
+    stepsInParallel: false
   provisionNodes: false
   statefulSet: false
   templateExpressions:
