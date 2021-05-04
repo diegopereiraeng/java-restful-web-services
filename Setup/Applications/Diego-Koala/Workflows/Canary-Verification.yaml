@@ -221,6 +221,14 @@ phases:
       value: DOCKER
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: SERVICE
 postDeploymentSteps:
 - type: JIRA_CREATE_UPDATE
   name: Close the change request
@@ -367,6 +375,14 @@ rollbackPhases:
       value: DOCKER
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: SERVICE
 templateExpressions:
 - expression: ${Environment}
   fieldName: envId
@@ -382,7 +398,7 @@ userVariables:
   mandatory: true
   name: Environment
 - type: ENTITY
-  description: Variable for Service entity in Rollback Canary
+  description: Variable for Service entity in Rollback Primary
   fixed: false
   mandatory: true
   name: Service
