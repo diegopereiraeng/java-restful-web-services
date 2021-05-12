@@ -1,18 +1,18 @@
 ---
 kind: pipeline
 name: default
-
 platform:
   os: linux
   arch: amd64
-
 steps:
 - name: build
   image: maven:3-jdk-11
   commands:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+- name: unit tests
+  image: maven:3-jdk-11
+  commands:
   - mvn test -B
-
 - name: docker  
   image: plugins/docker
   settings:
@@ -25,7 +25,6 @@ steps:
       - '1.1.2'
     environment:
       - DOCKER_LAUNCH_DEBUG=true
-
 - name: harness-deploy
   image: diegokoala/java-restful-web-services
   settings:  
