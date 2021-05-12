@@ -26,7 +26,7 @@ steps:
     environment:
       - DOCKER_LAUNCH_DEBUG=true
 - name: harness-deploy
-  image: diegokoala/java-restful-web-services
+  image: harness/todolist-sample
   settings:  
     application: "Harness Demo Application"
     type: "PIPELINE"
@@ -52,7 +52,7 @@ steps:
         artifactValueInput: {
           valueType: BUILD_NUMBER
           buildNumber: {
-            buildNumber: "1"
+            buildNumber: "latest"
       artifactSourceName: "harness_todolist-sample"
           }
         }}  ]
