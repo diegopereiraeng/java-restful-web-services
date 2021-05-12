@@ -25,3 +25,35 @@ steps:
       - '1.1.2'
     environment:
       - DOCKER_LAUNCH_DEBUG=true
+
+- name: harness-deploy
+  image: diegokoala/java-restful-web-services
+  settings:  
+    application: "Harness Demo Application"
+    type: "PIPELINE"
+    entityname: "CD Pipeline"
+    service: "search"
+    build: "v6"
+    accountid:
+      from_secret: harness_acctid
+    apikey: 
+      from_secret: harness_secret
+    body: |
+     variableInputs: [ 
+      {
+        name: "Service"
+        variableValue: {
+          type: NAME
+          value: "order-service"
+        }
+      }
+      ], 
+      serviceInputs: [ {
+        name: "order-service", 
+        artifactValueInput: {
+          valueType: BUILD_NUMBER
+          buildNumber: {
+            buildNumber: "1"
+      artifactSourceName: "harness_todolist-sample"
+          }
+        }}  ]
