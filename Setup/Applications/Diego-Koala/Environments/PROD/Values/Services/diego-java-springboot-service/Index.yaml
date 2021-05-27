@@ -1,0 +1,9 @@
+harnessApiVersion: '1.0'
+type: APPLICATION_MANIFEST_VALUES_ENV_SERVICE_OVERRIDE
+gitFileConfig:
+  branch: main
+  connectorName: Diego CV-DEMO
+  filePath: values/${service/values-${env}.yaml
+  useBranch: true
+  useInlineServiceDefinition: false
+storeType: Remote
