@@ -232,6 +232,31 @@ preDeploymentSteps:
     - name: public_ip
       value: ${terraform.public_ip}
       valueType: TEXT
+- type: SHELL_SCRIPT
+  name: Slack Notification Pipeline Workflow
+  properties:
+    executeOnDelegate: true
+    timeoutMillis: 600000
+  templateUri: Harness SE/Diego/Slack Notification Pipeline Workflow:latest
+  templateVariables:
+  - name: Message
+    value: Deployment started
+  - name: App
+    value: ${app.name}
+  - name: Workflow
+    value: ${workflow.name}
+  - name: Pipeline
+    value: ${pipeline.name}
+  - name: triggered
+    value: ${deploymentTriggeredBy}
+  - name: deploymentURL
+    value: ${deploymentUrl}
+  - name: Type
+    value: Workflow
+  - name: style
+    value: alert
+  - name: Title
+    value: Deployed triggered by ${deploymentTriggeredBy}
 rollbackPhases:
 - type: SSH
   computeProviderName: Diego Physical Data Center
