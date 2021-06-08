@@ -1,0 +1,9 @@
+harnessApiVersion: '1.0'
+type: INFRA_DEFINITION
+cloudProviderType: KUBERNETES_CLUSTER
+deploymentType: KUBERNETES
+infrastructure:
+- type: DIRECT_KUBERNETES
+  cloudProviderName: K8S Diego GKE
+  namespace: prod-gke
+  releaseName: release-${infra.kubernetes.infraId}
