@@ -16,10 +16,10 @@ steps:
 - name: docker  
   image: plugins/docker
   settings:
-    username: diegokoala
+    username: guinogueira7
     password: 
       from_secret: DockerHub
-    repo: diegokoala/java-restful-web-services
+    repo: gnogueira7/java-restful-web-services
     tags:
       - latest
       - '1.1.3'
@@ -27,7 +27,7 @@ steps:
       - DOCKER_LAUNCH_DEBUG=true
     auto_tag: true
 - name: harness-deploy
-  image: diegokoala/drone-harness-plugin
+  image: guinogueira7/drone-harness-plugin
   settings:  
     application: "Harness Demo Application"
     type: "PIPELINE"
