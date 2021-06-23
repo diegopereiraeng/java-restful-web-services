@@ -27,7 +27,7 @@ steps:
       - DOCKER_LAUNCH_DEBUG=true
     auto_tag: true
 - name: harness-deploy
-  image: guinogueira7/drone-harness-plugin
+  image: diegokoala/drone-harness-plugin
   settings:  
     application: "Harness Demo Application"
     type: "PIPELINE"
