@@ -19,7 +19,7 @@ steps:
     username: guinogueira7
     password: 
       from_secret: DockerHub
-    repo: gnogueira7/java-restful-web-services
+    repo: guinogueira7/java-restful-web-services
     tags:
       - latest
       - '1.1.3'
