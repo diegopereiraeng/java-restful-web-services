@@ -22,7 +22,7 @@ steps:
     repo: gnogueira7/java-restful-web-services
     tags:
       - latest
-      - '1.1.3'
+      - '1.1.4'
     environment:
       - DOCKER_LAUNCH_DEBUG=true
     auto_tag: true
