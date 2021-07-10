@@ -4,6 +4,6 @@ cloudProviderType: KUBERNETES_CLUSTER
 deploymentType: KUBERNETES
 infrastructure:
 - type: DIRECT_KUBERNETES
-  cloudProviderName: Kubernetes Cluster Diego-GKE
+  cloudProviderName: K8S Diego GKE
   namespace: ${app.defaults.project}-dev
   releaseName: release-${infra.kubernetes.infraId}
