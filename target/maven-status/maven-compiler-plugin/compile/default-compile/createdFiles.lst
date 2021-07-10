@@ -1,3 +1,6 @@
+com/diegokoala/rest/profile/restfulwebservices/BasicDiegoService.class
 com/diegokoala/rest/profile/restfulwebservices/RestfulWebServicesApplication.class
 com/diegokoala/rest/profile/restfulwebservices/ResumeController.class
 com/diegokoala/rest/profile/restfulwebservices/UtilsController.class
+com/diegokoala/rest/profile/restfulwebservices/DiegoService.class
+com/diegokoala/rest/profile/restfulwebservices/DiegoController.class

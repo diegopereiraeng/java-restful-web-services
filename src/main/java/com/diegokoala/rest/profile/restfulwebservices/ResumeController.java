@@ -15,7 +15,7 @@ public class ResumeController
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
         }
-        return "{ nome: 'Diego Paes Ramalho Pereira', position: 'Senior Sales Engineer', company: 'Harness', objective:'Help Customers with CI/CD'  }";
+        return "{ name: 'Diego Paes Ramalho Pereira', position: 'Senior Sales Engineer', company: 'Harness', objective:'Help Customers with CI/CD'  }";
 
     }
 
@@ -31,7 +31,7 @@ public class ResumeController
     }
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String GetRoot(){
-        return "{ Message: 'Welcome to Harness, Your Deployment 1.1.2 was successful implemented', status: 'UP' }";
+        return "{ Message: 'Welcome to Harness, Your Deployment 1.2.0 was successful implemented', status: 'UP' }";
 
     }
 
