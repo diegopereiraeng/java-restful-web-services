@@ -25,6 +25,8 @@ public class UtilsController {
         }
         return hostName;
     }
+
+
     /*
     @GetMapping("/build-info")
     public BuildProperties buildInfo() {
