@@ -31,7 +31,7 @@ public class ResumeController
     }
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String GetRoot(){
-        return "{ Message: 'Welcome to Harness, Your Deployment 1.2.0 was successful implemented', status: 'UP' }";
+        return "{ Message: 'Welcome to Harness, Your Deployment 1.2.3 was successful implemented', status: 'UP' }";
 
     }
 

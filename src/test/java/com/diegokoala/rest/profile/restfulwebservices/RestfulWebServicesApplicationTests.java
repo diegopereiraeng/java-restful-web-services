@@ -51,7 +51,7 @@ public class RestfulWebServicesApplicationTests extends AbstractTestNGSpringCont
 	public void testRoot() throws Exception {
 		mockMvc.perform(get("/")).andExpect(status().isOk())
 				.andExpect(content().contentType("text/plain;charset=UTF-8"))
-				.andExpect(jsonPath("$.Message").value("Welcome to Harness, Your Deployment 1.1.2 was successful implemented")).andExpect(jsonPath("$.status").value("UP"));
+				.andExpect(jsonPath("$.Message").value("Welcome to Harness, Your Deployment 1.2.3 was successful implemented")).andExpect(jsonPath("$.status").value("UP"));
 
 	}
 
