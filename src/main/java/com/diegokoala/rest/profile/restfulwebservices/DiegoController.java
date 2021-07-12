@@ -44,7 +44,7 @@ public class DiegoController {
         return info;
     }
 
-    @GetMapping("/userinfo")
+    @GetMapping("/users")
     public List getUsers() {
         List info = diegoService.getUsers();
         return info;
