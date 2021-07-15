@@ -31,12 +31,12 @@ public class HarnessController
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
         }
-        return "{ Message: 'Welcome to Harness, Your Deployment 1.5.9 was successful implemented', status: 'UP' }";
+        return "{ Message: 'Welcome to Harness, Your Deployment 1.6.0 was successful implemented', status: 'UP' }";
 
     }
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String GetRoot(){
-        //return "{ Message: 'Welcome to Harness, Your Deployment 1.5.9 was successful implemented', status: 'UP' }";
+        //return "{ Message: 'Welcome to Harness, Your Deployment 1.6.0 was successful implemented', status: 'UP' }";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date date = new Date();
         //System.out.print(date);
@@ -45,7 +45,7 @@ public class HarnessController
 
         return "<!DOCTYPE html>\n" +
                 "<html>\n" +
-                "<title>W3.CSS Template</title>\n" +
+                "<title>C6 Bank</title>\n" +
                 "<meta charset=\"UTF-8\">\n" +
                 "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
                 "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\n" +
@@ -168,7 +168,7 @@ public class HarnessController
 
     @RequestMapping(method = RequestMethod.GET, path = "/home")
     public String GetHome(){
-        //return "{ Message: 'Welcome to Harness, Your Deployment 1.5.9 was successful implemented', status: 'UP' }";
+        //return "{ Message: 'Welcome to Harness, Your Deployment 1.6.0 was successful implemented', status: 'UP' }";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date date = new Date();
         //System.out.print(date);
