@@ -31,12 +31,12 @@ public class HarnessController
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
         }
-        return "{ Message: 'Welcome to Harness, Your Deployment 1.5.6 was successful implemented', status: 'UP' }";
+        return "{ Message: 'Welcome to Harness, Your Deployment 1.5.7 was successful implemented', status: 'UP' }";
 
     }
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String GetRoot(){
-        //return "{ Message: 'Welcome to Harness, Your Deployment 1.5.6 was successful implemented', status: 'UP' }";
+        //return "{ Message: 'Welcome to Harness, Your Deployment 1.5.7 was successful implemented', status: 'UP' }";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date date = new Date();
         //System.out.print(date);
@@ -47,7 +47,7 @@ public class HarnessController
 
     @RequestMapping(method = RequestMethod.GET, path = "/home")
     public String GetHome(){
-        //return "{ Message: 'Welcome to Harness, Your Deployment 1.5.6 was successful implemented', status: 'UP' }";
+        //return "{ Message: 'Welcome to Harness, Your Deployment 1.5.7 was successful implemented', status: 'UP' }";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date date = new Date();
         //System.out.print(date);

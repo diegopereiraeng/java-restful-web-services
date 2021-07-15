@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.diegokoala.rest.profile</groupId>
 	<artifactId>restful-web-services</artifactId>
-	<version>1.5.6-SNAPSHOT</version>
+	<version>1.5.7-SNAPSHOT</version>
 	<name>restful-web-services</name>
 	<description>Resume as API</description>
 
