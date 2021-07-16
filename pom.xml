@@ -62,6 +62,11 @@
 			<version>5.7.0-M1</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.harness</groupId>
+			<artifactId>ff-java-server-sdk</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
 		<!-- Enables any legacy JUnit 3 and JUnit 4 tests you may have. Not needed for JUnit 5 tests. -->
