@@ -14,8 +14,8 @@ notificationRules:
   executionScope: WORKFLOW
   notificationGroupAsExpression: false
   userGroupAsExpression: false
-  userGroupIds:
-  - PFIVcv84TVW6OEpQEDvmGw
+  userGroupNames:
+  - Account Administrator
 phases:
 - type: SSH
   computeProviderName: Diego Physical Data Center
@@ -118,10 +118,10 @@ postDeploymentSteps:
     templateVariables: null
     templateVersion: null
     timeoutMillis: 86400000
-    userGroups:
-    - PFIVcv84TVW6OEpQEDvmGw
-    - xsUUKuxzQ8upFNUpt7wBYQ
-    - u-mGHdFRQA-NJj_KMnhTFQ
+    userGroupNames:
+    - Account Administrator
+    - AP-DEV
+    - AP-PROD
 - type: TERRAFORM_DESTROY
   name: Terraform Destroy
   properties:
@@ -194,7 +194,7 @@ preDeploymentSteps:
   name: Terraform Vars
   properties:
     commandPath: null
-    connectionAttributes: null
+    connectionAttributeName: null
     delegateSelectors:
     - diego-koala-delegate
     executeOnDelegate: true
@@ -203,7 +203,7 @@ preDeploymentSteps:
     publishAsVar: false
     scriptString: echo ${terraform.public_ip}
     scriptType: BASH
-    sshKeyRef: null
+    sshKeyRefName: null
     sweepingOutputName: null
     sweepingOutputScope: null
     tags: null
@@ -304,3 +304,9 @@ userVariables:
   mandatory: true
   name: instance_type
   value: f1-micro
+- type: TEXT
+  allowedValues: AWS,GCP
+  fixed: false
+  mandatory: true
+  name: InfraType
+  value: AWS
