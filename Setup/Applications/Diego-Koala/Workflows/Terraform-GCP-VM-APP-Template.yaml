@@ -135,6 +135,14 @@ postDeploymentSteps:
     tfVarGitFileConfig: null
     timeoutMillis: 300000
     workspace: ''
+preDeploymentStepSkipStrategy:
+- assertionExpression: ${workflow.variables.InfraType} == "AWS"
+  scope: SPECIFIC_STEPS
+  steps:
+  - Terraform Plan
+  - Terraform Apply
+  - Terraform Vars
+  - GCP Shell Script Provision
 preDeploymentSteps:
 - type: TERRAFORM_APPLY
   name: Terraform Plan
