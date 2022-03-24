@@ -1,2 +1,2 @@
 # java-restful-web-services
-Personal Project
+Java Personal Project
