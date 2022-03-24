@@ -1,6 +1,8 @@
-/Users/koaladiego/Documents/Development/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/DiegoController.java
-/Users/koaladiego/Documents/Development/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/UtilsController.java
-/Users/koaladiego/Documents/Development/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/BasicDiegoService.java
-/Users/koaladiego/Documents/Development/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/HarnessController.java
-/Users/koaladiego/Documents/Development/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/RestfulWebServicesApplication.java
-/Users/koaladiego/Documents/Development/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/DiegoService.java
+/Users/diegopereira/Documents/Development/git/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/BasicDiegoService.java
+/Users/diegopereira/Documents/Development/git/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/harnessservice/FFHarnessService.java
+/Users/diegopereira/Documents/Development/git/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/DiegoController.java
+/Users/diegopereira/Documents/Development/git/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/DiegoService.java
+/Users/diegopereira/Documents/Development/git/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/harnessservice/HarnessService.java
+/Users/diegopereira/Documents/Development/git/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/HarnessController.java
+/Users/diegopereira/Documents/Development/git/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/RestfulWebServicesApplication.java
+/Users/diegopereira/Documents/Development/git/java-restful-web-services/src/main/java/com/diegokoala/rest/profile/restfulwebservices/UtilsController.java

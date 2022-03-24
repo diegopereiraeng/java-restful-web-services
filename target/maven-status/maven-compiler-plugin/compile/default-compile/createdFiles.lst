@@ -1,5 +1,7 @@
+com/diegokoala/rest/profile/harnessservice/FFHarnessService.class
 com/diegokoala/rest/profile/restfulwebservices/BasicDiegoService.class
 com/diegokoala/rest/profile/restfulwebservices/HarnessController.class
+com/diegokoala/rest/profile/harnessservice/HarnessService.class
 com/diegokoala/rest/profile/restfulwebservices/RestfulWebServicesApplication.class
 com/diegokoala/rest/profile/restfulwebservices/UtilsController.class
 com/diegokoala/rest/profile/restfulwebservices/DiegoService.class
