@@ -31,7 +31,7 @@ public class HarnessController
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
         }
-        return "{ Message: 'Welcome to Harness, Your Deployment 1.6.1 was successful implemented', status: 'UP' }";
+        return "{ Message: 'Welcome to Harness, Your Deployment 1.8.6 was successful implemented', status: 'UP' }";
 
     }
     @RequestMapping(method = RequestMethod.GET, path = "/")
